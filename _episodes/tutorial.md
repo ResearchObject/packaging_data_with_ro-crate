@@ -157,15 +157,20 @@ Next we'll add another entity to the `@graph` array, to describe the [RO-Crate R
 By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located. This reference from `ro-crate-metadata.json` is therefore semantically marking the `crate1` folder as being the RO-Crate Root.
 
 
-> This example is a folder-based RO-Crate stored on disk, and therefore absolute paths are avoided, e.g. in case the root folder is moved or archived as a ZIP file. If the crate is being served from a Web service, such as a data repository or database where files are not organized in folders, then the `@id` might be an absolute URI instead of `./` -- this is one reason why we point to the root entity from the metadata descriptor, see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
+> ## RO-Crates can be published on the Web
+> This example is a folder-based RO-Crate stored on disk, and therefore absolute paths are avoided, e.g. in case the root folder is moved or archived as a ZIP file. 
+> 
+> If the crate is being served from a Web service, such as a data repository or database where files are not organized in folders, then the `@id` might be an absolute URI instead of `./` -- this is one reason why we point to the root entity from the metadata descriptor, see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
 {: .discussion}
 
 ## Describing the root entity
 
 When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity), the properties generally apply to the whole of the crate. For instance it is a good idea to give a description of why these resources are gathered in a crate, as well as giving the crate a name and license for FAIR reuse and citation.
 
+> ## 
 > Try to add the `name`, `description` and `datePublished` properties, and for `license` as a cross-reference, use [SPDX](https://spdx.org/licenses/) license list to find the identifier for Creative Commons Zero or another license of your choice:
 > 
+> > ## 
 > > ```json
 > > {
 > >   "@id": "./",
@@ -467,7 +472,7 @@ Try modify the graph's `@context` within the [JSON-LD Playground](https://json-l
 }
 ```
 
-![Triples table in the JSON-LD Playground](../fig/jsonld-playground-table.png)
+![Triples table in the JSON-LD Playground](../fig/jsonld-playground-table.png){: .image-with-shadow }
 
 Above `arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/` is a randomly generated identifier to represent the RO-Crate root, and now the JSON-LD Playground can show all the triples from the metadata file. You can likewise use the _N-Quads_ button to convert the metadata file to the [RDF N-Quads](http://www.w3.org/TR/n-quads/) format. Most RDF libraries and stores have JSON-LD support, but may need to specify a base URI as we did above, making a new UUID for each imported RO-Crate.
 
