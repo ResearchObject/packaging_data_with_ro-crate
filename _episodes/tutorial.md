@@ -85,6 +85,7 @@ First create a new folder `crate1/` and add a single file `data.csv` to represen
 2022-02-01,16.0,28.4,0.6
 2022-02-02,16.3,17.2,12.4
 ```
+{: .source .language-csv}
 
 Next, to turn this folder into an RO-Crate we need to add the _RO-Crate Metadata File_, which has a fixed filename.
 Create the file `ro-crate-metadata.json` using [Visual Studio Code](https://code.visualstudio.com/) or your favourite editor, then add the following JSON:
@@ -133,9 +134,9 @@ The first JSON-LD _entity_ to add has the `@id` value of `ro-crate-metadata.json
 This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor), helps this file self-identify as an RO-Crate Metadata Document, which is conforming to (`conformsTo`) the RO-Crate specification version 1.1. Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise, but they have two different functions. The context brings the defined terms into the metadata document, while the conformance declares which RO-Crate conventions of using those terms are being followed.
 
 
-> <tip-title>RO-Crate versions</tip-title>
+> ### RO-Crate versions
 > This tutorial is written for RO-Crate 1.1, the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html) -- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions, but check the [change log](https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html) for any important changes. The next development version of the specification, indicated with a `-DRAFT` status, may still be subject to changes and should only be used with caution.
-{: .tip}
+{: .callout}
 
 
 ## RO-Crate Root
@@ -156,18 +157,15 @@ Next we'll add another entity to the `@graph` array, to describe the [RO-Crate R
 By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located. This reference from `ro-crate-metadata.json` is therefore semantically marking the `crate1` folder as being the RO-Crate Root.
 
 
-{: .note }
-This example is a folder-based RO-Crate stored on disk, and therefore absolute paths are avoided, e.g. in case the root folder is moved or archived as a ZIP file. If the crate is being served from a Web service, such as a data repository or database where files are not organized in folders, then the `@id` might be an absolute URI instead of `./` -- this is one reason why we point to the root entity from the metadata descriptor, see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
+> This example is a folder-based RO-Crate stored on disk, and therefore absolute paths are avoided, e.g. in case the root folder is moved or archived as a ZIP file. If the crate is being served from a Web service, such as a data repository or database where files are not organized in folders, then the `@id` might be an absolute URI instead of `./` -- this is one reason why we point to the root entity from the metadata descriptor, see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
+{: .discussion}
 
 ## Describing the root entity
 
 When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity), the properties generally apply to the whole of the crate. For instance it is a good idea to give a description of why these resources are gathered in a crate, as well as giving the crate a name and license for FAIR reuse and citation.
 
-> <question-title></question-title>
-> 
 > Try to add the `name`, `description` and `datePublished` properties, and for `license` as a cross-reference, use [SPDX](https://spdx.org/licenses/) license list to find the identifier for Creative Commons Zero or another license of your choice:
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >   "@id": "./",
@@ -183,18 +181,18 @@ When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/ro
 {: .challenge}
 
 
-> <tip-title>License identifiers</tip-title>
+> ### License identifiers
 > In the above solution, the identifier for CC0-1.0 <http://spdx.org/licenses/CC0-1.0> is slightly 
 > different from their listed web page URI <https://spdx.org/licenses/CC0-1.0.html> -- the former 
 > is chosen to align with [SPDX JSON-LD identifiers](https://github.com/spdx/license-list-data/tree/main/jsonld),
 > which unfortunately are not shown directly on their website as _permalinks_. 
 > It is not a requirement in RO-Crate to use permalinks for `@id` of entities like licenses, 
 > it is nevertheless best practice to propagate permalinks where known.
-{: .tip}
+{: .callout}
 
-> <tip-title>Choosing a license</tip-title>
+> ### Choosing a license
 > Choosing a license appropriate for your dataset can be non-trivial, particularly if third-party data/software and multiple organizations are involved. See [FAIR Cookbook on licensing](https://faircookbook.elixir-europe.org/content/recipes/reusability/ATI-licensing.html). It is worth noting that an RO-Crate permits data entities to have a `license` different from the overall Crate license. It is still recommended to choose an overall Crate license that can legally apply across all the content in the RO-Crate Root.
-{: .tip}
+{: .discussion}
 
 
 ## About cross-references
@@ -206,11 +204,8 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 ![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](../fig/introduction-figure-1.svg "showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code>")
 
 
-> <question-title></question-title>
-> 
 > Consider the root Data Entity `./`, and add such a cross-reference to the file `data.csv` using the _property_ called `hasPart`:
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "./",
@@ -227,12 +222,10 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 
 The RO-Crate root is always typed `Dataset`, though `@type` may in some cases have additional types by using a JSON array instead of a single value.  Most entities can have such more specific types, e.g. chosen from [schema.org type list](https://schema.org/docs/full.html).
 
-> <question-title></question-title>
 > 1. Navigate the schema.org type list to find a subtype of `CreativeWork` that is suitable for a learning resource..
 > 2. Modify the root entity's `@type` to be an array.
 > 3. Add the type name for learning resource at the end of the array.
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "./",
@@ -255,20 +248,17 @@ The root has several metadata properties that describe the RO-Crate as a whole, 
 
 A main type of resources collected in a Research Object is _data_ -- simplifying, we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
-> <tip-title>Referencing external resources</tip-title>
+> ### Referencing external resources
 > RO-Crates can also contain data entities that are folders and Web resources, as well as non-File data like online databases -- see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
-{: .tip}
+{: .keypoints}
 
 We should now be able to follow the `@id` reference for the corresponding _data entity_ JSON block for our CSV file, which we need to add to the `@graph` of the RO-Crate Metadata Document. 
 
 
-> <question-title></question-title>
-> 
 > 1. Add a declaration for the CSV file as new entity with `@type` declared as `File`.  
 > 2. Give the file a human-readable `name` and `description` to detail it as _Rainfall data for Katoomba in NSW Australia, captured February 2022_. 
 > 3. To add this is a CSV file, declare the `encodingFormat` as the appropriate [IANA media type](https://www.iana.org/assignments/media-types/#text) string. 
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "data.csv",
@@ -287,12 +277,9 @@ It is recommended that every entity has a human-readable `name`; as shown in the
 
 For more information on describing files and folders, including their recommended and required attributes, see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
 
-> <question-title></question-title>
-> 
 > 1. Consider if the file content of `data.csv` is not covered by our overall license (CC0), but [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (which only permits non-commercial use)
 > 2. To override, add an  `license` cross-reference property on this particular data entity
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "data.csv",
@@ -312,9 +299,9 @@ For more information on describing files and folders, including their recommende
 
 Entities that we have added under `hasPart` are considered _data entities_, while entities only referenced from those are considered _contextual entities_ -- they help explain the crate and its content.
 
-> <tip-title>Adding entities to the JSON array</tip-title>
+> ### Adding entities to the JSON array
 > You may have noticed we're adding incrementally to the `@graph` array. It is important to remember the `,` between each entity, **except** for the final entity in the JSON array; and likewise for the properties within the JSON object for each entity. This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing. The order of the entities within the `@graph` JSON-LD array and the order of the keys within a JSON object is _not significant_. The _graph_ content is given by the `@id` cross-references.
-{: .tip}
+{: .callout}
 
 You may notice the subtle difference between a _data entity_ that is conceptually part of the RO-Crate and is file-like (containing bytes), while a _contextual entity_ is a representation of a real-life organization that can't be downloaded: following the URL, we would only get its _description_. The section [contextual entities](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) explores several of the entities that can be added to the RO-Crate to provide it with a **context**, for instance how to link to authors and their affiliations.  Simplifying slightly, a data entity is referenced from `hasPart` in a `Dataset`, while a contextual entity is referenced using any other defined property.
 
@@ -322,8 +309,6 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 We have previously declared two different `license` cross-references. While following the URLs in this case explain the licenses well, it is also best practice to include a very brief summary of contextual entities in the RO-Crate Metadata Document. This is more important if the cross-reference do not use a permalink and may change over time. As a minimum, each referenced entity should have a `@type` and `name` property. It is also possible to add `url` for more information
 
-> <question-title></question-title>
-> 
 > Add a contextual entity for each of the two licenses, see the [licensing](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#licensing-access-control-and-copyright) section for details:
 > 
 > > <solution-title></solution-title>
@@ -353,14 +338,11 @@ An additional exercise is to try to unify the two entites so that both use spdx 
 
 Moving back to the RO-Crate root `./`, let's specify who are the authors of the crate.
 
-> <question-title></question-title>
-> 
 > 1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people) of the crate using the type `Person`
 > 2. Include your preferred name. 
 > 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution, or a crate-local identifier like `#alice`.
 > 4. Include your `affiliation` as a string value.
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >   "@id": "./",
@@ -379,16 +361,13 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 {: .challenge}
 
 
-> <tip-title>Who can be authors of an RO-Crate?</tip-title>
+> ### Who can be authors of an RO-Crate?
 > When we say someone is an author of a crate, it means they have contributed something substansively to its content (typically the data). Agreement on what is considered authorship on a dataset can be tricky; you may decide some people would be better represented as `contributor`. One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity, so it can be clearer where each person have contributed (e.g. a statistician is author of an R script).  This means that generally the authors of the crate can be a broader, more inclusive list than perhaps traditionally recognized as academic authorship.
-{: .tip}
+{: .discussion}
 
-> <question-title></question-title>
-> 
 > 1. "Unroll" your `affiliation` of the person as cross-reference to another contextual entity, typed as an `Organization`. 
 > 2. You can use [ROR](https://ror.org/) to find an identifier for most educational/research institutions, or you can use the main web page of your organization as its `@id`.
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >   "@id": "https://orcid.org/0000-0002-1825-0097",
@@ -409,12 +388,9 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 
 The reuse of existing identifiers is important for both persons and organization from a FAIR perspective, as their names may not be globally unique.
 
-> <question-title></question-title>
-> 
 > 1. Now imagine you are going to publish the RO-Crate on your institution's web pages. 
 > 2. Cross-reference the same Organization entity with `publisher` from the RO-Crate Root entitity:
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "./",
@@ -435,6 +411,7 @@ As we made this RO-Crate Metadata File by hand, it's good to check for any JSON 
 JSON markup - SyntaxError: JSON.parse: expected `','` or `']'` after array element 
 at line 29 column 5 of the JSON data
 ```
+{: .output}
 
 Modify the JSON file in your editor to fix any such errors. You can also use editor commands such as _Format Document_ to ensure you have consistent spacing, indentation and brackets.
 
@@ -467,6 +444,7 @@ If the document passes without errors in the JSON-LD Playground, you should see 
   }
 ]
 ```
+{: .output .language-json}
 
 This verbose listing of the JSON-LD shows how the `@context` has correctly expanded the keys, but is not particularly readable. Try the _Visualized_ tab to see an interactive rendering of the entities:
 
@@ -500,8 +478,6 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 
 ![Example dataset for RO-Crate specification](../fig/ro-crate-preview-example.png)
 
-> <question-title></question-title>
-> 
 > Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-crate-preview.html) and find:
 >
 > 1. What is the license of the rainfall CSV?
@@ -509,7 +485,6 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 > 3. What does the Validity Check inspect
 > 4. What is not covered by this check?
 > 
-> > <solution-title></solution-title>
 > > 1. CC BY-NC-SA 4.0 International
 > > 2. Brown University
 > > 3. The context, and for root dataset: existance, valid identifier, name, description, license and date published.  
@@ -544,11 +519,10 @@ You have completed making a basic RO-Crate. You may try any of the following:
 - Follow the RO-Crate specification for additional [contextual entities](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) you can add to the crate
 - Try briefly describing [provenance](https://www.researchobject.org/ro-crate/1.1/provenance.html) or [software](https://www.researchobject.org/ro-crate/1.1/workflows.html) for any additional data entities you have added.
 
-> <question-title>Complete RO-Crate Metadata Document</question-title>
+> ### Complete RO-Crate Metadata Document
 > 
 > The final RO-Crate Metadata Document constructed in this tutorial should look something like:
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >   "@context": "https://w3id.org/ro/crate/1.1/context",
@@ -632,3 +606,4 @@ This tutorial has been adapted from the revised [RO-Crate introduction for 1.2](
 * Adaptation to Galaxy Training Material rendering
 * Explicit links to RO-Crate specifications
 * Example changed to different organization and license
+* Modiied for Carpentries style
