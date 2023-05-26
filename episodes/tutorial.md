@@ -1,8 +1,8 @@
 ---
-layout: tutorial_hands_on
-
 title: RO-Crate - Introduction
 level: Introductory
+teaching: 10
+exercises: 10
 requirements:
 - type: none
   title: "Files and folder organization"
