@@ -34,7 +34,7 @@ objectives:
 - Connect different parts of the Research Object using identifiers
 
 time_estimation:  30M
-key_points:
+keypoints:
 - RO-Crate provides a structure to make FAIR data packages
 - schema.org in JSON-LD provides a controlled vocabulary for FAIR metadata
 - Each entity of the crate is described separately
@@ -268,6 +268,7 @@ We should now be able to follow the `@id` reference for the corresponding _data 
 > 2. Give the file a human-readable `name` and `description` to detail it as _Rainfall data for Katoomba in NSW Australia, captured February 2022_. 
 > 3. To add this is a CSV file, declare the `encodingFormat` as the appropriate [IANA media type](https://www.iana.org/assignments/media-types/#text) string. 
 > 
+> > ## Solution
 > > ```json
 > > {
 > >     "@id": "data.csv",
@@ -291,6 +292,7 @@ For more information on describing files and folders, including their recommende
 > 1. Consider if the file content of `data.csv` is not covered by our overall license (CC0), but [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (which only permits non-commercial use)
 > 2. To override, add an  `license` cross-reference property on this particular data entity
 > 
+> > ## Solution
 > > ```json
 > > {
 > >     "@id": "data.csv",
@@ -324,6 +326,7 @@ We have previously declared two different `license` cross-references. While foll
 >
 > Add a contextual entity for each of the two licenses, see the [licensing](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#licensing-access-control-and-copyright) section for details:
 > 
+> > ## Solution
 > > ```json
 > > {
 > >     "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -357,6 +360,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution, or a crate-local identifier like `#alice`.
 > 4. Include your `affiliation` as a string value.
 > 
+> > ## Solution
 > > ```json
 > > {
 > >   "@id": "./",
@@ -411,6 +415,7 @@ The reuse of existing identifiers is important for both persons and organization
 > 1. Now imagine you are going to publish the RO-Crate on your institution's web pages. 
 > 2. Cross-reference the same Organization entity with `publisher` from the RO-Crate Root entitity:
 > 
+> > ## Solution
 > > ```json
 > > {
 > >     "@id": "./",
@@ -507,6 +512,7 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 > 3. What does the Validity Check inspect
 > 4. What is not covered by this check?
 > 
+> > ## Solution
 > > 1. CC BY-NC-SA 4.0 International
 > > 2. Brown University
 > > 3. The context, and for root dataset: existance, valid identifier, name, description, license and date published.  
