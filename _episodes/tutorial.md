@@ -100,7 +100,7 @@ Create the file `ro-crate-metadata.json` using [Visual Studio Code](https://code
 
 Your folder should now look like this:
 
-![Folder listing of crate1, including data.csv and ro-crate-metadata.json](../../images/ro-crate-intro/crate1-folders.svg "Any folder can be made into an RO-Crate by adding <code>ro-crate-metadata.json</code>")
+![Folder listing of crate1, including data.csv and ro-crate-metadata.json](../fig/crate1-folders.svg "Any folder can be made into an RO-Crate by adding <code>ro-crate-metadata.json</code>")
 
 The presence of the reserved `ro-crate-metadata.json` filename means that `crate1` (and its children) can now be considered to be an **RO-Crate**. We call the top-level folder of the crate for the **RO-Crate Root** and can now refer to its content with relative file paths.
 
@@ -180,7 +180,7 @@ When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/ro
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 > <tip-title>License identifiers</tip-title>
@@ -203,7 +203,7 @@ In a RO-Crate Metadata Document, entities are cross-referenced using `@id` refer
 In short, this _flattened JSON-LD_ style (shown below) allows any entity to reference any other entity, and RO-Crate consumers can directly find all the descriptions of a given entity as a single JSON object. 
 
 
-![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](../../images/ro-crate-intro/introduction-figure-1.svg "showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code>")
+![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](../fig/introduction-figure-1.svg "showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code>")
 
 
 > <question-title></question-title>
@@ -222,7 +222,7 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 The RO-Crate root is always typed `Dataset`, though `@type` may in some cases have additional types by using a JSON array instead of a single value.  Most entities can have such more specific types, e.g. chosen from [schema.org type list](https://schema.org/docs/full.html).
@@ -244,7 +244,7 @@ The RO-Crate root is always typed `Dataset`, though `@type` may in some cases ha
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 The root has several metadata properties that describe the RO-Crate as a whole, considering it as a Research Object of collected resources. The section on [root data entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) details further the required and recommended properties of the root `./`. 
 
@@ -280,7 +280,7 @@ We should now be able to follow the `@id` reference for the corresponding _data 
 > > ```
 > > 
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 It is recommended that every entity has a human-readable `name`; as shown in the above example, this does not need to match the filename/identifier. The `encodingFormat` indicates the media file type so that consumers of the crate can open `data.csv` in an appropriate program, and can be particularly important for less common file extensions frequently encounted in outputs from research software and instruments.
@@ -304,7 +304,7 @@ For more information on describing files and folders, including their recommende
 > > },  
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 
@@ -343,7 +343,7 @@ We have previously declared two different `license` cross-references. While foll
 > > },  
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 An additional exercise is to try to unify the two entites so that both use spdx identifiers, remembering to update the corresponding `license` cross-references when changing the `@id`. However, not all licenses have a direct SPDX identifier.
@@ -376,7 +376,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 > <tip-title>Who can be authors of an RO-Crate?</tip-title>
@@ -403,7 +403,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 
@@ -424,7 +424,7 @@ The reuse of existing identifiers is important for both persons and organization
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 ## Validating and visualizing
@@ -470,7 +470,7 @@ If the document passes without errors in the JSON-LD Playground, you should see 
 
 This verbose listing of the JSON-LD shows how the `@context` has correctly expanded the keys, but is not particularly readable. Try the _Visualized_ tab to see an interactive rendering of the entities:
 
-![Visualized in the JSON-LD Playground](../../images/ro-crate-intro/jsonld-playground-visualized.png)
+![Visualized in the JSON-LD Playground](../fig/jsonld-playground-visualized.png)
 
 As the RO-Crate Metadata Document is valid JSON-LD it is also possible to process it using Linked Data technologies such as triple stores and SPARQL queries. It is beyond the scope of this tutorial to explain this aspect fully, but interested readers should consider how to [handle relative URI references](https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html).
 As an example, try the _Table_ button and notice that the entities with relative identifiers are not included. This is because when converting to RDF you need absolute URIs which do not readily exist when a crate is stored on disk, we've not decided where the crate is to be published yet.  
@@ -489,7 +489,7 @@ Try modify the graph's `@context` within the [JSON-LD Playground](https://json-l
 }
 ```
 
-![Triples table in the JSON-LD Playground](../../images/ro-crate-intro/jsonld-playground-table.png)
+![Triples table in the JSON-LD Playground](../fig/jsonld-playground-table.png)
 
 Above `arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/` is a randomly generated identifier to represent the RO-Crate root, and now the JSON-LD Playground can show all the triples from the metadata file. You can likewise use the _N-Quads_ button to convert the metadata file to the [RDF N-Quads](http://www.w3.org/TR/n-quads/) format. Most RDF libraries and stores have JSON-LD support, but may need to specify a base URI as we did above, making a new UUID for each imported RO-Crate.
 
@@ -498,11 +498,11 @@ Above `arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/` is a randomly generate
 
 An RO-Crate can be distributed on disk, in a packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate can have an accompanying HTML version (`ro-crate-metadata.html`) designed to be human-readable. 
 
-![Example dataset for RO-Crate specification](../../images/ro-crate-intro/ro-crate-preview-example.png)
+![Example dataset for RO-Crate specification](../fig/ro-crate-preview-example.png)
 
 > <question-title></question-title>
 > 
-> Try navigating the [preview of the running example](rainfall-1.2.1/ro-crate-preview.html) and find:
+> Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-crate-preview.html) and find:
 >
 > 1. What is the license of the rainfall CSV?
 > 2. What is the affiliation of the crate's author?
@@ -515,7 +515,7 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 > > 3. The context, and for root dataset: existance, valid identifier, name, description, license and date published.  
 > > 4. The other entities were not checked, e.g. the `affiliation` of the author.
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 ## Advanced: Generating HTML preview
@@ -534,7 +534,7 @@ docker pull simleo/rochtml
 docker run -v $(pwd):/crate -it simleo/rochtml -c ro-crate-preview_files /crate/ro-crate-metadata.json
 ```
 
-The above will generate a `ro-crate-preview.html` file within your RO-Crate Root. Experiment with modifying the Metadata file and re-generating the HTML preview to see how your rendering differs from the [running example](rainfall-1.2.1/ro-crate-preview.html).
+The above will generate a `ro-crate-preview.html` file within your RO-Crate Root. Experiment with modifying the Metadata file and re-generating the HTML preview to see how your rendering differs from the [running example](../files/rainfall-1.2.1/ro-crate-preview.html).
 
 ## Next steps
 
@@ -611,7 +611,7 @@ You have completed making a basic RO-Crate. You may try any of the following:
 > > }
 > > ```
 > {: .solution}
-{: .question}
+{: .challenge}
 
 
 
