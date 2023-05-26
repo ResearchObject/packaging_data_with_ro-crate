@@ -209,8 +209,10 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 ![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](../fig/introduction-figure-1.svg "showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code>")
 
 
+> ## 
 > Consider the root Data Entity `./`, and add such a cross-reference to the file `data.csv` using the _property_ called `hasPart`:
 > 
+> > ## 
 > > ```json
 > > {
 > >     "@id": "./",
@@ -227,10 +229,14 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 
 The RO-Crate root is always typed `Dataset`, though `@type` may in some cases have additional types by using a JSON array instead of a single value.  Most entities can have such more specific types, e.g. chosen from [schema.org type list](https://schema.org/docs/full.html).
 
+> ## 
+> 
 > 1. Navigate the schema.org type list to find a subtype of `CreativeWork` that is suitable for a learning resource..
 > 2. Modify the root entity's `@type` to be an array.
 > 3. Add the type name for learning resource at the end of the array.
 > 
+> > ##
+> >
 > > ```json
 > > {
 > >     "@id": "./",
@@ -259,7 +265,7 @@ A main type of resources collected in a Research Object is _data_ -- simplifying
 
 We should now be able to follow the `@id` reference for the corresponding _data entity_ JSON block for our CSV file, which we need to add to the `@graph` of the RO-Crate Metadata Document. 
 
-
+> ## 
 > 1. Add a declaration for the CSV file as new entity with `@type` declared as `File`.  
 > 2. Give the file a human-readable `name` and `description` to detail it as _Rainfall data for Katoomba in NSW Australia, captured February 2022_. 
 > 3. To add this is a CSV file, declare the `encodingFormat` as the appropriate [IANA media type](https://www.iana.org/assignments/media-types/#text) string. 
@@ -282,6 +288,7 @@ It is recommended that every entity has a human-readable `name`; as shown in the
 
 For more information on describing files and folders, including their recommended and required attributes, see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
 
+> ## 
 > 1. Consider if the file content of `data.csv` is not covered by our overall license (CC0), but [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (which only permits non-commercial use)
 > 2. To override, add an  `license` cross-reference property on this particular data entity
 > 
@@ -314,9 +321,9 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 
 We have previously declared two different `license` cross-references. While following the URLs in this case explain the licenses well, it is also best practice to include a very brief summary of contextual entities in the RO-Crate Metadata Document. This is more important if the cross-reference do not use a permalink and may change over time. As a minimum, each referenced entity should have a `@type` and `name` property. It is also possible to add `url` for more information
 
+> ##
 > Add a contextual entity for each of the two licenses, see the [licensing](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#licensing-access-control-and-copyright) section for details:
 > 
-> > <solution-title></solution-title>
 > > ```json
 > > {
 > >     "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
@@ -343,6 +350,7 @@ An additional exercise is to try to unify the two entites so that both use spdx 
 
 Moving back to the RO-Crate root `./`, let's specify who are the authors of the crate.
 
+> ## 
 > 1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people) of the crate using the type `Person`
 > 2. Include your preferred name. 
 > 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution, or a crate-local identifier like `#alice`.
@@ -481,7 +489,7 @@ Above `arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/` is a randomly generate
 
 An RO-Crate can be distributed on disk, in a packaged format such as a zip file or disk image, or placed on a static website. In any of these cases, an RO-Crate can have an accompanying HTML version (`ro-crate-metadata.html`) designed to be human-readable. 
 
-![Example dataset for RO-Crate specification](../fig/ro-crate-preview-example.png)
+![Example dataset for RO-Crate specification](../fig/ro-crate-preview-example.png){: .image-with-shadow }
 
 > Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-crate-preview.html) and find:
 >
@@ -527,7 +535,8 @@ You have completed making a basic RO-Crate. You may try any of the following:
 > ## Complete RO-Crate Metadata Document
 > 
 > The final RO-Crate Metadata Document constructed in this tutorial should look something like:
-> 
+
+> > ## `ro-crate-metadata.json`
 > > ```json
 > > {
 > >   "@context": "https://w3id.org/ro/crate/1.1/context",
