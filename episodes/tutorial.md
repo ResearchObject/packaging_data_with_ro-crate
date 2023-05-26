@@ -131,6 +131,7 @@ This required entity, known as the [RO-Crate Metadata Descriptor](https://www.re
 
 
 > ## RO-Crate versions
+>
 > This tutorial is written for RO-Crate 1.1, the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html) -- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions, but check the [change log](https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html) for any important changes. The next development version of the specification, indicated with a `-DRAFT` status, may still be subject to changes and should only be used with caution.
 {: .callout}
 
@@ -154,6 +155,7 @@ By convention, in RO-Crate the `@id` value of  `./` means that this entity descr
 
 
 > ## RO-Crates can be published on the Web
+> 
 > This example is a folder-based RO-Crate stored on disk, and therefore absolute paths are avoided, e.g. in case the root folder is moved or archived as a ZIP file. 
 > 
 > If the crate is being served from a Web service, such as a data repository or database where files are not organized in folders, then the `@id` might be an absolute URI instead of `./` -- this is one reason why we point to the root entity from the metadata descriptor, see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
@@ -168,6 +170,7 @@ When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/ro
 > Try to add the `name`, `description` and `datePublished` properties, and for `license` as a cross-reference, use [SPDX](https://spdx.org/licenses/) license list to find the identifier for Creative Commons Zero or another license of your choice:
 > 
 > > ## Solution
+> >
 > > ```json
 > > {
 > >   "@id": "./",
@@ -184,6 +187,7 @@ When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/ro
 
 
 > ## License identifiers
+>
 > In the above solution, the identifier for CC0-1.0 <http://spdx.org/licenses/CC0-1.0> is slightly 
 > different from their listed web page URI <https://spdx.org/licenses/CC0-1.0.html> -- the former 
 > is chosen to align with [SPDX JSON-LD identifiers](https://github.com/spdx/license-list-data/tree/main/jsonld),
@@ -193,6 +197,7 @@ When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/ro
 {: .callout}
 
 > ## Choosing a license
+>
 > Choosing a license appropriate for your dataset can be non-trivial, particularly if third-party data/software and multiple organizations are involved. See [FAIR Cookbook on licensing](https://faircookbook.elixir-europe.org/content/recipes/reusability/ATI-licensing.html). It is worth noting that an RO-Crate permits data entities to have a `license` different from the overall Crate license. It is still recommended to choose an overall Crate license that can legally apply across all the content in the RO-Crate Root.
 {: .discussion}
 
@@ -257,6 +262,7 @@ The root has several metadata properties that describe the RO-Crate as a whole, 
 A main type of resources collected in a Research Object is _data_ -- simplifying, we can consider data as any kind of file that can be opened in other programs. These are aggregated by the Root Dataset with the `hasPart` property. In this example we have an array with a single value, a reference to the entity describing the file `data.csv`. 
 
 > ## Referencing external resources
+>
 > RO-Crates can also contain data entities that are folders and Web resources, as well as non-File data like online databases -- see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
 {: .keypoints}
 
@@ -293,6 +299,7 @@ For more information on describing files and folders, including their recommende
 > 2. To override, add an  `license` cross-reference property on this particular data entity
 > 
 > > ## Solution
+> >
 > > ```json
 > > {
 > >     "@id": "data.csv",
@@ -313,6 +320,7 @@ For more information on describing files and folders, including their recommende
 Entities that we have added under `hasPart` are considered _data entities_, while entities only referenced from those are considered _contextual entities_ -- they help explain the crate and its content.
 
 > ## Adding entities to the JSON array
+>
 > You may have noticed we're adding incrementally to the `@graph` array. It is important to remember the `,` between each entity, **except** for the final entity in the JSON array; and likewise for the properties within the JSON object for each entity. This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing. The order of the entities within the `@graph` JSON-LD array and the order of the keys within a JSON object is _not significant_. The _graph_ content is given by the `@id` cross-references.
 {: .callout}
 
@@ -380,6 +388,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 
 
 > ## Who can be authors of an RO-Crate?
+>
 > When we say someone is an author of a crate, it means they have contributed something substansively to its content (typically the data). Agreement on what is considered authorship on a dataset can be tricky; you may decide some people would be better represented as `contributor`. One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity, so it can be clearer where each person have contributed (e.g. a statistician is author of an R script).  This means that generally the authors of the crate can be a broader, more inclusive list than perhaps traditionally recognized as academic authorship.
 {: .discussion}
 
@@ -416,6 +425,7 @@ The reuse of existing identifiers is important for both persons and organization
 > 2. Cross-reference the same Organization entity with `publisher` from the RO-Crate Root entitity:
 > 
 > > ## Solution
+> >
 > > ```json
 > > {
 > >     "@id": "./",
@@ -436,7 +446,7 @@ As we made this RO-Crate Metadata File by hand, it's good to check for any JSON 
 JSON markup - SyntaxError: JSON.parse: expected `','` or `']'` after array element 
 at line 29 column 5 of the JSON data
 ~~~
-{: .output}
+{: .error}
 
 Modify the JSON file in your editor to fix any such errors. You can also use editor commands such as _Format Document_ to ensure you have consistent spacing, indentation and brackets.
 
@@ -513,6 +523,7 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 > 4. What is not covered by this check?
 > 
 > > ## Solution
+> >
 > > 1. CC BY-NC-SA 4.0 International
 > > 2. Brown University
 > > 3. The context, and for root dataset: existance, valid identifier, name, description, license and date published.  
