@@ -210,9 +210,11 @@ In short, this _flattened JSON-LD_ style (shown below) allows any entity to refe
 
 
 > ## 
+>
 > Consider the root Data Entity `./`, and add such a cross-reference to the file `data.csv` using the _property_ called `hasPart`:
 > 
 > > ## 
+> >
 > > ```json
 > > {
 > >     "@id": "./",
@@ -266,6 +268,7 @@ A main type of resources collected in a Research Object is _data_ -- simplifying
 We should now be able to follow the `@id` reference for the corresponding _data entity_ JSON block for our CSV file, which we need to add to the `@graph` of the RO-Crate Metadata Document. 
 
 > ## 
+>
 > 1. Add a declaration for the CSV file as new entity with `@type` declared as `File`.  
 > 2. Give the file a human-readable `name` and `description` to detail it as _Rainfall data for Katoomba in NSW Australia, captured February 2022_. 
 > 3. To add this is a CSV file, declare the `encodingFormat` as the appropriate [IANA media type](https://www.iana.org/assignments/media-types/#text) string. 
@@ -289,6 +292,7 @@ It is recommended that every entity has a human-readable `name`; as shown in the
 For more information on describing files and folders, including their recommended and required attributes, see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
 
 > ## 
+> 
 > 1. Consider if the file content of `data.csv` is not covered by our overall license (CC0), but [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (which only permits non-commercial use)
 > 2. To override, add an  `license` cross-reference property on this particular data entity
 > 
@@ -322,6 +326,7 @@ You may notice the subtle difference between a _data entity_ that is conceptuall
 We have previously declared two different `license` cross-references. While following the URLs in this case explain the licenses well, it is also best practice to include a very brief summary of contextual entities in the RO-Crate Metadata Document. This is more important if the cross-reference do not use a permalink and may change over time. As a minimum, each referenced entity should have a `@type` and `name` property. It is also possible to add `url` for more information
 
 > ##
+>
 > Add a contextual entity for each of the two licenses, see the [licensing](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#licensing-access-control-and-copyright) section for details:
 > 
 > > ```json
@@ -351,6 +356,7 @@ An additional exercise is to try to unify the two entites so that both use spdx 
 Moving back to the RO-Crate root `./`, let's specify who are the authors of the crate.
 
 > ## 
+>
 > 1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people) of the crate using the type `Person`
 > 2. Include your preferred name. 
 > 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution, or a crate-local identifier like `#alice`.
@@ -378,9 +384,12 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > When we say someone is an author of a crate, it means they have contributed something substansively to its content (typically the data). Agreement on what is considered authorship on a dataset can be tricky; you may decide some people would be better represented as `contributor`. One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity, so it can be clearer where each person have contributed (e.g. a statistician is author of an R script).  This means that generally the authors of the crate can be a broader, more inclusive list than perhaps traditionally recognized as academic authorship.
 {: .discussion}
 
+> ##
 > 1. "Unroll" your `affiliation` of the person as cross-reference to another contextual entity, typed as an `Organization`. 
 > 2. You can use [ROR](https://ror.org/) to find an identifier for most educational/research institutions, or you can use the main web page of your organization as its `@id`.
 > 
+> > ## 
+> >
 > > ```json
 > > {
 > >   "@id": "https://orcid.org/0000-0002-1825-0097",
@@ -401,6 +410,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 
 The reuse of existing identifiers is important for both persons and organization from a FAIR perspective, as their names may not be globally unique.
 
+> ##
 > 1. Now imagine you are going to publish the RO-Crate on your institution's web pages. 
 > 2. Cross-reference the same Organization entity with `publisher` from the RO-Crate Root entitity:
 > 
@@ -420,10 +430,10 @@ The reuse of existing identifiers is important for both persons and organization
 
 As we made this RO-Crate Metadata File by hand, it's good to check for any JSON errors, such as missing/extra `,` or unclosed `"` quotes. Try pasting the file content into the [JSON-LD Playground](https://json-ld.org/playground/). It should show up any errors, for example:
 
-```
+~~~
 JSON markup - SyntaxError: JSON.parse: expected `','` or `']'` after array element 
 at line 29 column 5 of the JSON data
-```
+~~~
 {: .output}
 
 Modify the JSON file in your editor to fix any such errors. You can also use editor commands such as _Format Document_ to ensure you have consistent spacing, indentation and brackets.
@@ -491,6 +501,8 @@ An RO-Crate can be distributed on disk, in a packaged format such as a zip file 
 
 ![Example dataset for RO-Crate specification](../fig/ro-crate-preview-example.png){: .image-with-shadow }
 
+> ##
+> 
 > Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-crate-preview.html) and find:
 >
 > 1. What is the license of the rainfall CSV?
@@ -532,74 +544,73 @@ You have completed making a basic RO-Crate. You may try any of the following:
 - Follow the RO-Crate specification for additional [contextual entities](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) you can add to the crate
 - Try briefly describing [provenance](https://www.researchobject.org/ro-crate/1.1/provenance.html) or [software](https://www.researchobject.org/ro-crate/1.1/workflows.html) for any additional data entities you have added.
 
-> ## Complete RO-Crate Metadata Document
-> 
-> The final RO-Crate Metadata Document constructed in this tutorial should look something like:
+## Complete RO-Crate Metadata Document
+ 
+The final RO-Crate Metadata Document constructed in this tutorial should look something like:
 
-> > ## `ro-crate-metadata.json`
-> > ```json
-> > {
-> >   "@context": "https://w3id.org/ro/crate/1.1/context",
-> >   "@graph": [
-> >     {
-> >       "@id": "ro-crate-metadata.json",
-> >       "@type": "CreativeWork",
-> >       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
-> >       "about": {"@id": "./"}
-> >     },
-> >     {
-> >       "@id": "./",
-> >       "@type": ["Dataset", "LearningResource"],
-> >       "hasPart": [
-> >         {"@id": "data.csv"}
-> >       ],
-> >       "name": "Example dataset for RO-Crate specification",
-> >       "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
-> >       "datePublished": "2023-05-22T12:03:00+0100",
-> >       "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
-> >       "author": { "@id": "https://orcid.org/0000-0002-1825-0097" },
-> >       "publisher": {"@id": "https://ror.org/05gq02987"}
-> >     },
-> >     {
-> >       "@id": "data.csv",
-> >       "@type": "File",
-> >       "name": "Rainfall Katoomba 2022-02",
-> >       "description": "Rainfall data for Katoomba, NSW Australia February 2022",
-> >       "encodingFormat": "text/csv",
-> >       "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/"}
-> >     },
-> >     {
-> >       "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-> >       "@type": "CreativeWork",
-> >       "name": "CC BY-NC-SA 4.0 International",
-> >       "description": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
-> >     },    
-> >     {
-> >       "@id": "http://spdx.org/licenses/CC0-1.0",
-> >       "@type": "CreativeWork",
-> >       "name": "CC0-1.0",
-> >       "description": "Creative Commons Zero v1.0 Universal",
-> >       "url": "https://creativecommons.org/publicdomain/zero/1.0/"
-> >     },    
-> >     {
-> >       "@id": "https://orcid.org/0000-0002-1825-0097",
-> >       "@type": "Person", 
-> >       "name": "Josiah Carberry",
-> >       "affiliation": {
-> >         "@id": "https://ror.org/05gq02987"
-> >       }
-> >     },
-> >     {
-> >       "@id": "https://ror.org/05gq02987",
-> >       "@type": "Organization",
-> >       "name": "Brown University",
-> >       "url": "http://www.brown.edu/"
-> >     }
-> >   ]
-> > }
-> > ```
-> {: .solution}
-{: .challenge}
+> ## `ro-crate-metadata.json`
+> ```json
+> {
+>   "@context": "https://w3id.org/ro/crate/1.1/context",
+>   "@graph": [
+>     {
+>       "@id": "ro-crate-metadata.json",
+>       "@type": "CreativeWork",
+>       "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+>       "about": {"@id": "./"}
+>     },
+>     {
+>       "@id": "./",
+>       "@type": ["Dataset", "LearningResource"],
+>       "hasPart": [
+>         {"@id": "data.csv"}
+>       ],
+>       "name": "Example dataset for RO-Crate specification",
+>       "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
+>       "datePublished": "2023-05-22T12:03:00+0100",
+>       "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
+>       "author": { "@id": "https://orcid.org/0000-0002-1825-0097" },
+>       "publisher": {"@id": "https://ror.org/05gq02987"}
+>     },
+>     {
+>       "@id": "data.csv",
+>       "@type": "File",
+>       "name": "Rainfall Katoomba 2022-02",
+>       "description": "Rainfall data for Katoomba, NSW Australia February 2022",
+>       "encodingFormat": "text/csv",
+>       "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/"}
+>     },
+>     {
+>       "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+>       "@type": "CreativeWork",
+>       "name": "CC BY-NC-SA 4.0 International",
+>       "description": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+>     },    
+>     {
+>       "@id": "http://spdx.org/licenses/CC0-1.0",
+>       "@type": "CreativeWork",
+>       "name": "CC0-1.0",
+>       "description": "Creative Commons Zero v1.0 Universal",
+>       "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+>     },    
+>     {
+>       "@id": "https://orcid.org/0000-0002-1825-0097",
+>       "@type": "Person", 
+>       "name": "Josiah Carberry",
+>       "affiliation": {
+>         "@id": "https://ror.org/05gq02987"
+>       }
+>     },
+>     {
+>       "@id": "https://ror.org/05gq02987",
+>       "@type": "Organization",
+>       "name": "Brown University",
+>       "url": "http://www.brown.edu/"
+>     }
+>   ]
+> }
+> ```
+{: .solution}
 
 
 
