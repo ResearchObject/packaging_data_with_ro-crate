@@ -56,12 +56,21 @@ abbreviations:
 ---
 
 
-## Introduction
+# Introduction
 
-This tutorial assumes you have already completed [An overview of the RO-Crate concept and its implementations](https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/) and have a basic understanding of working with JSON.
+This tutorial assumes you have already completed [An overview of the RO-Crate concept and its implementations](https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/):
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5GYdN5B1tc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  <a href="https://www.youtube.com/watch?v=5GYdN5B1tc8"><img src="https://i.ytimg.com/vi/5GYdN5B1tc8/maxresdefault.jpg" alt="An overview of the RO-Crate concept and its implementations" />
+</iframe>
+
+_Video: An overview of the RO-Crate concept and its implementations_ (see also [slides and transcript](https://doi.org/10.5281/zenodo.7828632))
+
+
+## Tutorial walk-through
 
 In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/), we'll walk through the initial steps for creating a basic RO-Crate. You are invited to replicate the below steps on your local computer.
+
 
 
 
