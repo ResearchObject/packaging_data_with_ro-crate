@@ -3,35 +3,30 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
+
 This lesson is intended to teach users how to use RO-Crate (Research Object Crates) for
 packaging research data.
 
-<!-- this is an html comment -->
-
-{% comment %} This is a comment in Liquid {% endcomment %}
-
 > ## Prerequisites
 >
-> It will be helpful if you are familiar with unix systems.
+> - Files and folder organization and using an editor/IDE
+> - Familiarity with [JSON](https://www.json.org/) file format
 {: .prereq}
 
-### For Contributors
-
-Use the _Episodes_ menu above to browse through the pages for
-indivual blocks of learning objectives.
-These pages can be used for designing challenges/exercises
-for the tutorial.
-
-**Note:** the order of these episode pages is arbitrary and
-these pages may be removed/rearranged/merged
-later in the lesson development process.
 
 ### Target Audience
 
-Define target audience (FIXME)
+This tutorial targets researchers and infrastructure managers who are producing file-based datasets. 
+The audience will learn the method _RO-Crate_ for publishing such datasets using a pragmatic approach to 
+structure and provide FAIR metadata.
+
 
 ### Learning Objectives
 
-Define learning objectives and goals (FIXME)
+- Construct an RO-Crate by hand using JSON
+- Describe each part of the Research Object
+- Learn basic JSON-LD to create FAIR metadata
+- Connect different parts of the Research Object using identifiers
+
 
 {% include links.md %}
