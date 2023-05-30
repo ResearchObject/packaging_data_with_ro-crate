@@ -1,0 +1,95 @@
+---
+title: "Authorship in crates"
+teaching: 0
+exercises: 0
+questions:
+- "Key question (FIXME)"
+objectives:
+- "First learning objective. (FIXME)"
+keypoints:
+- "First key point. Brief Answer to questions. (FIXME)"
+---
+
+## Authorship
+
+Moving back to the RO-Crate root `./`, let's specify who are the authors of the crate.
+
+> ## Add an author and affiliation
+>
+> 1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people) of the crate using the type `Person`
+> 2. Include your preferred name. 
+> 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution, or a crate-local identifier like `#alice`.
+> 4. Include your `affiliation` as a string value.
+> 
+> > ## Solution
+> > ```json
+> > {
+> >   "@id": "./",
+> >   "@type": "Dataset",
+> >   "author": {"@id": "https://orcid.org/0000-0002-1825-0097"},
+> >   "…": "…"
+> > },
+> > {
+> >   "@id": "https://orcid.org/0000-0002-1825-0097",
+> >   "@type": "Person", 
+> >   "name": "Josiah Carberry",
+> >   "affiliation": "Brown University"
+> > }
+> > ```
+> {: .solution}
+{: .challenge}
+
+
+> ## Who can be authors of an RO-Crate?
+>
+> When we say someone is an author of a crate, it means they have contributed something substansively to its content (typically the data). Agreement on what is considered authorship on a dataset can be tricky; you may decide some people would be better represented as `contributor`. One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity, so it can be clearer where each person have contributed (e.g. a statistician is author of an R script).  This means that generally the authors of the crate can be a broader, more inclusive list than perhaps traditionally recognized as academic authorship.
+{: .discussion}
+
+> ## Add an organization
+> 
+> 1. "Unroll" your `affiliation` of the person as cross-reference to another contextual entity, typed as an `Organization`. 
+> 2. You can use [ROR](https://ror.org/) to find an identifier for most educational/research institutions, or you can use the main web page of your organization as its `@id`.
+> 
+> > ## Solution
+> >
+> > ```json
+> > {
+> >   "@id": "https://orcid.org/0000-0002-1825-0097",
+> >   "@type": "Person", 
+> >   "name": "Josiah Carberry"
+> > },
+> > {
+> >   "@id": "https://ror.org/05gq02987",
+> >   "@type": "Organization",
+> >   "name": "Brown University",
+> >   "url": "http://www.brown.edu/"
+> > }
+> > ```
+> {: .solution}
+{: .challenge}
+
+
+
+The reuse of existing identifiers is important for both persons and organization from a FAIR perspective, as their names may not be globally unique.
+
+> ## Specify a publisher
+> 
+> 1. Now imagine you are going to publish the RO-Crate on your institution's web pages. 
+> 2. Cross-reference the same Organization entity with `publisher` from the RO-Crate Root entitity:
+> 
+> > ## Solution
+> >
+> > ```json
+> > {
+> >     "@id": "./",
+> >     "@type": "Dataset",
+> >     "publisher": {"@id": "https://ror.org/05gq02987"},
+> >     "…": "…"
+> > }
+> > ```
+> {: .solution}
+{: .challenge}
+
+
+{% include links.md %}
+
