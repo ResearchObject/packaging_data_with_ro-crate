@@ -23,9 +23,9 @@ This tutorial has been adapted from the revised [RO-Crate introduction for 1.2](
 * Example changed to different organization and license
 * Modiied for Carpentries style
 
-# Licence for examples
+# Examples are public domain
 
-The RO-Crate JSON-LD examples and solutions are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). This means they can be re-used without any particular attribution or licence.
+The RO-Crate JSON-LD examples and solutions are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). This means they can be re-used freely without any requirements for attribution or licence.
 
 
 ## Trademark
@@ -33,8 +33,4 @@ The RO-Crate JSON-LD examples and solutions are distributed under [CC0 1.0 Unive
 "Software Carpentry" and "Data Carpentry" and their respective logos
 are registered trademarks of [Community Initiatives][CI].
 
-[cc-by-human]: https://creativecommons.org/licenses/by/4.0/
-[cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
-[mit-license]: https://opensource.org/licenses/mit-license.html
 [ci]: http://communityin.org/
-[osi]: https://opensource.org
