@@ -1,7 +1,7 @@
 ---
 title: "Making a metadata descriptor"
-teaching: 0
-exercises: 0
+teaching: 2
+exercises: 2
 questions:
 - "Key question (FIXME)"
 objectives:

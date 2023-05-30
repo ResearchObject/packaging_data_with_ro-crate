@@ -1,8 +1,8 @@
 ---
-title: RO-Crate - Introduction
+title: Introduction
 level: Introductory
-teaching: 10
-exercises: 10
+teaching: 17
+exercises: 0
 requirements:
 - type: none
   title: "Files and folder organization"

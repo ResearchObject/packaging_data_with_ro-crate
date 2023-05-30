@@ -1,7 +1,7 @@
 ---
 title: "Visualizing a crate as HTML preview"
-teaching: 0
-exercises: 0
+teaching: 3
+exercises: 3
 questions:
 - "Key question (FIXME)"
 objectives:

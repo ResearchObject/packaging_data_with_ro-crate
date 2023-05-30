@@ -1,7 +1,7 @@
 ---
 title: "Validating JSON-LD"
-teaching: 0
-exercises: 0
+teaching: 2
+exercises: 4
 questions:
 - "Key question (FIXME)"
 objectives:

@@ -1,7 +1,7 @@
 ---
 title: "Converting JSON-LD to triples"
-teaching: 0
-exercises: 0
+teaching: 1
+exercises: 2
 questions:
 - "Key question (FIXME)"
 objectives:

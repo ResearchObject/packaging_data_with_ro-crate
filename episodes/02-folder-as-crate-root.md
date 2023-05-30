@@ -1,7 +1,7 @@
 ---
 title: "Turning a folder into an RO-Crate"
-teaching: 0
-exercises: 0
+teaching: 4
+exercises: 3
 questions:
 - "Key question (FIXME)"
 objectives:
