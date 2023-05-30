@@ -4,7 +4,7 @@ title: "Licenses"
 root: .
 ---
 
-# Copyright and license
+# Training Materials
 
 © Copyright 2021-2023 University of Technology Sydney, The University of Manchester UK and RO-Crate contributors.
 
@@ -23,12 +23,12 @@ This tutorial has been adapted from the revised [RO-Crate introduction for 1.2](
 * Example changed to different organization and license
 * Modiied for Carpentries style
 
-# Examples are public domain
+# Examples
 
 The RO-Crate JSON-LD examples and solutions are distributed under [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/). This means they can be re-used freely without any requirements for attribution or licence.
 
 
-## Trademark
+# Trademarks
 
 "Software Carpentry" and "Data Carpentry" and their respective logos
 are registered trademarks of [Community Initiatives][CI].
