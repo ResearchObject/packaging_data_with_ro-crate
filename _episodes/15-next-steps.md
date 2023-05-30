@@ -1,6 +1,6 @@
 ---
 title: "Next steps"
-teaching: 0
+teaching: 1
 exercises: 0
 questions:
 - "Key question (FIXME)"

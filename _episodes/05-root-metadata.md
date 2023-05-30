@@ -1,7 +1,7 @@
 ---
 title: "Describing the root entity"
-teaching: 0
-exercises: 0
+teaching: 4
+exercises: 4
 questions:
 - "Key question (FIXME)"
 objectives:

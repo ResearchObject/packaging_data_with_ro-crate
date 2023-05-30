@@ -1,6 +1,6 @@
 ---
 title: "Completed RO-Crate"
-teaching: 0
+teaching: 1
 exercises: 0
 questions:
 - "Key question (FIXME)"

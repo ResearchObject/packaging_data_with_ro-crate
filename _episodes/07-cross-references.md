@@ -1,7 +1,7 @@
 ---
 title: "Adding cross-references"
-teaching: 0
-exercises: 0
+teaching: 3
+exercises: 4
 questions:
 - "Key question (FIXME)"
 objectives:

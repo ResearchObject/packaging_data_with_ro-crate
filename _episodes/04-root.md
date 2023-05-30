@@ -1,7 +1,7 @@
 ---
 title: "Declaring the root folder"
-teaching: 0
-exercises: 0
+teaching: 2
+exercises: 1
 questions:
 - "Key question (FIXME)"
 objectives:
