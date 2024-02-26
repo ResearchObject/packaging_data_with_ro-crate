@@ -3,9 +3,14 @@ title: "Data entities"
 teaching: 2
 exercises: 2
 questions:
-- "Key question (FIXME)"
+- "How do I describe the files in my RO-Crate?"
+objectives:
+- "Understand the purpose of data entities"
+- "Learn required properties for data entities"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Data entities are files & folders within the root, as well as external Web references"
+- "Required properties for files are name and encodingFormat"
+- "License can be overridden for particular data entities"
 ---
 
 

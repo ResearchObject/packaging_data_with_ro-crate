@@ -3,11 +3,15 @@ title: "Making a metadata descriptor"
 teaching: 2
 exercises: 2
 questions:
-- "Key question (FIXME)"
+- "Which RO-Crate version is used?"
+- "How can the crate self-identify as an RO-Crate?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Add the first entity to the JSON-LD @graph"
+- "Indicate the version of RO-Crate"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "The RO-Crate Metadata Descriptor describes the JSON-LD file itself"
+- "RO-Crate specifications are versioned"
+- "The version of RO-Crate is indicated using the conformsTo property" 
 ---
 
 ## RO-Crate Metadata descriptor 

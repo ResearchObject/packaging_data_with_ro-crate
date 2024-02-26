@@ -3,11 +3,11 @@ title: "Next steps"
 teaching: 1
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What else can I do with RO-Crate?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Find additional sections in RO-Crate specification"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "RO-Crate specification has further details, e.g. additional contextual entities"
 ---
 
 ## Next steps
