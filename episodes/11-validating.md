@@ -3,11 +3,15 @@ title: "Validating JSON-LD"
 teaching: 2
 exercises: 4
 questions:
-- "Key question (FIXME)"
+- "How can I validate the JSON-LD?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Learn to avoid common JSON and JSON-LD errors"
+- "Try the JSON-LD Glayground with RO-Crate metadata"
+- "Visualize the RO-Crate entities"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "RO-Crate metadata files are valid JSON-LD"
+- "The JSON-LD Playground can do basic validation and visualization"
+- "Further use of RO-Crate as Linked Data is possible, but may require handling of relative URI references"
 ---
 
 

@@ -3,11 +3,12 @@ title: "Declaring the root folder"
 teaching: 2
 exercises: 1
 questions:
-- "Key question (FIXME)"
+- "What is the root folder?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Create a top-level entity that can list the parts of the crate"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "The RO-Crate Root is the top-level object of the RO-Crate"
+- "The root identifier may be a URL, but commonly just ./ for the current folder"
 ---
 
 ## RO-Crate Root

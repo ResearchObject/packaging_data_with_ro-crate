@@ -3,11 +3,14 @@ title: "Converting JSON-LD to triples"
 teaching: 1
 exercises: 2
 questions:
-- "Key question (FIXME)"
+- "How can I generate RDF triples from an RO-Crate?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand converting the JSON-LD to RDF triples"
+- "Learn how to create unique identifiers for items within an RO-Crate"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "The JSON-LD @context maps JSON keys to schema.org vocabulary"
+- "A @base URI is needed to make absolute URIs"
+- "arcp and UUID can be used for RO-Crates that are not exposed on the Web"
 ---
 
 ## Advanced: Converting JSON-LD to triples

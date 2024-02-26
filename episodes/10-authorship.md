@@ -3,11 +3,18 @@ title: "Authorship in crates"
 teaching: 2
 exercises: 4
 questions:
-- "Key question (FIXME)"
+- "How can I list who made the content of the crate?"
+- "How do I affiliate a person with their place of work?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Adding and describing a Person contextual entity"
+- "Adding a Organization contextual entity"
+- "Understanding what it means to be an authof of the crate"
+- "Indicating the publisher of the RO-Crate"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Authors are described as separate entities"
+- "Organization entities can be shared by multiple persons having the same affiliation"
+- "Crate authors made (some) of the crate's content"
+- "Publishers of an RO-Crate are typically organizations"
 ---
 
 ## Authorship

@@ -3,11 +3,13 @@ title: "Completed RO-Crate"
 teaching: 1
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What should the final RO-Crate look like?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Compare your RO-Crate with the solution"
+- "Understand the flattened nature of the JSON-LD"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "A single RO-Crate lists all the entities"
+- "The order of entities in the @graph array is not important"
 ---
 
 ## Complete RO-Crate Metadata Document

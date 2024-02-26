@@ -3,13 +3,16 @@ title: "Contextual entities"
 teaching: 2
 exercises: 2
 questions:
-- "Key question (FIXME)"
+- "How can I describe things in the world?"
+- "How can I give details about licenses?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Understand the difference between contextual and data entities"
+- "Add a contextual entity to the RO-Crate"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Contextual entities are not considered part of the crate"
+- "Cross-references should be expanded as contextual entities"
+- "It is recommended to provide a human-readable name for licenses"
 ---
-
 
 
 ## Contextual entities

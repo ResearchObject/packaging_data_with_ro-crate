@@ -3,11 +3,17 @@ title: "Turning a folder into an RO-Crate"
 teaching: 4
 exercises: 3
 questions:
-- "Key question (FIXME)"
+- How can I start a new RO-Crate?
 objectives:
-- "First learning objective. (FIXME)"
+- Creating a skeleton RO-Crate Metadata File
+- Use the JSON-LD pre-amble to enable Linked Data
+- 
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- Adding a RO-Crate Metadata file to a folder turns it into an RO-Crate
+- The RO-Crate Root is the top-level folder of the crate
+- RO-Crate uses schema.org as base vocabulary
+- The JSON-LD context enables optional Linked Data processing
+- Descriptions are listed flatly as entities in the @graph array
 ---
 
 

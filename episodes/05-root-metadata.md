@@ -3,11 +3,14 @@ title: "Describing the root entity"
 teaching: 4
 exercises: 4
 questions:
-- "Key question (FIXME)"
+- "How can I describe the crate?"
+- "How do I specify the license of the RO-Crate?"
 objectives:
-- "First learning objective. (FIXME)"
+- "Learn about required metadata for the RO-Crate Root"
+- "Understand license identifiers using SPDX"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Name, description, date published and license are required for the RO-Crate Root"
+- "RO-Crate allows multiple licenses for different parts"
 ---
 
 ## Describing the root entity
