@@ -14,10 +14,17 @@ keypoints:
 - "The version of RO-Crate is indicated using the conformsTo property" 
 ---
 
-## RO-Crate Metadata descriptor 
+## Entities
 
-The first JSON-LD _entity_ to add has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
+Our metadata will be made up of _entities_: items which we'll cross-reference with IDs. These items might be files within the directory (_data entities_), or references to things that exist outside of the directory (_contextual entities_).
 
+The RO-Crate Metadata Document contains a flat list of _entities_ as JSON objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers, rather than being deeply nested. This is one major difference from JSON structures you may have experienced before.
+
+The rest of this tutorial, and indeed most of the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/), specify which entities can be added to the `@graph` array.
+
+## RO-Crate Metadata descriptor
+
+The first entity to add has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself.
 
 ```json
 {
@@ -28,14 +35,18 @@ The first JSON-LD _entity_ to add has the `@id` value of `ro-crate-metadata.json
 }
 ```
 
-This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor), helps this file self-identify as an RO-Crate Metadata Document, which is conforming to (`conformsTo`) the RO-Crate specification version 1.1. Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise, but they have two different functions. The context brings the defined terms into the metadata document, while the conformance declares which RO-Crate conventions of using those terms are being followed.
+This entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor), helps this file self-identify as an RO-Crate Metadata Document, which is conforming to (`conformsTo`) the RO-Crate specification version 1.1. This entity must be included in any RO-Crate.
 
+The `@type` keyword associates an object with a predefined type from the [JSON-LD context](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html#ro-crate-json-ld-context). Almost any property can alternatively be used with an `[]` array to provide multiple values.
 
-> ## RO-Crate versions
+> ## Why is `conformsTo` the same as `@context`?
 >
-> This tutorial is written for RO-Crate 1.1, the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html) -- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions, but check the [change log](https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html) for any important changes. The next development version of the specification, indicated with a `-DRAFT` status, may still be subject to changes and should only be used with caution.
+> Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise, but they have two different functions. The `@context` brings the defined terms into the metadata document, while the `conformsTo` declares which RO-Crate conventions of using those terms are being followed.
 {: .callout}
 
+> ## Why do some keywords start with `@` but not others?
+>
+> TODO because I can't explain this well yet
+{: .callout}
 
 {% include links.md %}
-

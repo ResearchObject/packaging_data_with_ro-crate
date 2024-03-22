@@ -66,13 +66,13 @@ This tutorial assumes you have already completed [An overview of the RO-Crate co
 
 _Video: An overview of the RO-Crate concept and its implementations_ (see also [slides and transcript](https://doi.org/10.5281/zenodo.7828632))
 
-
 ## Tutorial walk-through
 
 In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/), we'll walk through the initial steps for creating a basic RO-Crate. You are invited to replicate the below steps on your local computer.
 
-
-
+> ## RO-Crate versions
+>
+> This tutorial is written for RO-Crate 1.1, the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html) -- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions, but check the [change log](https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html) for any important changes. The next development version of the specification, indicated with a `-DRAFT` status, may still be subject to changes and should only be used with caution.
+{: .callout}
 
 {% include links.md %}
-

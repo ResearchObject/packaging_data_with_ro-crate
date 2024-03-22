@@ -7,7 +7,7 @@ questions:
 objectives:
 - Creating a skeleton RO-Crate Metadata File
 - Use the JSON-LD pre-amble to enable Linked Data
-- 
+
 keypoints:
 - Adding a RO-Crate Metadata file to a folder turns it into an RO-Crate
 - The RO-Crate Root is the top-level folder of the crate
@@ -19,17 +19,17 @@ keypoints:
 
 ## Turning a folder into an RO-Crate
 
-In the simplest form, to describe some data on disk, an _RO-Crate Metadata File_ is placed in a folder alongside a set of files or folders. 
+In the simplest form, to describe some data on disk, an _RO-Crate Metadata File_ is placed in a folder alongside a set of files or folders.
 
-First create a new folder `crate1/` and add a single file `data.csv` to represent our dataset:
+First create a new folder `crate1/` and add a single file `data.csv` to it to represent our dataset:
 
 ```
 "Date","Minimum temperature (°C)","Maximum temperature (°C)","Rainfall (mm)"
 2022-02-01,16.0,28.4,0.6
 2022-02-02,16.3,17.2,12.4
 ```
-{: .source}
 
+{: .source}
 
 Next, to turn this folder into an RO-Crate we need to add the _RO-Crate Metadata File_, which has a fixed filename.
 Create the file `ro-crate-metadata.json` using [Visual Studio Code](https://code.visualstudio.com/) or your favourite editor, then add the following JSON:
@@ -47,18 +47,24 @@ Your folder should now look like this:
 
 ![Folder listing of crate1, including data.csv and ro-crate-metadata.json](../fig/crate1-folders.svg "Any folder can be made into an RO-Crate by adding <code>ro-crate-metadata.json</code>")
 
-The presence of the reserved `ro-crate-metadata.json` filename means that `crate1` (and its children) can now be considered to be an **RO-Crate**. We call the top-level folder of the crate for the **RO-Crate Root** and can now refer to its content with relative file paths.
+The presence of the reserved `ro-crate-metadata.json` filename means that `crate1` (and its children) can now be considered to be an **RO-Crate**. We call the top-level folder of the crate (i.e. `crate1`) the **RO-Crate Root** and can now refer to its content with relative file paths.
 
-We also need to make some declaration within the JSON file to turn it into a valid _RO-Crate Metadata Document_, explained in the next session.
+We also need to make some declarations within the JSON file to turn it into a valid _RO-Crate Metadata Document_, explained in the next episode.
 
+> ## JSON-LD - the file format for `ro-crate-metadata.json`
+>
+> The `ro-crate-metadata.json` file uses a data format called [JSON-LD](https://json-ld.org). This is a format that is easy for both humans and machines to read and write, based on the widely used [JSON](https://www.json.org/json-en.html) format.
+>
+> The LD in JSON-LD stands for Linked Data, which is a way of interconnecting structured data across different applications (e.g. referencing an author by their [ORCID](https://orcid.org) identifier).
+>
+> You do not need a deep understanding of Linked Data or JSON-LD for this tutorial or for using RO-Crate in general.
+{: .callout}
 
-## JSON-LD preamble
-
-The preamble of `@context` and `@graph` are JSON-LD structures that help provide global identifiers to the JSON keys and types used in the rest of the RO-Crate document. These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary, which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications. It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes -- this is explored further in the specification's [appendix on JSON-LD](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html). In short, only JSON keys (_properties_) and types defined this way can be used within the RO-Crate Metadata Document.
-
-However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding. The RO-Crate Metadata Document contains a flat list of _entities_ as JSON objects in the `@graph` array. These entities are cross-referenced using `@id` identifiers, rather than being deeply nested. This is one major difference from JSON structures you may have experienced before.  The `@type` keyword associates an object with a predefined type from the JSON-LD context. Almost any property can alternatively be used with an `[]` array to provide multiple values.
-
-The rest of this tutorial, and indeed most of the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/), specify which entities can be added to the `@graph` array. 
+> ## What are `@context` and `@graph`?
+>
+> The `@context` provides a list of the types of data that we may include in our metadata (such as `Person` or `File`). This helps with interlinking different pieces of metadata, as we normally expect to collect different information about a person than we would about a file. The permitted types are mostly based on the [schema.org](https://schema.org/docs/full.html) vocabulary, but can be extended with [RO-Crate profiles](https://www.researchobject.org/ro-crate/profiles.html) (beyond the scope of this lesson).
+>
+> The `@graph` is a list that will contain our metadata. We'll populate this in the next episodes.
+{: .callout}
 
 {% include links.md %}
-
