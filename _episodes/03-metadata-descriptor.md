@@ -46,7 +46,7 @@ The `@type` keyword associates an object with a predefined type from the [JSON-L
 
 > ## Why do some keywords start with `@` but not others?
 >
-> TODO because I can't explain this well yet
+> TODO
 {: .callout}
 
 {% include links.md %}
