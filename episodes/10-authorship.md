@@ -63,7 +63,10 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > > {
 > >   "@id": "https://orcid.org/0000-0002-1825-0097",
 > >   "@type": "Person", 
-> >   "name": "Josiah Carberry"
+> >   "name": "Josiah Carberry",
+> >   "affiliation": {
+> >     "@id": "https://ror.org/05gq02987"
+> >   }
 > > },
 > > {
 > >   "@id": "https://ror.org/05gq02987",
