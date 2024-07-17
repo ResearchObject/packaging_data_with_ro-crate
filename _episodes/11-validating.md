@@ -6,7 +6,7 @@ questions:
 - "How can I validate the JSON-LD?"
 objectives:
 - "Learn to avoid common JSON and JSON-LD errors"
-- "Try the JSON-LD Glayground with RO-Crate metadata"
+- "Try the JSON-LD Playground with RO-Crate metadata"
 - "Visualize the RO-Crate entities"
 keypoints:
 - "RO-Crate metadata files are valid JSON-LD"
