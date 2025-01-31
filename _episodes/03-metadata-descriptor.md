@@ -16,7 +16,7 @@ keypoints:
 
 ## RO-Crate Metadata descriptor 
 
-The first JSON-LD _entity_ to add has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
+The first JSON-LD _entity_ to add in the `@graph` array has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
 
 
 ```json
