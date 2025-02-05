@@ -32,7 +32,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 > > ```json
 > > {
 > >   "@id": "./",
-> >   "@type": "Dataset",
+> >   "@type": ["Dataset", "LearningResource"],
 > >   "author": {"@id": "https://orcid.org/0000-0002-1825-0097"},
 > >   "…": "…"
 > > },
@@ -92,7 +92,7 @@ The reuse of existing identifiers is important for both persons and organization
 > > ```json
 > > {
 > >     "@id": "./",
-> >     "@type": "Dataset",
+> >     "@type": ["Dataset", "LearningResource"],
 > >     "publisher": {"@id": "https://ror.org/05gq02987"},
 > >     "…": "…"
 > > }

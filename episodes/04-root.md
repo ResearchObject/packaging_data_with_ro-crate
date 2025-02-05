@@ -26,6 +26,13 @@ Next we'll add another entity to the `@graph` array, to describe the [RO-Crate R
 }
 ```
 
+> ## Adding entities to the JSON array
+>
+> Because we're adding incrementally to the `@graph` array. It is important to remember the comma `,` between each entity, **except** for the final entity in the JSON array; and likewise for the properties within the JSON object for each entity. This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing. The order of the entities within the `@graph` JSON-LD array and the order of the keys within a JSON object is _not significant_. The _graph_ content is given by the `@id` cross-references.
+>
+> You will add a comma here between the `ro-crate-metadata.json` entity, and the root data entity.
+{: .callout}
+
 By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located. This reference from `ro-crate-metadata.json` is therefore semantically marking the `crate1` folder as being the RO-Crate Root.
 
 
