@@ -19,11 +19,6 @@ keypoints:
 
 Entities that we have added under `hasPart` are considered _data entities_, while entities only referenced from those are considered _contextual entities_ -- they help explain the crate and its content.
 
-> ## Adding entities to the JSON array
->
-> You may have noticed we're adding incrementally to the `@graph` array. It is important to remember the `,` between each entity, **except** for the final entity in the JSON array; and likewise for the properties within the JSON object for each entity. This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing. The order of the entities within the `@graph` JSON-LD array and the order of the keys within a JSON object is _not significant_. The _graph_ content is given by the `@id` cross-references.
-{: .callout}
-
 You may notice the subtle difference between a _data entity_ that is conceptually part of the RO-Crate and is file-like (containing bytes), while a _contextual entity_ is a representation of a real-life organization that can't be downloaded: following the URL, we would only get its _description_. The section [contextual entities](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html) explores several of the entities that can be added to the RO-Crate to provide it with a **context**, for instance how to link to authors and their affiliations.  Simplifying slightly, a data entity is referenced from `hasPart` in a `Dataset`, while a contextual entity is referenced using any other defined property.
 
 ## Detailing licenses

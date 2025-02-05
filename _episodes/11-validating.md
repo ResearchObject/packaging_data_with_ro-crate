@@ -60,6 +60,11 @@ If the document passes without errors in the JSON-LD Playground, you should see 
 
 This verbose listing of the JSON-LD shows how the `@context` has correctly expanded the keys, but is not particularly readable. Try the _Visualized_ tab to see an interactive rendering of the entities:
 
+> ## Expanding the visualization
+>
+> Click on the circles to expand or collapse the details of the graph's different nodes.
+{: .callout}
+
 ![Visualized in the JSON-LD Playground](../fig/jsonld-playground-visualized.png)
 
 As the RO-Crate Metadata Document is valid JSON-LD it is also possible to process it using Linked Data technologies such as triple stores and SPARQL queries. It is beyond the scope of this tutorial to explain this aspect fully, but interested readers should consider how to [handle relative URI references](https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html).
@@ -67,4 +72,3 @@ As an example, try the _Table_ button and notice that the entities with relative
 
 
 {% include links.md %}
-
