@@ -62,7 +62,7 @@ This verbose listing of the JSON-LD shows how the `@context` has correctly expan
 
 > ## Expanding the visualization
 >
-> Click on the cicles to expand or collapse the details of the graph's different nodes.
+> Click on the circles to expand or collapse the details of the graph's different nodes.
 {: .callout}
 
 ![Visualized in the JSON-LD Playground](../fig/jsonld-playground-visualized.png)
@@ -72,4 +72,3 @@ As an example, try the _Table_ button and notice that the entities with relative
 
 
 {% include links.md %}
-
