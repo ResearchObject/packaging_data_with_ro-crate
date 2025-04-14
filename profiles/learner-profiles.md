@@ -1,5 +1,9 @@
 ---
-title: FIXME
+title: Learner Profiles 
 ---
 
-This is a placeholder file. Please add content here. 
+## Target Audience
+
+This tutorial targets researchers and infrastructure managers who are producing file-based datasets. 
+The audience will learn the method _RO-Crate_ for publishing such datasets using a pragmatic approach to 
+structure and provide FAIR metadata.
