@@ -1,15 +1,15 @@
 ---
-title: "Converting JSON-LD to triples"
+title: Converting JSON-LD to triples
 teaching: 1
 exercises: 2
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I generate RDF triples from an RO-Crate?"
+- How can I generate RDF triples from an RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Understand converting the JSON-LD to RDF triples"
-- "Learn how to create unique identifiers for items within an RO-Crate"
+- Understand converting the JSON-LD to RDF triples
+- Learn how to create unique identifiers for items within an RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Advanced: Converting JSON-LD to triples
@@ -42,9 +42,9 @@ making a new UUID for each imported RO-Crate.
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "The JSON-LD @context maps JSON keys to schema.org vocabulary"
-- "A @base URI is needed to make absolute URIs"
-- "arcp and UUID can be used for RO-Crates that are not exposed on the Web"
+- The JSON-LD @context maps JSON keys to schema.org vocabulary
+- A @base URI is needed to make absolute URIs
+- arcp and UUID can be used for RO-Crates that are not exposed on the Web
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

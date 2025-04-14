@@ -1,16 +1,16 @@
 ---
-title: "Completed RO-Crate"
+title: Completed RO-Crate
 teaching: 1
 exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "What should the final RO-Crate look like?"
+- What should the final RO-Crate look like?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Compare your RO-Crate with the solution"
-- "Understand the flattened nature of the JSON-LD"
+- Compare your RO-Crate with the solution
+- Understand the flattened nature of the JSON-LD
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Complete RO-Crate Metadata Document
@@ -88,7 +88,7 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "A single RO-Crate lists all the entities"
-- "The order of entities in the @graph array is not important"
+- A single RO-Crate lists all the entities
+- The order of entities in the @graph array is not important
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

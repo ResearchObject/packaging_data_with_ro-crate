@@ -1,17 +1,17 @@
 ---
-title: "Contextual entities"
+title: Contextual entities
 teaching: 2
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I describe things in the world?"
-- "How can I give details about licenses?"
+- How can I describe things in the world?
+- How can I give details about licenses?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Understand the difference between contextual and data entities"
-- "Add a contextual entity to the RO-Crate"
+- Understand the difference between contextual and data entities
+- Add a contextual entity to the RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -70,9 +70,9 @@ remembering to update the corresponding `license` cross-references when changing
 However, not all licenses have a direct SPDX identifier.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "Contextual entities are not considered part of the crate"
-- "Cross-references should be expanded as contextual entities"
-- "It is recommended to provide a human-readable name for licenses"
+- Contextual entities are not considered part of the crate
+- Cross-references should be expanded as contextual entities
+- It is recommended to provide a human-readable name for licenses
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

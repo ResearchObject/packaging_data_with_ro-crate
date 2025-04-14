@@ -1,6 +1,5 @@
 ---
 title: Introduction
-level: Introductory
 teaching: 17
 exercises: 0
 requirements:

@@ -1,17 +1,17 @@
 ---
-title: "Adding cross-references"
+title: Adding cross-references
 teaching: 3
 exercises: 4
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I describe an entity further?"
-- "How can I cross-reference different entities?"
+- How can I describe an entity further?
+- How can I cross-reference different entities?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Understand cross-references in flattened JSON-LD"
-- "Add a data entity reference from the root entity"
-- "Add another type to the root entity"
+- Understand cross-references in flattened JSON-LD
+- Add a data entity reference from the root entity
+- Add another type to the root entity
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -79,9 +79,9 @@ The section on [root data entity](https://www.researchobject.org/ro-crate/1.1/ro
 details further the required and recommended properties of the root `./`. 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "The @id uniquely identifies the entity within the RO-Crate"
-- "The @id key is used for cross-referencing"
-- "Multiple types can be listed by using an array"
+- The @id uniquely identifies the entity within the RO-Crate
+- The @id key is used for cross-referencing
+- Multiple types can be listed by using an array
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

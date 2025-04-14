@@ -1,16 +1,16 @@
 ---
-title: "Describing the root entity"
+title: Describing the root entity
 teaching: 4
 exercises: 4
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I describe the crate?"
-- "How do I specify the license of the RO-Crate?"
+- How can I describe the crate?
+- How do I specify the license of the RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Learn about required metadata for the RO-Crate Root"
-- "Understand license identifiers using SPDX"
+- Learn about required metadata for the RO-Crate Root
+- Understand license identifiers using SPDX
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Describing the root entity
@@ -68,8 +68,8 @@ It is still recommended to choose an overall Crate license that can legally appl
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "Name, description, date published and license are required for the RO-Crate Root"
-- "RO-Crate allows multiple licenses for different parts"
+- Name, description, date published and license are required for the RO-Crate Root"
+- RO-Crate allows multiple licenses for different parts
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

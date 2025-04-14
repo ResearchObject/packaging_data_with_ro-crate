@@ -1,19 +1,19 @@
 ---
-title: "Authorship in crates"
+title: Authorship in crates
 teaching: 2
 exercises: 4
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I list who made the content of the crate?"
-- "How do I affiliate a person with their place of work?"
+- How can I list who made the content of the crate?
+- How do I affiliate a person with their place of work?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Adding and describing a Person contextual entity"
-- "Adding a Organization contextual entity"
-- "Understanding what it means to be an authof of the crate"
-- "Indicating the publisher of the RO-Crate"
+- Adding and describing a Person contextual entity
+- Adding a Organization contextual entity
+- Understanding what it means to be an authof of the crate
+- Indicating the publisher of the RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -114,8 +114,8 @@ as their names may not be globally unique.
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "Authors are described as separate entities"
-- "Organization entities can be shared by multiple persons having the same affiliation"
-- "Crate authors made (some) of the crate's content"
-- "Publishers of an RO-Crate are typically organizations"
+- Authors are described as separate entities
+- Organization entities can be shared by multiple persons having the same affiliation
+- Crate authors made (some) of the crate's content
+- Publishers of an RO-Crate are typically organizations
 ::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -1,15 +1,15 @@
 ---
-title: "Declaring the root folder"
+title: Declaring the root folder
 teaching: 2
 exercises: 1
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "What is the root folder?"
+- What is the root folder?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Create a top-level entity that can list the parts of the crate"
+- Create a top-level entity that can list the parts of the crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## RO-Crate Root
@@ -61,7 +61,7 @@ see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "The RO-Crate Root is the top-level object of the RO-Crate"
-- "The root identifier may be a URL, but commonly just ./ for the current folder"
+- The RO-Crate Root is the top-level object of the RO-Crate
+- The root identifier may be a URL, but commonly just ./ for the current folder
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

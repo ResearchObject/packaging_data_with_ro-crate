@@ -1,16 +1,16 @@
 ---
-title: "Data entities"
+title: Data entities
 teaching: 2
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How do I describe the files in my RO-Crate?"
+- How do I describe the files in my RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Understand the purpose of data entities"
-- "Learn required properties for data entities"
+- Understand the purpose of data entities
+- Learn required properties for data entities
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Data entities
@@ -86,9 +86,9 @@ see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "Data entities are files & folders within the root, as well as external Web references"
-- "Required properties for files are name and encodingFormat"
-- "License can be overridden for particular data entities"
+- Data entities are files & folders within the root, as well as external Web references
+- Required properties for files are name and encodingFormat
+- License can be overridden for particular data entities
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

@@ -1,16 +1,16 @@
 ---
-title: "Validating JSON-LD"
+title: Validating JSON-LD
 teaching: 2
 exercises: 4
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can I validate the JSON-LD?"
+- How can I validate the JSON-LD?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Learn to avoid common JSON and JSON-LD errors"
-- "Try the JSON-LD Playground with RO-Crate metadata"
-- "Visualize the RO-Crate entities"
+- Learn to avoid common JSON and JSON-LD errors
+- Try the JSON-LD Playground with RO-Crate metadata
+- Visualize the RO-Crate entities
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -82,8 +82,8 @@ This is because when converting to RDF you need absolute URIs which do not readi
 we've not decided where the crate is to be published yet.  
 
 ::::::::::::::::::::::::::::::::::::::::keypoints
-- "RO-Crate metadata files are valid JSON-LD"
-- "The JSON-LD Playground can do basic validation and visualization"
-- "Further use of RO-Crate as Linked Data is possible, but may require handling of relative URI references"
+- RO-Crate metadata files are valid JSON-LD
+- The JSON-LD Playground can do basic validation and visualization
+- Further use of RO-Crate as Linked Data is possible, but may require handling of relative URI references
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

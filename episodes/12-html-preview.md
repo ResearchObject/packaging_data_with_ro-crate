@@ -1,17 +1,17 @@
 ---
-title: "Visualizing a crate as HTML preview"
+title: Visualizing a crate as HTML preview
 teaching: 3
 exercises: 3
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- "How can an RO-Crate be rendered without showing the JSON?"
-- "How can I generate a preview of the RO-Crate?"
+- How can an RO-Crate be rendered without showing the JSON?
+- How can I generate a preview of the RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- "Explore a HTML preview of an RO-Crate"
-- "(Advanced) Try the ro-crate-html tool"
+- Explore a HTML preview of an RO-Crate
+- (Advanced) Try the ro-crate-html tool
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## HTML preview
@@ -66,9 +66,9 @@ and re-generating the HTML preview to see how your rendering differs from the [r
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- "RO-Crate can be rendered into a HTML preview"
-- "RO-Crate previews tend to show each entity separately"
-- "The preview HTML can be added as part of the RO-Crate"
+- RO-Crate can be rendered into a HTML preview
+- RO-Crate previews tend to show each entity separately
+- The preview HTML can be added as part of the RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

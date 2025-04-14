@@ -1,18 +1,18 @@
 ---
-title: "Making a metadata descriptor"
+title: Making a metadata descriptor
 teaching: 2
 exercises: 2
 
 ---
 
 ::::::::::::::::::::::::::::::::::::::: questions
-- "Which RO-Crate version is used?"
-- "How can the crate self-identify as an RO-Crate?"
+- Which RO-Crate version is used?
+- How can the crate self-identify as an RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: objectives
-- "Add the first entity to the JSON-LD @graph"
-- "Indicate the version of RO-Crate"
+- Add the first entity to the JSON-LD @graph
+- Indicate the version of RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## RO-Crate Metadata descriptor 
@@ -48,9 +48,9 @@ may still be subject to changes and should only be used with caution.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: keypoints
-- "The RO-Crate Metadata Descriptor describes the JSON-LD file itself"
-- "RO-Crate specifications are versioned"
-- "The version of RO-Crate is indicated using the conformsTo property" 
+- The RO-Crate Metadata Descriptor describes the JSON-LD file itself
+- RO-Crate specifications are versioned
+- The version of RO-Crate is indicated using the conformsTo property
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

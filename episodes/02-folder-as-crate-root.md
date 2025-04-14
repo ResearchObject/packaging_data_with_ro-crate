@@ -1,5 +1,5 @@
 ---
-title: "Turning a folder into an RO-Crate"
+title: Turning a folder into an RO-Crate
 teaching: 4
 exercises: 3
 ---
