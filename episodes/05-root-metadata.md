@@ -29,8 +29,6 @@ use [SPDX](https://spdx.org/licenses/) license list to find the identifier for C
 or another license of your choice:
 
 :::::::::::::::  solution
-## Solution
-
 ```json
 {
   "@id": "./",
