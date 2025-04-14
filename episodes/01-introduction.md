@@ -23,21 +23,17 @@ copyright: © Copyright 2021-2023 University of Technology Sydney, The Universit
 ---
 
 ::::::::::::::::::::::::::::::::::::::: questions
-
 - How do I package data in a FAIR way?
 - How can I list the authors of individual files?
 - Can I use multiple licenses in the same data package?
 - How can I visualize JSON-LD metadata?
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: objectives
-
 - Construct an RO-Crate by hand using JSON
 - Describe each part of the Research Object
 - Learn basic JSON-LD to create FAIR metadata
 - Connect different parts of the Research Object using identifiers
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -59,22 +55,18 @@ In this tutorial, meant to be read along with the [RO-Crate specification](https
 we'll walk through the initial steps for creating a basic RO-Crate.
 You are invited to replicate the below steps on your local computer.
 
+::::::::::::::::::::::::::::::::::::::: callout
 ## Abbreviations
-
 - FAIR: Findable, Accessible, Interoperable, Reusable; a set of principles for publishing research data and metadata
 - JSON: JavaScript Object Notation, a generic structured text-based data format
 - JSON-LD: JSON Linked Data, a way to express Linked Data (RDF) using regular JSON
 - RO-Crate: Research Object Crate; a way to package research data with structured FAIR metadata
-
-
-
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: keypoints
-
 - RO-Crate provides a structure to make FAIR data packages
 - schema.org in JSON-LD provides a controlled vocabulary for FAIR metadata
 - Each entity of the crate is described separately
 - Cross-references between entities create a graph
 - The RO-Crate specification recommends which types and keys to use
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
