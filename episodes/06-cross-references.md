@@ -24,8 +24,7 @@ rather than using deeply nested JSON objects.
 In short, this _flattened JSON-LD_ style (shown below) allows any entity to reference any other entity,
 and RO-Crate consumers can directly find all the descriptions of a given entity as a single JSON object. 
 
-
-![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](../fig/introduction-figure-1.svg "showing RO-Crate Metadata descriptor's <code>about</code> property pointing at the RO-Crate Root entity with matching <code>@id</code>")
+![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](fig/introduction-figure-1.svg){alt="showing RO-Crate Metadata descriptor's `about` property pointing at the RO-Crate Root entity with matching `@id`"}
 
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Add cross-reference to data entity
