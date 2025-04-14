@@ -70,15 +70,15 @@ episodes:
 - 03-metadata-descriptor.md
 - 04-root.md
 - 05-root-metadata.md
-- 07-cross-references.md
-- 08-data-entities.md
-- 09-contextual-entities.md
-- 10-authorship.md
-- 11-validating.md
-- 12-triples.md
-- 13-html-preview.md
-- 14-complete.md
-- 15-next-steps.md
+- 06-cross-references.md
+- 07-data-entities.md
+- 08-contextual-entities.md
+- 09-authorship.md
+- 10-validating.md
+- 11-triples.md
+- 12-html-preview.md
+- 13-complete.md
+- 14-next-steps.md
 
 # Information for Learners
 learners: 
