@@ -48,7 +48,7 @@ then add the following JSON:
 
 Your folder should now look like this:
 
-![](fig/crate1-folders.svg){alt='Any folder can be made into an RO-Crate by adding `ro-crate-metadata.json`'}
+![Folder listing of crate1, including data.csv and ro-crate-metadata.json](fig/crate1-folders.svg){alt='Any folder can be made into an RO-Crate by adding `ro-crate-metadata.json`'}
 
 The presence of the reserved `ro-crate-metadata.json` filename
 means that `crate1` (and its children) can now be considered to be an **RO-Crate**.
