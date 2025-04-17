@@ -2,23 +2,23 @@
 title: Introduction
 teaching: 17
 exercises: 0
-requirements:
-- type: none
-  title: "Files and folder organization"
-- type: none
-  title: "Familiarity with JSON file format and editor/IDE"
-- type: external
-  title: "An overview of the RO-Crate concept and its implementations"
-  link: "https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/"
-- type: "internal"
-  topic_name: data-science
-  tutorials:
-      - cli-basics
-
-license: Apache-2.0
-
-copyright: © Copyright 2021-2023 University of Technology Sydney, The University of Manchester UK and RO-Crate contributors
-
+#requirements:
+#- type: none
+#  title: "Files and folder organization"
+#- type: none
+#  title: "Familiarity with JSON file format and editor/IDE"
+#- type: external
+#  title: "An overview of the RO-Crate concept and its implementations"
+#  link: "https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/"
+#- type: "internal"
+#  topic_name: data-science
+#  tutorials:
+#      - cli-basics
+#
+#license: Apache-2.0
+#
+#copyright: © Copyright 2021-2023 University of Technology Sydney, The University of Manchester UK and RO-Crate contributors
+#
 ---
 
 ::::::::::::::::::::::::::::::::::::::: questions
@@ -36,7 +36,7 @@ copyright: © Copyright 2021-2023 University of Technology Sydney, The Universit
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-# Introduction
+## Introduction
 
 This tutorial assumes you have already completed
 [An overview of the RO-Crate concept and its implementations](https://gallantries.github.io/video-library/videos/ro-crates/intro/slides/):
