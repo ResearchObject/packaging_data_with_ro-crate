@@ -33,13 +33,13 @@ life_cycle: 'beta'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/fishtree-attempt/convert_lesson_2/'
+source: 'https://github.com/ResearchObject/packaging_data_with_ro-crate'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'ro-crate@researchobject.org'
 
 # Navigation ------------------------------------------------
 #
