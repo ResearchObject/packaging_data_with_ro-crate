@@ -46,7 +46,13 @@
     <loc>https://preview.carpentries.org/convert_lesson_2/404.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/images.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/index.html</loc>
@@ -97,10 +103,22 @@
     <loc>https://preview.carpentries.org/convert_lesson_2/instructor/404.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/instructor/profiles.html</loc>
@@ -110,6 +128,12 @@
   </url>
   <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/instructor/setup.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://preview.carpentries.org/convert_lesson_2/key-points.html</loc>
   </url>
   <url>
     <loc>https://preview.carpentries.org/convert_lesson_2/profiles.html</loc>
