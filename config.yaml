@@ -30,7 +30,7 @@ keywords: 'software, data, lesson, The Carpentries'
 life_cycle: 'beta'
 
 # License of the lesson materials (recommended CC-BY 4.0)
-license: 'CC-BY 4.0'
+license: 'Apache 2.0'
 
 # Link to the source repository for this lesson
 source: 'https://github.com/ResearchObject/packaging_data_with_ro-crate'
