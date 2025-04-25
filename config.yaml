@@ -96,7 +96,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 carpentry_description: Carpentries Incubator
-url: https://preview.carpentries.org/convert_lesson_2
+url: https://www.researchobject.org/packaging_data_with_ro-crate/
 analytics: carpentries
 lang: en
-workbench-beta: yes
