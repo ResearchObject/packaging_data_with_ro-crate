@@ -1,6 +1,6 @@
 # Contributing
 
-[RO-Crate](roc-site) and [The Carpentries][c-site] (who provide the lesson template) 
+[RO-Crate][roc-site] and [The Carpentries][c-site] (who provide the lesson template) 
 are open source projects,
 and we welcome contributions of all kinds: new lessons, fixes to
 existing material, bug reports, and reviews of proposed changes are all
@@ -11,7 +11,7 @@ welcome.
 By contributing, you agree that we may redistribute your work under [our
 license](LICENSE.md). In exchange, we will address your issues and/or assess
 your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [RO-Crate](roc-site) agrees to abide by our 
+community. Everyone involved in [RO-Crate][roc-site] agrees to abide by our 
 [code of conduct](CODE_OF_CONDUCT.md).
 
 ## How to Contribute
