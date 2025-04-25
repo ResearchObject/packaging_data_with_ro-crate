@@ -95,7 +95,5 @@ profiles:
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-carpentry_description: Carpentries Incubator
 url: https://www.researchobject.org/packaging_data_with_ro-crate/
-analytics: carpentries
 lang: en
