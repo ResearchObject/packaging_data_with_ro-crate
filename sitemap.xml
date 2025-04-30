@@ -1,147 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/01-introduction.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/02-folder-as-crate-root.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/02-folder-as-crate-root.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/03-metadata-descriptor.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/03-metadata-descriptor.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/04-root.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/04-root.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/05-root-metadata.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/05-root-metadata.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/06-cross-references.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/06-cross-references.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/07-data-entities.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/07-data-entities.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/08-contextual-entities.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/08-contextual-entities.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/09-authorship.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/09-authorship.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/10-validating.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/10-validating.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/11-triples.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/11-triples.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/12-html-preview.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/12-html-preview.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/13-complete.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/13-complete.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/14-next-steps.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/14-next-steps.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/404.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/404.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/aio.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/discuss.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/images.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/aio.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/index.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/discuss.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/01-introduction.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/files/rainfall-1.2.1/index.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/02-folder-as-crate-root.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/files/rainfall-1.2.1/ro-crate-preview.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/03-metadata-descriptor.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/images.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/04-root.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/index.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/05-root-metadata.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/06-cross-references.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/02-folder-as-crate-root.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/07-data-entities.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/03-metadata-descriptor.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/08-contextual-entities.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/04-root.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/09-authorship.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/05-root-metadata.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/10-validating.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/06-cross-references.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/11-triples.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/07-data-entities.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/12-html-preview.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/08-contextual-entities.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/13-complete.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/09-authorship.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/14-next-steps.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/10-validating.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/404.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/11-triples.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/aio.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/12-html-preview.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/discuss.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/13-complete.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/images.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/14-next-steps.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/index.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/instructor-notes.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/key-points.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/profiles.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/reference.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/discuss.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor/setup.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/instructor-notes.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/key-points.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/profiles.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/key-points.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/reference.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/profiles.html</loc>
   </url>
   <url>
-    <loc>https://preview.carpentries.org/convert_lesson_2/setup.html</loc>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor/setup.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://www.researchobject.org/packaging_data_with_ro-crate/setup.html</loc>
   </url>
 </urlset>
