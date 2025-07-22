@@ -4,63 +4,27 @@ teaching: 3
 exercises: 4
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- How does RO Crate use flattened JSON-LD?
+- How can I describe an entity further?
 - How can I cross-reference different entities?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- Understand cross-references in RO Crate
+- Understand cross-references in flattened JSON-LD
 - Add a data entity reference from the root entity
+- Add another type to the root entity
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ## About cross-references
 
-In many JSON documents, related information is nested inside parent objects. For example:
-```json
-{
-  "@id": "./",
-  "@type": "Dataset",
-  "name": "My Dataset",
-  "author": {
-    "@type": "Person",
-    "name": "Josiah Carberry",
-    "affiliation": "Brown University"
-  }
-}
-```
-
-While this is readable, it can become hard to manage when entities are reused or grow in complexity.
-
-In contrast, RO-Crate uses a flattened structure, where each entity is described just once, and connected using @id cross-references:
-
-```json
-[
-  {
-    "@id": "./",
-    "@type": "Dataset",
-    "name": "My Dataset",
-    "author": { "@id": "https://orcid.org/0000-0002-1825-0097" }
-  },
-  {
-    "@id": "https://orcid.org/0000-0002-1825-0097",
-    "@type": "Person",
-    "name": "Josiah Carberry",
-    "affiliation": "Brown University"
-  }
-]
-```
-
 In a RO-Crate Metadata Document,
 entities are cross-referenced using `@id` reference objects,
 rather than using deeply nested JSON objects.
-In short, this _flattened JSON-LD_ style allows any entity to reference any other entity,
-and RO-Crate consumers can directly find all the descriptions of a given entity as a single JSON object.
-
-Think of @id as the entity’s “name tag”, you describe it once and refer to it anywhere in the graph.
+In short, this _flattened JSON-LD_ style (shown below) allows any entity to reference any other entity,
+and RO-Crate consumers can directly find all the descriptions of a given entity as a single JSON object. 
 
 ![JSON block with id `ro-crate-metadata.json` has some attributes, `conformsTo` RO-Crate 1.2, and `about` referencing id `./`. In second JSON block with id <code>./</code> we see additional attributes such as its name and description.](fig/introduction-figure-1.svg){alt="showing RO-Crate Metadata descriptor's `about` property pointing at the RO-Crate Root entity with matching `@id`"}
-
 
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Add cross-reference to data entity
@@ -83,10 +47,41 @@ and add such a cross-reference to the file `data.csv` using the _property_ calle
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+The RO-Crate root is always typed `Dataset`,
+though `@type` may in some cases have additional types by using a JSON array instead of a single value.
+Most entities can have such more specific types,
+e.g. chosen from [schema.org type list](https://schema.org/docs/full.html).
+
+:::::::::::::::::::::::::::::::::::::::: challenge
+## Add an additional type
+
+1. Navigate the schema.org type list to find a subtype of `CreativeWork` that is suitable for a learning resource.
+2. Modify the root entity's `@type` to be an array.
+3. Add the type name for learning resource at the end of the array.
+
+:::::::::::::::  solution
+```json
+{
+   "@id": "./",
+   "@type": ["Dataset", "LearningResource"],
+   "hasPart": [ 
+     {"@id": "data.csv"} 
+   ],
+   "…": "…"
+}
+```
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+The root has several metadata properties that describe the RO-Crate as a whole,
+considering it as a Research Object of collected resources.
+The section on [root data entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html)
+details further the required and recommended properties of the root `./`. 
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - The @id uniquely identifies the entity within the RO-Crate
-- Flattened JSON-LD helps keep each entity self-contained
-- Reuse of @id avoids duplication and enables linking
+- The @id key is used for cross-referencing
+- Multiple types can be listed by using an array
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

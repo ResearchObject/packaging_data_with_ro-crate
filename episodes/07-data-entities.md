@@ -5,7 +5,7 @@ exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- How do I describe the data files in my RO-Crate?
+- How do I describe the files in my RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
@@ -26,7 +26,7 @@ a reference to the entity describing the file `data.csv`.
 
 RO-Crates can also contain data entities that are folders and Web resources,
 as well as non-File data like online databases
--- see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html).
+-- see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entities.html).
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 We should now be able to follow the `@id` reference for the corresponding _data entity_ JSON block for our CSV file,
@@ -59,16 +59,36 @@ as shown in the above example, this does not need to match the filename/identifi
 The `encodingFormat` indicates the media file type so that consumers of the crate can open `data.csv` in an appropriate program,
 and can be particularly important for less common file extensions frequently encountered in outputs from research software and instruments.
 
-You can override the license for the root data entity by specifying a `license` property on the data entity itself.
-
 For more information on describing files and folders,
 including their recommended and required attributes,
-see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entitites.html).
+see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
 
+:::::::::::::::::::::::::::::::::::::::: challenge
+## Override the licence
+
+1. Consider if the file content of `data.csv` is not covered by our overall license (CC0), 
+   but [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+   (which only permits non-commercial use)
+2. To override, add an  `license` cross-reference property on this particular data entity
+
+:::::::::::::::  solution
+```json
+{
+    "@id": "data.csv",
+    "@type": "File",
+    "name": "Rainfall Katoomba 2022-02",
+    "description": "Rainfall data for Katoomba, NSW Australia February 2022",
+    "encodingFormat": "text/csv",
+    "license": { "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/" }
+},  
+```
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - Data entities are files & folders within the root, as well as external Web references
 - Required properties for files are name and encodingFormat
+- License can be overridden for particular data entities
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

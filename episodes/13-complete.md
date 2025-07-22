@@ -41,7 +41,7 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
      ],
      "name": "Example dataset for RO-Crate specification",
      "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
-     "datePublished": "2023-05-22",
+     "datePublished": "2023-05-22T12:03:00+0100",
      "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
      "author": { "@id": "https://orcid.org/0000-0002-1825-0097" },
      "publisher": {"@id": "https://ror.org/05gq02987"}
@@ -52,14 +52,13 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
      "name": "Rainfall Katoomba 2022-02",
      "description": "Rainfall data for Katoomba, NSW Australia February 2022",
      "encodingFormat": "text/csv",
-     "instrument": { "@id": "https://example.org/instrument/ws-2000" }
+     "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/"}
    },
    {
-     "@id": "https://example.org/instrument/ws-2000",
-     "@type": "Thing",
-     "name": "WS-2000 Weather Station",
-     "description": "Automated weather station used to record temperature and rainfall data in Katoomba, Australia.",
-     "url": "https://example.org/instrument/ws-2000"
+     "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+     "@type": "CreativeWork",
+     "name": "CC BY-NC-SA 4.0 International",
+     "description": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
    },    
    {
      "@id": "http://spdx.org/licenses/CC0-1.0",

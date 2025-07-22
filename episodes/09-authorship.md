@@ -25,7 +25,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Add an author and affiliation
 
-1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#people)
+1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people)
    of the crate using the type `Person`
 2. Include your preferred name. 
 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution,
