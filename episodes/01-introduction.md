@@ -23,16 +23,18 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::: questions
 - How do I package data in a FAIR way?
+- How does an RO-Crate identify and describe its contents?
+- What is the difference between data entities and context entities?
+- What is the role of JSON-LD in RO-Crate?
 - How can I list the authors of individual files?
-- Can I use multiple licenses in the same data package?
-- How can I visualize JSON-LD metadata?
+- How can I validate and visualize RO-Crate metadata?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 - Construct an RO-Crate by hand using JSON
-- Describe each part of the Research Object
 - Learn basic JSON-LD to create FAIR metadata
-- Connect different parts of the Research Object using identifiers
+- Describe each part of the RO-Crate
+- Connect different parts of the RO-Crate using identifiers
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -50,16 +52,19 @@ _Video: An overview of the RO-Crate concept and its implementations_ (see also [
 
 ## Tutorial walk-through
 
-In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/),
+In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.2/),
 we'll walk through the initial steps for creating a basic RO-Crate.
 You are invited to replicate the below steps on your local computer.
 
 ::::::::::::::::::::::::::::::::::::::: callout
 ## Abbreviations
-- FAIR: Findable, Accessible, Interoperable, Reusable; a set of principles for publishing research data and metadata
-- JSON: JavaScript Object Notation, a generic structured text-based data format
-- JSON-LD: JSON Linked Data, a way to express Linked Data (RDF) using regular JSON
-- RO-Crate: Research Object Crate; a way to package research data with structured FAIR metadata
+- FAIR: Findable, Accessible, Interoperable, Reusable; a set of principles for publishing research data and metadata.
+- FDO: FAIR Digital Object; a set of recommendations to improve findability, accessibility, interoperability, and reproducibility for any digital object.
+- JSON: JavaScript Object Notation, a generic structured text-based data format.
+- JSON-LD: JSON Linked Data, a way to express Linked Data (RDF) using regular JSON.
+- RO-Crate: Research Object Crate; a way to package research data with structured FAIR metadata.
+- PID: Persistent Identifier; a long-lasting reference to a digital object.
+- URI: Uniform Resource Identifier; a string of characters that identifies a resource.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::: keypoints

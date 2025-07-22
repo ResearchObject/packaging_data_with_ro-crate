@@ -11,7 +11,6 @@ exercises: 3
 
 :::::::::::::::::::::::::::::::::::::::: objectives
 - Explore a HTML preview of an RO-Crate
-- (Advanced) Try the ro-crate-html tool
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## HTML preview
@@ -45,24 +44,15 @@ Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-c
 
 ## Advanced: Generating HTML preview
 
-If you have [Node JS](https://nodejs.org/) installed,
-you can install and try the [ro-crate-html](https://www.npmjs.com/package/ro-crate-html) tool on your `crate1` folder:
+The [LDACA RO-Crate Playground](https://ro-crate.ldaca.edu.au/) is a web-based tool that lets you upload an RO-Crate and view a structured HTML summary of its metadata.
 
-```bash
-npm i -g ro-crate-html
-rochtml crate1/ro-crate-metadata.json
-```
+Navigate to the [LDACA RO-Crate Playground](https://ro-crate.ldaca.edu.au/) Click "Start Packaging", then click "Examples." From the examples list, click "Try it" for "sample-crate."
+You will see a tab called "HTML Preview" that contains a preview of the RO-Crate metadata.
 
-Or if you have [Docker](https://www.docker.com/), something like:
+If you want to generate a preview of your own RO-Crate, you can click "Create New" to create a new RO-Crate, where you can upload your data files and add metadata. Once you have added your data files and metadata, click the "HTML Preview" button at the top of the page.
 
-```bash
-docker pull simleo/rochtml
-docker run -v $(pwd):/crate -it simleo/rochtml -c ro-crate-preview_files /crate/ro-crate-metadata.json
-```
+The tool will generate a preview of your RO-Crate, which you can then download as an HTML file. This preview will show the entities in your RO-Crate, including the root dataset, data files, licenses, authors, and any other contextual entities you have added. You can save the resulting HTML page using your browser’s “Save As” feature, or extract the generated preview for distribution.
 
-The above will generate a `ro-crate-preview.html` file within your RO-Crate Root.
-Experiment with modifying the Metadata file
-and re-generating the HTML preview to see how your rendering differs from the [running example](../files/rainfall-1.2.1/ro-crate-preview.html).
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
@@ -70,6 +60,3 @@ and re-generating the HTML preview to see how your rendering differs from the [r
 - RO-Crate previews tend to show each entity separately
 - The preview HTML can be added as part of the RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-

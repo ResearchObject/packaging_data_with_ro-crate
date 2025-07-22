@@ -47,7 +47,7 @@ you should see output under _Expanded_ looking something like:
     ],
     "http://purl.org/dc/terms/conformsTo": [
       {
-        "@id": "https://w3id.org/ro/crate/1.1"
+        "@id": "https://w3id.org/ro/crate/1.2"
       }
     ]
   },
@@ -76,7 +76,7 @@ Click on the circles to expand or collapse the details of the graph's different 
 As the RO-Crate Metadata Document is valid JSON-LD it is also possible to process it
 using Linked Data technologies such as triple stores and SPARQL queries.
 It is beyond the scope of this tutorial to explain this aspect fully,
-but interested readers should consider how to [handle relative URI references](https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html).
+but interested readers should consider how to [handle relative URI references](https://www.researchobject.org/ro-crate/specification/1.2/appendix/relative-uris.html).
 As an example, try the _Table_ button and notice that the entities with relative identifiers are not included.
 This is because when converting to RDF you need absolute URIs which do not readily exist when a crate is stored on disk,
 we've not decided where the crate is to be published yet.  
@@ -86,4 +86,3 @@ we've not decided where the crate is to be published yet.
 - The JSON-LD Playground can do basic validation and visualization
 - Further use of RO-Crate as Linked Data is possible, but may require handling of relative URI references
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-

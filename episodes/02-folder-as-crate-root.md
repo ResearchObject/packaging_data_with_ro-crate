@@ -67,7 +67,7 @@ used in the rest of the RO-Crate document.
 These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary,
 which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications.
 It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes
--- this is explored further in the specification's [appendix on JSON-LD](https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html).
+-- this is explored further in the specification's [appendix on JSON-LD](https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html).
 In short, only JSON keys (_properties_) and types defined this way can be used within the RO-Crate Metadata Document.
 
 However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding.
@@ -78,7 +78,7 @@ The `@type` keyword associates an object with a predefined type from the JSON-LD
 Almost any property can alternatively be used with an `[]` array to provide multiple values.
 
 The rest of this tutorial,
-and indeed most of the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.1/),
+and indeed most of the [RO-Crate specification](https://www.researchobject.org/ro-crate/specification/1.2/),
 specify which entities can be added to the `@graph` array. 
 
 
@@ -89,4 +89,3 @@ specify which entities can be added to the `@graph` array.
 - The JSON-LD context enables optional Linked Data processing
 - Descriptions are listed flatly as entities in the @graph array
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
