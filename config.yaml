@@ -67,8 +67,8 @@ contact: "ro-crate@researchobject.org"
 # Order of episodes in your lesson
 episodes:
   - 01-introduction.md
-  - 02-folder-as-crate-root.md  
-  - 03-root.md  
+  - 02-folder-as-crate-root.md
+  - 03-root.md
   - 04-root-metadata.md
   - 05-metadata-descriptor.md
   - 06-cross-references.md
