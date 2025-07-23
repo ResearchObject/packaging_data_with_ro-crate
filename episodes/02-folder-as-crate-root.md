@@ -56,7 +56,7 @@ We call the top-level folder of the crate for the **RO-Crate Root**
 and can now refer to its content with relative file paths.
 
 We also need to make some declaration within the JSON file to turn it into a valid _RO-Crate Metadata Document_,
-explained in the next session.
+explained in the next section.
 
 
 ## JSON-LD preamble

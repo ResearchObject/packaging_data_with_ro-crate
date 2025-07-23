@@ -68,6 +68,6 @@ It is still recommended to choose an overall Crate license that can legally appl
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- Name, description, date published and license are required for the RO-Crate Root"
+- Name, description, date published and license are required for the RO-Crate Root
 - RO-Crate allows multiple licenses for different parts
 ::::::::::::::::::::::::::::::::::::::::::::::::::

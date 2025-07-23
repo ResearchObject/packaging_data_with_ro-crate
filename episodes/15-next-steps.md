@@ -19,7 +19,7 @@ You have completed making a basic RO-Crate. You may try any of the following:
 
 - **More Contextual Entities**: Discover additional [contextual entities](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html) you can add to your crate, such as projects, grants, or related publications, to enrich the crate's context.
 
-- **Provenance and Software**: Learn how to describe the [provenance](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html)(origin and history) of your data and include information about the [software](https://www.researchobject.org/ro-crate/specification/1.2/workflows.html) and workflows used in your research.
+- **Provenance and Software**: Learn how to describe the [provenance](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html) (origin and history) of your data and include information about the [software](https://www.researchobject.org/ro-crate/specification/1.2/workflows.html) and workflows used in your research.
 
 - **RO-Crate Profiles**: Delve into [RO-Crate Profiles](https://www.researchobject.org/ro-crate/profiles.html), which are community-defined content checklists that extend the base specification to meet the specific needs of a domain or data type. Profiles impose conventions and may add domain specific terms/vocabularies, effectively making RO-Crates typed and machine-actionable for specific use cases. Examples include the [Workflow RO-Crate profile](https://about.workflowhub.eu/Workflow-RO-Crate/) used by WorkflowHub and the [Five Safes RO-Crate profile](https://trefx.uk/5s-crate/) for trusted workflow execution in Trusted Research Environments (TREs).
 

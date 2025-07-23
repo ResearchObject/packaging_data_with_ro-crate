@@ -81,7 +81,7 @@ As an example, try the _Table_ button and notice that the entities with relative
 This is because when converting to RDF you need absolute URIs which do not readily exist when a crate is stored on disk,
 we've not decided where the crate is to be published yet.  
 
-::::::::::::::::::::::::::::::::::::::::keypoints
+:::::::::::::::::::::::::::::::::::::::: keypoints
 - RO-Crate metadata files are valid JSON-LD
 - The JSON-LD Playground can do basic validation and visualization
 - Further use of RO-Crate as Linked Data is possible, but may require handling of relative URI references

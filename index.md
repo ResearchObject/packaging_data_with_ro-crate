@@ -9,8 +9,7 @@ packaging research data.
 
 :::::::::::::::::::::::::::::::::::::::::: prereq
 ## Prerequisites
-- Files and folder organization and using an editor/IDE
-- Files and folder organization and using a text editor or IDE such a [Visual Studio Code](https://code.visualstudio.com/)
+- Files and folder organization and using a text editor or IDE such as [Visual Studio Code](https://code.visualstudio.com/)
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Target Audience

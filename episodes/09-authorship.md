@@ -54,7 +54,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 ## Who can be authors of an RO-Crate?
 
 When we say someone is an author of a crate,
-it means they have contributed something substansively to its content (typically the data).
+it means they have contributed something substantively to its content (typically the data).
 Agreement on what is considered authorship on a dataset can be tricky;
 you may decide some people would be better represented as `contributor`.
 One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity,

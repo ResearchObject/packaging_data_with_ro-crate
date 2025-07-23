@@ -63,7 +63,7 @@ You can override the license for the root data entity by specifying a `license` 
 
 For more information on describing files and folders,
 including their recommended and required attributes,
-see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entitites.html).
+see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html).
 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

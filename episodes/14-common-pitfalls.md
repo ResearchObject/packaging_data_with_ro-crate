@@ -52,7 +52,7 @@ Creating RO-Crate packages by hand is a great way to understand their structure,
 - **Problem**: Accidentally defining two entities with the same @id, or referencing an entity with an @id that doesn’t exist.
 - **Fix**: Ensure every @id is unique and points to an entity defined in the metadata.
 
-### 4. Forgetting required metadata on key entities
+### 5. Forgetting required metadata on key entities
 - **Problem**: The root dataset doesn’t have name or license, or files are missing type.
 - **Fix**: Always include the required fields for the root (./) and for files:
 ```json

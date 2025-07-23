@@ -58,9 +58,9 @@ Then define the instrument entity in the @graph.
 },    
 {
   "@id": "https://example.org/instrument/ws-2000",
-  "@type": "ThiIndividualProductng",
+  "@type": "IndividualProduct",
   "name": "WS-2000 Weather Station",
-  "description": "Automated weather station used to record temperature and rainfall data in Katoomba, Australia.",
+  "description": "Automated weather station used to record temperature and rainfall data.",
   "url": "https://example.org/instrument/ws-2000"
 },
 ```  
@@ -71,5 +71,5 @@ Then define the instrument entity in the @graph.
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - Contextual entities are not considered part of the crate’s file structure
 - Instruments, software, and projects can be described as contextual entities
-- Cntextual entities can provide provenance about data capture and processing
+- Contextual entities can provide provenance about data capture and processing
 ::::::::::::::::::::::::::::::::::::::::::::::::::

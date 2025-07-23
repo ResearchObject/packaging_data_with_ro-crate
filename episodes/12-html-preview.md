@@ -36,7 +36,7 @@ Try navigating the [preview of the running example](../files/rainfall-1.2.1/ro-c
 :::::::::::::::  solution
 1. CC BY-NC-SA 4.0 International
 2. Brown University
-3. The context, and for root dataset: existance, valid identifier, name, description, license and date published.  
+3. The context, and for root dataset: existence, valid identifier, name, description, license and date published.
 4. The other entities were not checked, e.g. the `affiliation` of the author.
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::

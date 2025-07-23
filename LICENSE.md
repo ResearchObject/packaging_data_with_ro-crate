@@ -21,7 +21,7 @@ This tutorial has been adapted from the revised [RO-Crate introduction for 1.2](
 * Adaptation to Galaxy Training Material rendering
 * Explicit links to RO-Crate specifications
 * Example changed to different organization and license
-* Modiied for Carpentries style
+* Modified for Carpentries style
 
 # Examples
 

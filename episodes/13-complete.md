@@ -56,9 +56,9 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
    },
    {
      "@id": "https://example.org/instrument/ws-2000",
-     "@type": "Thing",
+     "@type": "Individual Product",
      "name": "WS-2000 Weather Station",
-     "description": "Automated weather station used to record temperature and rainfall data in Katoomba, Australia.",
+     "description": "Automated weather station used to record temperature and rainfall data.",
      "url": "https://example.org/instrument/ws-2000"
    },    
    {
@@ -72,9 +72,7 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
      "@id": "https://orcid.org/0000-0002-1825-0097",
      "@type": "Person", 
      "name": "Josiah Carberry",
-     "affiliation": {
-       "@id": "https://ror.org/05gq02987"
-     }
+     "affiliation": { "@id": "https://ror.org/05gq02987" }
    },
    {
      "@id": "https://ror.org/05gq02987",
