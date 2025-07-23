@@ -66,7 +66,7 @@ Creating RO-Crate packages by hand is a great way to understand their structure,
 ```
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Spot the errors
-Here’s an incorrect metadata example. Identify and fix the issues.
+Here's an incorrect metadata example. Identify and fix the issues.
 
 ```json
 {
@@ -90,11 +90,10 @@ Here’s an incorrect metadata example. Identify and fix the issues.
 2. The hasPart value should reference an @id, not contain the full entity.
 3. The data.csv entity should be defined separately in the @graph.
 4. The encodingFormat should be a valid IANA media type (e.g., "text/csv").
-5. Missing required properties (license) on the root dataset.
+5. Missing required properties (description, datePublished, license) on the root dataset.
+::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- Make sure you have a ro-crate-metadata.json file with the correct structure
-- Ensure the file has both a `@context` and `@graph`
 - Include a metadata descriptor with @id: "ro-crate-metadata.json" and @type: "CreativeWork"
 - Ensure each referenced @id is also defined as an entity in @graph
 - Use unique identifiers for each entity

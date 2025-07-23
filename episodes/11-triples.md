@@ -25,7 +25,7 @@ Try to specify a hypothetical base URI by modifing the graph's `@context` within
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.2/context",
     { "@base": "arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/" }
   ],
   "…": "…"

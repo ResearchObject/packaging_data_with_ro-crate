@@ -25,12 +25,12 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
 
 ```json
 {
- "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@context": "https://w3id.org/ro/crate/1.2/context",
  "@graph": [
    {
      "@id": "ro-crate-metadata.json",
      "@type": "CreativeWork",
-     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
      "about": {"@id": "./"}
    },
    {

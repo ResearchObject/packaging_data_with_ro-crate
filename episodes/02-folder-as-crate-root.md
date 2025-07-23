@@ -39,7 +39,7 @@ then add the following JSON:
 
 ```json
 {
-  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@context": "https://w3id.org/ro/crate/1.2/context",
   "@graph": [
 
   ]
