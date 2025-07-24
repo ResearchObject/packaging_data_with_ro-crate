@@ -9,7 +9,7 @@ exercises: 4
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
-- Understand cross-references in RO Crate
+- Understand cross-references in RO-Crate
 - Add a data entity reference from the root entity
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

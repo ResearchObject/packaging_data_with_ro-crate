@@ -46,14 +46,14 @@ Creating RO-Crate packages by hand is a great way to understand their structure,
 ### 3. Using nested JSON instead of flat structure
 
 - **Problem**: Embedding full descriptions of related entities instead of referencing them with `@id`.
-- **Fix**: Use cross-referencing. Define each entity once and refer to it using its `@id`.
+- **Fix**: Use cross-referencing. Define each entity once in the `@graph` array and refer to it using its `@id`.
 
 ### 4. Repeating or mismatched @id values
-- **Problem**: Accidentally defining two entities with the same @id, or referencing an entity with an @id that doesn’t exist.
-- **Fix**: Ensure every @id is unique and points to an entity defined in the metadata.
+- **Problem**: Accidentally defining two entities with the same @id, or referencing an entity with an @id that doesn’t exist in the `@graph`.
+- **Fix**: Ensure every @id is unique and cross-references point to an entity defined in the metadata.
 
 ### 5. Forgetting required metadata on key entities
-- **Problem**: The root dataset doesn’t have name or license, or files are missing type.
+- **Problem**: The root dataset doesn’t have `name` or `license`, or files are missing `@type`.
 - **Fix**: Always include the required fields for the root (./) and for files:
 ```json
 {
@@ -91,6 +91,28 @@ Here's an incorrect metadata example. Identify and fix the issues.
 3. The data.csv entity should be defined separately in the @graph.
 4. The encodingFormat should be a valid IANA media type (e.g., "text/csv").
 5. Missing required properties (description, datePublished, license) on the root dataset.
+::::::::::::::::::::::::::::::::::::::::
+
+## RO-Crate validation tools
+
+The [RO-Crate Playground](https://ro-crate.ldaca.edu.au) and the [rocrate-validator](https://rocrate-validator.readthedocs.io/en/latest/) Python package can both be used to check for errors in your RO-Crate metadata. Each of them performs a different set of checks.
+
+:::::::::::::::::::::::::::::::::::::::: challenge
+
+Copy and paste your completed JSON-LD into the [RO-Crate Playground](https://ro-crate.ldaca.edu.au), then click "Validate". Are there any issues?
+
+::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: challenge
+
+Install the [rocrate-validator](https://rocrate-validator.readthedocs.io/en/latest/) and run it on the command line against your completed RO-Crate:
+
+```
+rocrate-validator validate <path_to_rocrate>
+```
+
+Are there any issues? Are the results different to the RO-Crate Playground?
+
 ::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

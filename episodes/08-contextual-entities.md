@@ -24,6 +24,7 @@ A contextual entity might describe:
 - The software that processed the data
 - The instrument that captured it
 - The project that funded it
+- The people that contributed to creating it
 
 These entities don’t contain data themselves but give semantic context to the data you’re describing.
 

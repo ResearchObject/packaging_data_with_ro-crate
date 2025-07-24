@@ -42,7 +42,7 @@ If the crate is being served from a Web service,
 such as a data repository or database where files are not organized in folders,
 then the `@id` might be an absolute URI instead of `./`
 -- this is one reason why we point to the root entity from the metadata descriptor,
-see section [Root Data Entity](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html) for details.
+as you will see in the next section.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: challenge
@@ -68,8 +68,7 @@ see section [Root Data Entity](https://www.researchobject.org/ro-crate/specifica
 
 The root has several metadata properties that describe the RO-Crate as a whole,
 considering it as a Research Object of collected resources.
-The section on [root data entity](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html)
-details further the required and recommended properties of the root `./`. 
+In the next section we will cover the required and recommended properties of the root `./`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - The RO-Crate Root is the top-level object of the RO-Crate
