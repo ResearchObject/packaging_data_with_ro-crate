@@ -4,7 +4,7 @@ teaching: 3
 exercises: 4
 ---
 :::::::::::::::::::::::::::::::::::::::: questions
-- How does RO Crate use flattened JSON-LD?
+- How can I describe an entity further?
 - How can I cross-reference different entities?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

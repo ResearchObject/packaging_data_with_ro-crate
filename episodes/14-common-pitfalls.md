@@ -91,7 +91,8 @@ Here's an incorrect metadata example. Identify and fix the issues.
 3. The data.csv entity should be defined separately in the @graph.
 4. The encodingFormat should be a valid IANA media type (e.g., "text/csv").
 5. Missing required properties (description, datePublished, license) on the root dataset.
-::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## RO-Crate validation tools
 
