@@ -118,11 +118,11 @@
   Packaging Data with RO-Crates
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 22%" class="percentage">
-    22%
+<aside class="col-md-12 lesson-progress"><div style="width: 20%" class="percentage">
+    20%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 22%" aria-valuenow="22" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 20%" aria-valuenow="20" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -254,7 +254,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -335,7 +335,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -384,7 +393,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="01-introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="03-metadata-descriptor.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="04-root.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -392,14 +401,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Introduction
         </a>
-        <a class="chapter-link float-end" href="03-metadata-descriptor.html" rel="next">
-          Next: Making a metadata...
+        <a class="chapter-link float-end" href="04-root.html" rel="next">
+          Next: Declaring the root...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Turning a folder into an RO-Crate</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/02-folder-as-crate-root.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -450,7 +459,7 @@ favourite editor, then add the following JSON:</p>
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1/context"</span><span class="fu">,</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="fu">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="dt">"@graph"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="ot">]</span></span>
@@ -466,7 +475,7 @@ folder of the crate for the <strong>RO-Crate Root</strong> and can now
 refer to its content with relative file paths.</p>
 <p>We also need to make some declaration within the JSON file to turn it
 into a valid <em>RO-Crate Metadata Document</em>, explained in the next
-session.</p>
+section.</p>
 </section><section><h2 class="section-heading" id="json-ld-preamble">JSON-LD preamble<a class="anchor" aria-label="anchor" href="#json-ld-preamble"></a></h2>
 <hr class="half-width"><p>The preamble of <code>@context</code> and <code>@graph</code> are
 JSON-LD structures that help provide global identifiers to the JSON keys
@@ -475,7 +484,7 @@ map to definitions in the <a href="http://schema.org/" class="external-link">sch
 vocabulary, which can be used by RO-Crate extensions to provide
 additional metadata beyond the RO-Crate specifications. It is this
 feature of JSON-LD that helps make RO-Crate extensible for many
-different purposes – this is explored further in the specification’s <a href="https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html" class="external-link">appendix
+different purposes – this is explored further in the specification’s <a href="https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html" class="external-link">appendix
 on JSON-LD</a>. In short, only JSON keys (<em>properties</em>) and types
 defined this way can be used within the RO-Crate Metadata Document.</p>
 <p>However, in the general case it should be sufficient to follow the
@@ -488,7 +497,7 @@ have experienced before. The <code>@type</code> keyword associates an
 object with a predefined type from the JSON-LD context. Almost any
 property can alternatively be used with an <code>[]</code> array to
 provide multiple values.</p>
-<p>The rest of this tutorial, and indeed most of the <a href="https://www.researchobject.org/ro-crate/1.1/" class="external-link">RO-Crate
+<p>The rest of this tutorial, and indeed most of the <a href="https://www.researchobject.org/ro-crate/specification/1.2/" class="external-link">RO-Crate
 specification</a>, specify which entities can be added to the
 <code>@graph</code> array.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -510,7 +519,7 @@ RO-Crate</li>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="01-introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="03-metadata-descriptor.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="04-root.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -518,8 +527,8 @@ RO-Crate</li>
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Introduction
         </a>
-        <a class="chapter-link float-end" href="03-metadata-descriptor.html" rel="next">
-          Next: Making a metadata...
+        <a class="chapter-link float-end" href="04-root.html" rel="next">
+          Next: Declaring the root...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -564,9 +573,9 @@ RO-Crate</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/02-folder-as-crate-root.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/02-folder-as-crate-root.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

@@ -118,11 +118,11 @@
   Packaging Data with RO-Crates
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 78%" class="percentage">
-    78%
+<aside class="col-md-12 lesson-progress"><div style="width: 72%" class="percentage">
+    72%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 78%" aria-valuenow="78" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 72%" aria-valuenow="72" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -233,7 +233,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -242,7 +242,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -398,7 +407,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Validating JSON-LD</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/10-validating.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -465,7 +474,7 @@ should see output under <em>Expanded</em> looking something like:</p>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="dt">"http://purl.org/dc/terms/conformsTo"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1"</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2"</span></span>
 <span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>      <span class="fu">}</span></span>
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="ot">]</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
@@ -499,7 +508,7 @@ different nodes.</p>
 possible to process it using Linked Data technologies such as triple
 stores and SPARQL queries. It is beyond the scope of this tutorial to
 explain this aspect fully, but interested readers should consider how to
-<a href="https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html" class="external-link">handle
+<a href="https://www.researchobject.org/ro-crate/specification/1.2/appendix/relative-uris.html" class="external-link">handle
 relative URI references</a>. As an example, try the <em>Table</em>
 button and notice that the entities with relative identifiers are not
 included. This is because when converting to RDF you need absolute URIs
@@ -577,9 +586,9 @@ handling of relative URI references</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/10-validating.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/10-validating.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

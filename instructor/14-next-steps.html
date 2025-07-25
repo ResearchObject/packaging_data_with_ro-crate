@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -233,7 +233,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -242,7 +242,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -320,13 +320,22 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush15">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading15">
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        14. Next steps
+        15. Next steps
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -382,14 +391,14 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/13-complete.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="../instructor/15-common-pitfalls.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/13-complete.html" rel="prev">
+        <a class="chapter-link" href="../instructor/15-common-pitfalls.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Completed RO-Crate
+          Previous: Avoiding Common
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Home
@@ -398,7 +407,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Next steps</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/14-next-steps.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -436,37 +445,47 @@
 <section><h2 class="section-heading" id="next-steps">Next steps<a class="anchor" aria-label="anchor" href="#next-steps"></a></h2>
 <hr class="half-width"><p>You have completed making a basic RO-Crate. You may try any of the
 following:</p>
-<ul><li>Add and describe additional data entities, adding additional
-properties for <a href="https://www.researchobject.org/ro-crate/1.1/data-entities.html" class="external-link">data
-entities</a>
-</li>
-<li>Follow the RO-Crate specification for additional <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html" class="external-link">contextual
-entities</a> you can add to the crate</li>
-<li>Try briefly describing <a href="https://www.researchobject.org/ro-crate/1.1/provenance.html" class="external-link">provenance</a>
-or <a href="https://www.researchobject.org/ro-crate/1.1/workflows.html" class="external-link">software</a>
-for any additional data entities you have added.</li>
-</ul><div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul><li>RO-Crate specification has further details, e.g. additional
-contextual entities</li>
-</ul></div>
-</div>
-</div>
-</section></div> <!-- / div.lesson-content -->
+<ul><li><p><strong>Add Additional Properties</strong>: Explore the RO-Crate
+specification for a wide range of properties to describe <a href="https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html" class="external-link">data
+entities</a> more comprehensively.</p></li>
+<li><p><strong>More Contextual Entities</strong>: Discover additional <a href="https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html" class="external-link">contextual
+entities</a> you can add to your crate, such as projects, grants, or
+related publications, to enrich the crate’s context.</p></li>
+<li><p><strong>Provenance and Software</strong>: Learn how to describe
+the <a href="https://www.researchobject.org/ro-crate/specification/1.2/provenance.html" class="external-link">provenance</a>
+(origin and history) of your data and include information about the <a href="https://www.researchobject.org/ro-crate/specification/1.2/workflows.html" class="external-link">software</a>
+and workflows used in your research.</p></li>
+<li><p><strong>RO-Crate Profiles</strong>: Delve into <a href="https://www.researchobject.org/ro-crate/profiles.html" class="external-link">RO-Crate
+Profiles</a>, which are community-defined content checklists that extend
+the base specification to meet the specific needs of a domain or data
+type. Profiles impose conventions and may add domain specific
+terms/vocabularies, effectively making RO-Crates typed and
+machine-actionable for specific use cases. Examples include the <a href="https://about.workflowhub.eu/Workflow-RO-Crate/" class="external-link">Workflow RO-Crate
+profile</a> used by WorkflowHub and the <a href="https://trefx.uk/5s-crate/" class="external-link">Five Safes RO-Crate profile</a> for
+trusted workflow execution in Trusted Research Environments
+(TREs).</p></li>
+<li><p><strong>FAIR Signposting</strong>: Understand how <a href="https://catalogue.fair-impact.eu/resources/fair-signposting" class="external-link">FAIR
+Signposting</a> can be used in combination with RO-Crate to guide
+machine agents through metadata space.</p></li>
+<li><p><strong>Bioschemas</strong>: Explore <a href="https://bioschemas.org/" class="external-link">Bioschemas</a>, a life sciences community
+initiative built on schema.org that defines domain-specific profiles
+(e.g., Dataset, ComputationalWorkflow, ChemicalSubstance).</p></li>
+<li><p><strong>Community and Tools</strong>: Join the open <a href="https://www.researchobject.org/ro-crate/community" class="external-link">RO-Crate
+community</a> on GitHub, participate in drop-in sessions, and explore
+the tools and libraries for various programming languages.</p></li>
+<li><p><strong>Real-world Use Cases</strong>: Explore how RO-Crates are
+being <a href="https://www.researchobject.org/ro-crate/use_cases" class="external-link">used
+in practice</a> across various domains.</p></li>
+</ul></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/13-complete.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="../instructor/15-common-pitfalls.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/13-complete.html" rel="prev">
+        <a class="chapter-link" href="../instructor/15-common-pitfalls.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Completed RO-Crate
+          Previous: Avoiding Common
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Home
@@ -514,9 +533,9 @@ contextual entities</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/14-next-steps.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/14-next-steps.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

@@ -118,11 +118,11 @@
   Packaging Data with RO-Crates
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 70%" class="percentage">
-    70%
+<aside class="col-md-12 lesson-progress"><div style="width: 65%" class="percentage">
+    65%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 70%" aria-valuenow="70" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 65%" aria-valuenow="65" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -233,7 +233,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -242,7 +242,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -398,7 +407,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Authorship in crates</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/09-authorship.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -445,7 +454,7 @@ are the authors of the crate.</p>
 <div id="add-an-author-and-affiliation" class="callout-inner">
 <h3 class="callout-title">Add an author and affiliation</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>Add yourself as an <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people" class="external-link"><code>author</code></a>
+<ol style="list-style-type: decimal"><li>Add yourself as an <a href="https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#people" class="external-link"><code>author</code></a>
 of the crate using the type <code>Person</code>
 </li>
 <li>Include your preferred name.</li>
@@ -461,7 +470,7 @@ crate-local identifier like <code>#alice</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -491,7 +500,7 @@ crate-local identifier like <code>#alice</code>.</li>
 <h3 class="callout-title">Who can be authors of an RO-Crate?</h3>
 <div class="callout-content">
 <p>When we say someone is an author of a crate, it means they have
-contributed something substansively to its content (typically the data).
+contributed something substantively to its content (typically the data).
 Agreement on what is considered authorship on a dataset can be tricky;
 you may decide some people would be better represented as
 <code>contributor</code>. One advantage of RO-Crate is that authorship
@@ -524,7 +533,7 @@ page of your organization as its <code>@id</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -570,7 +579,7 @@ institution’s web pages.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -658,9 +667,9 @@ same affiliation</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/09-authorship.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/09-authorship.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

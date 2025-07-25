@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -254,7 +254,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -335,7 +335,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -399,7 +408,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -419,9 +428,12 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>How do I package data in a FAIR way?</li>
+<li>How does an RO-Crate identify and describe its contents?</li>
+<li>What is the difference between data entities and context
+entities?</li>
+<li>What is the role of JSON-LD in RO-Crate?</li>
 <li>How can I list the authors of individual files?</li>
-<li>Can I use multiple licenses in the same data package?</li>
-<li>How can I visualize JSON-LD metadata?</li>
+<li>How can I validate and visualize RO-Crate metadata?</li>
 </ul></div>
 </div>
 </div>
@@ -430,10 +442,9 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Construct an RO-Crate by hand using JSON</li>
-<li>Describe each part of the Research Object</li>
 <li>Learn basic JSON-LD to create FAIR metadata</li>
-<li>Connect different parts of the Research Object using
-identifiers</li>
+<li>Describe each part of the RO-Crate</li>
+<li>Connect different parts of the RO-Crate using identifiers</li>
 </ul></div>
 </div>
 </div>
@@ -448,7 +459,7 @@ overview of the RO-Crate concept and its implementations</a>:</p>
 implementations</em> (see also <a href="https://doi.org/10.5281/zenodo.7828632" class="external-link">slides and
 transcript</a>)</p>
 </section><section><h2 class="section-heading" id="tutorial-walk-through">Tutorial walk-through<a class="anchor" aria-label="anchor" href="#tutorial-walk-through"></a></h2>
-<hr class="half-width"><p>In this tutorial, meant to be read along with the <a href="https://www.researchobject.org/ro-crate/1.1/" class="external-link">RO-Crate
+<hr class="half-width"><p>In this tutorial, meant to be read along with the <a href="https://www.researchobject.org/ro-crate/1.2/" class="external-link">RO-Crate
 specification</a>, we’ll walk through the initial steps for creating a
 basic RO-Crate. You are invited to replicate the below steps on your
 local computer.</p>
@@ -460,13 +471,20 @@ local computer.</p>
 <h3 class="callout-title">Abbreviations</h3>
 <div class="callout-content">
 <ul><li>FAIR: Findable, Accessible, Interoperable, Reusable; a set of
-principles for publishing research data and metadata</li>
+principles for publishing research data and metadata.</li>
+<li>FDO: FAIR Digital Object; a set of recommendations to improve
+findability, accessibility, interoperability, and reproducibility for
+any digital object.</li>
 <li>JSON: JavaScript Object Notation, a generic structured text-based
-data format</li>
+data format.</li>
 <li>JSON-LD: JSON Linked Data, a way to express Linked Data (RDF) using
-regular JSON</li>
+regular JSON.</li>
 <li>RO-Crate: Research Object Crate; a way to package research data with
-structured FAIR metadata</li>
+structured FAIR metadata.</li>
+<li>PID: Persistent Identifier; a long-lasting reference to a digital
+object.</li>
+<li>URI: Uniform Resource Identifier; a string of characters that
+identifies a resource.</li>
 </ul></div>
 </div>
 </div>
@@ -544,9 +562,9 @@ use</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/01-introduction.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/01-introduction.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

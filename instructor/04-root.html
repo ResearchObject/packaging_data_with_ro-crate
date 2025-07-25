@@ -118,11 +118,11 @@
   Packaging Data with RO-Crates
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 36%" class="percentage">
-    36%
+<aside class="col-md-12 lesson-progress"><div style="width: 29%" class="percentage">
+    29%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 36%" aria-valuenow="36" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 29%" aria-valuenow="29" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -221,22 +221,13 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush4">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        4. Declaring the root folder
+        3. Declaring the root folder
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -250,10 +241,19 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -382,14 +391,14 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/03-metadata-descriptor.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="../instructor/02-folder-as-crate-root.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/05-root-metadata.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/03-metadata-descriptor.html" rel="prev">
+        <a class="chapter-link" href="../instructor/02-folder-as-crate-root.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Making a metadata
+          Previous: Turning a folder
         </a>
         <a class="chapter-link float-end" href="../instructor/05-root-metadata.html" rel="next">
           Next: Describing the root...
@@ -398,7 +407,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Declaring the root folder</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/04-root.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -434,8 +443,8 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="ro-crate-root">RO-Crate Root<a class="anchor" aria-label="anchor" href="#ro-crate-root"></a></h2>
-<hr class="half-width"><p>Next we’ll add another entity to the <code>@graph</code> array, to
-describe the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">RO-Crate
+<hr class="half-width"><p>First we’ll add an entity to the <code>@graph</code> array, to
+describe the <a href="https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">RO-Crate
 Root</a>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -448,33 +457,12 @@ Root</a>:</p>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="ot">]</span></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
 </div>
-<div id="adding-entities-to-the-json-array" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="adding-entities-to-the-json-array" class="callout-inner">
-<h3 class="callout-title">Adding entities to the JSON array</h3>
-<div class="callout-content">
-<p>Because we’re adding incrementally to the <code>@graph</code> array.
-It is important to remember the comma <code>,</code> between each
-entity, <strong>except</strong> for the final entity in the JSON array;
-and likewise for the properties within the JSON object for each entity.
-This is an artefact of the strict <a href="https://www.json.org/" class="external-link">JSON</a> file format rules to simplify
-parsing. The order of the entities within the <code>@graph</code>
-JSON-LD array and the order of the keys within a JSON object is <em>not
-significant</em>. The <em>graph</em> content is given by the
-<code>@id</code> cross-references.</p>
-<p>You will add a comma here between the
-<code>ro-crate-metadata.json</code> entity, and the root data
-entity.</p>
-</div>
-</div>
-</div>
 <p>By convention, in RO-Crate the <code>@id</code> value of
 <code>./</code> means that this entity describes the folder in which the
-RO-Crate metadata file is located. This reference from
-<code>ro-crate-metadata.json</code> is therefore semantically marking
-the <code>crate1</code> folder as being the RO-Crate Root.</p>
+RO-Crate metadata file is located. The root data entity always has the
+<code>@type</code> value of <code>Dataset</code>, which is a <a href="https://schema.org/Dataset" class="external-link">schema.org</a> type. This will be
+referenced from <code>ro-crate-metadata.json</code>, semantically
+marking the <code>crate1</code> folder as being the RO-Crate Root.</p>
 <div id="ro-crates-can-be-published-on-the-web" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -489,11 +477,52 @@ archived as a ZIP file.</p>
 repository or database where files are not organized in folders, then
 the <code>@id</code> might be an absolute URI instead of <code>./</code>
 – this is one reason why we point to the root entity from the metadata
-descriptor, see section <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html" class="external-link">Root
-Data Entity</a> for details.</p>
+descriptor, as you will see in the next section.</p>
 </div>
 </div>
 </div>
+<div id="add-an-additional-type" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="add-an-additional-type" class="callout-inner">
+<h3 class="callout-title">Add an additional type</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal"><li>Navigate the schema.org type list to find a subtype of
+<code>CreativeWork</code> that is suitable for a learning resource.</li>
+<li>Modify the root entity’s <code>@type</code> to be an array.</li>
+<li>Add the type name for learning resource at the end of the
+array.</li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>   <span class="dt">"@type"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Dataset"</span><span class="ot">,</span> <span class="st">"LearningResource"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> </span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>     <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">}</span> </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The root has several metadata properties that describe the RO-Crate
+as a whole, considering it as a Research Object of collected resources.
+In the next section we will cover the required and recommended
+properties of the root <code>./</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -502,21 +531,23 @@ Data Entity</a> for details.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>The RO-Crate Root is the top-level object of the RO-Crate</li>
-<li>The root identifier may be a URL, but commonly just ./ for the
-current folder</li>
+<li>The root identifier is commonly just ./ for the current folder, but
+can be a URL</li>
+<li>The root is always typed as a Dataset, but can have additional
+types</li>
 </ul></div>
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/03-metadata-descriptor.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="../instructor/02-folder-as-crate-root.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/05-root-metadata.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="../instructor/03-metadata-descriptor.html" rel="prev">
+        <a class="chapter-link" href="../instructor/02-folder-as-crate-root.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Making a metadata
+          Previous: Turning a folder
         </a>
         <a class="chapter-link float-end" href="../instructor/05-root-metadata.html" rel="next">
           Next: Describing the root...
@@ -564,9 +595,9 @@ current folder</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/04-root.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/04-root.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

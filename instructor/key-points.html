@@ -269,7 +269,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -293,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -401,7 +401,19 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -485,6 +497,20 @@ RO-Crate</li>
 <li>RO-Crate uses schema.org as base vocabulary</li>
 <li>The JSON-LD context enables optional Linked Data processing</li>
 <li>Descriptions are listed flatly as entities in the <span class="citation">@graph</span> array</li>
+</ul></section><section id="04-root"><h2 class="section-heading"><a href="04-root.html">Declaring the root folder</a></h2>
+<hr class="half-width">
+<ul>
+<li>The RO-Crate Root is the top-level object of the RO-Crate</li>
+<li>The root identifier is commonly just ./ for the current folder, but
+can be a URL</li>
+<li>The root is always typed as a Dataset, but can have additional
+types</li>
+</ul></section><section id="05-root-metadata"><h2 class="section-heading"><a href="05-root-metadata.html">Describing the root entity</a></h2>
+<hr class="half-width">
+<ul>
+<li>Name, description, date published and license are required for the
+RO-Crate Root</li>
+<li>RO-Crate allows multiple licenses for different parts</li>
 </ul></section><section id="03-metadata-descriptor"><h2 class="section-heading"><a href="03-metadata-descriptor.html">Making a metadata descriptor</a></h2>
 <hr class="half-width">
 <ul>
@@ -493,39 +519,29 @@ itself</li>
 <li>RO-Crate specifications are versioned</li>
 <li>The version of RO-Crate is indicated using the conformsTo
 property</li>
-</ul></section><section id="04-root"><h2 class="section-heading"><a href="04-root.html">Declaring the root folder</a></h2>
-<hr class="half-width">
-<ul>
-<li>The RO-Crate Root is the top-level object of the RO-Crate</li>
-<li>The root identifier may be a URL, but commonly just ./ for the
-current folder</li>
-</ul></section><section id="05-root-metadata"><h2 class="section-heading"><a href="05-root-metadata.html">Describing the root entity</a></h2>
-<hr class="half-width">
-<ul>
-<li>Name, description, date published and license are required for the
-RO-Crate Root”</li>
-<li>RO-Crate allows multiple licenses for different parts</li>
 </ul></section><section id="06-cross-references"><h2 class="section-heading"><a href="06-cross-references.html">Adding cross-references</a></h2>
 <hr class="half-width">
 <ul>
 <li>The <span class="citation">@id</span> uniquely identifies the entity
 within the RO-Crate</li>
-<li>The <span class="citation">@id</span> key is used for
-cross-referencing</li>
-<li>Multiple types can be listed by using an array</li>
+<li>Flattened JSON-LD helps keep each entity self-contained</li>
+<li>Reuse of <span class="citation">@id</span> avoids duplication and
+enables linking</li>
 </ul></section><section id="07-data-entities"><h2 class="section-heading"><a href="07-data-entities.html">Data entities</a></h2>
 <hr class="half-width">
 <ul>
 <li>Data entities are files &amp; folders within the root, as well as
 external Web references</li>
 <li>Required properties for files are name and encodingFormat</li>
-<li>License can be overridden for particular data entities</li>
 </ul></section><section id="08-contextual-entities"><h2 class="section-heading"><a href="08-contextual-entities.html">Contextual entities</a></h2>
 <hr class="half-width">
 <ul>
-<li>Contextual entities are not considered part of the crate</li>
-<li>Cross-references should be expanded as contextual entities</li>
-<li>It is recommended to provide a human-readable name for licenses</li>
+<li>Contextual entities are not considered part of the crate’s file
+structure</li>
+<li>Instruments, software, and projects can be described as contextual
+entities</li>
+<li>Contextual entities can provide provenance about data capture and
+processing</li>
 </ul></section><section id="09-authorship"><h2 class="section-heading"><a href="09-authorship.html">Authorship in crates</a></h2>
 <hr class="half-width">
 <ul>
@@ -563,12 +579,21 @@ Web</li>
 <li>A single RO-Crate lists all the entities</li>
 <li>The order of entities in the <span class="citation">@graph</span>
 array is not important</li>
-</ul></section><section id="14-next-steps"><h2 class="section-heading"><a href="14-next-steps.html">Next steps</a></h2>
+</ul></section><section id="15-common-pitfalls"><h2 class="section-heading"><a href="15-common-pitfalls.html">Avoiding Common pitfalls</a></h2>
 <hr class="half-width">
 <ul>
-<li>RO-Crate specification has further details, e.g. additional
-contextual entities</li>
-</ul></section>
+<li>Include a metadata descriptor with <span class="citation">@id</span>: “ro-crate-metadata.json” and <span class="citation">@type</span>: “CreativeWork”</li>
+<li>Ensure each referenced <span class="citation">@id</span> is also
+defined as an entity in <span class="citation">@graph</span>
+</li>
+<li>Use unique identifiers for each entity</li>
+<li>Ensure every entity has an <span class="citation">@id</span> and a
+meaningful <span class="citation">@type</span>
+</li>
+<li>Use tools like JSON validators and JSON-LD playgrounds to check your
+metadata</li>
+</ul></section><section id="14-next-steps"><h2 class="section-heading"><a href="14-next-steps.html">Next steps</a></h2>
+<hr class="half-width"></section>
 </div>
     </main>
 </div>
@@ -615,9 +640,9 @@ contextual entities</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/key-points.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/instructor/key-points.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-07-22",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

@@ -118,11 +118,11 @@
   Packaging Data with RO-Crates
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 86%" class="percentage">
-    86%
+<aside class="col-md-12 lesson-progress"><div style="width: 80%" class="percentage">
+    80%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 86%" aria-valuenow="86" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 80%" aria-valuenow="80" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -224,7 +224,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -233,7 +233,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -242,7 +242,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,16 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -398,7 +407,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Converting JSON-LD to triples</h1>
-        <p>Last updated on 2025-04-17 |
+        <p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/11-triples.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -438,7 +447,7 @@ RO-Crate</li>
 it might be described at a web resource, a ‘base’ URI is needed that
 will point to that resource, i.e. resolve as a page or file on the
 web.</p>
-<p>Try to specify a hypothetical base URI by modifing the graph’s
+<p>Try to specify a hypothetical base URI by modifying the graph’s
 <code>@context</code> within the <a href="https://json-ld.org/playground/" class="external-link">JSON-LD Playground</a> (do not
 modify the <code>ro-crate-metadata.json</code> on disk), and revisit the
 <em>Table</em> rendering.</p>
@@ -447,7 +456,7 @@ modify the <code>ro-crate-metadata.json</code> on disk), and revisit the
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="st">"https://w3id.org/ro/crate/1.1/context"</span><span class="ot">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="ot">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">"@base"</span><span class="fu">:</span> <span class="st">"arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/"</span> <span class="fu">}</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
@@ -535,9 +544,9 @@ Web</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/11-triples.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/11-triples.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-04-17",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>

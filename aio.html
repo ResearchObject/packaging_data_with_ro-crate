@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-metadata-descriptor.html">3. Making a metadata descriptor</a>
+        <a href="04-root.html">3. Declaring the root folder</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-root.html">4. Declaring the root folder</a>
+        <a href="05-root-metadata.html">4. Describing the root entity</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-root-metadata.html">5. Describing the root entity</a>
+        <a href="03-metadata-descriptor.html">5. Making a metadata descriptor</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -400,7 +400,19 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="14-next-steps.html">14. Next steps</a>
+        <a href="15-common-pitfalls.html">14. Avoiding Common pitfalls</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush16">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading16">
+        <a href="14-next-steps.html">15. Next steps</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -466,7 +478,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -481,9 +493,12 @@
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I package data in a FAIR way?</li>
+<li>How does an RO-Crate identify and describe its contents?</li>
+<li>What is the difference between data entities and context
+entities?</li>
+<li>What is the role of JSON-LD in RO-Crate?</li>
 <li>How can I list the authors of individual files?</li>
-<li>Can I use multiple licenses in the same data package?</li>
-<li>How can I visualize JSON-LD metadata?</li>
+<li>How can I validate and visualize RO-Crate metadata?</li>
 </ul>
 </div>
 </div>
@@ -494,10 +509,9 @@
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Construct an RO-Crate by hand using JSON</li>
-<li>Describe each part of the Research Object</li>
 <li>Learn basic JSON-LD to create FAIR metadata</li>
-<li>Connect different parts of the Research Object using
-identifiers</li>
+<li>Describe each part of the RO-Crate</li>
+<li>Connect different parts of the RO-Crate using identifiers</li>
 </ul>
 </div>
 </div>
@@ -517,7 +531,7 @@ transcript</a>)</p>
 </section><section><h2 class="section-heading" id="tutorial-walk-through">Tutorial walk-through<a class="anchor" aria-label="anchor" href="#tutorial-walk-through"></a>
 </h2>
 <hr class="half-width">
-<p>In this tutorial, meant to be read along with the <a href="https://www.researchobject.org/ro-crate/1.1/" class="external-link">RO-Crate
+<p>In this tutorial, meant to be read along with the <a href="https://www.researchobject.org/ro-crate/1.2/" class="external-link">RO-Crate
 specification</a>, we’ll walk through the initial steps for creating a
 basic RO-Crate. You are invited to replicate the below steps on your
 local computer.</p>
@@ -530,13 +544,20 @@ local computer.</p>
 <div class="callout-content">
 <ul>
 <li>FAIR: Findable, Accessible, Interoperable, Reusable; a set of
-principles for publishing research data and metadata</li>
+principles for publishing research data and metadata.</li>
+<li>FDO: FAIR Digital Object; a set of recommendations to improve
+findability, accessibility, interoperability, and reproducibility for
+any digital object.</li>
 <li>JSON: JavaScript Object Notation, a generic structured text-based
-data format</li>
+data format.</li>
 <li>JSON-LD: JSON Linked Data, a way to express Linked Data (RDF) using
-regular JSON</li>
+regular JSON.</li>
 <li>RO-Crate: Research Object Crate; a way to package research data with
-structured FAIR metadata</li>
+structured FAIR metadata.</li>
+<li>PID: Persistent Identifier; a long-lasting reference to a digital
+object.</li>
+<li>URI: Uniform Resource Identifier; a string of characters that
+identifies a resource.</li>
 </ul>
 </div>
 </div>
@@ -562,7 +583,7 @@ use</li>
 </div>
 </section></section><section id="aio-02-folder-as-crate-root"><p>Content from <a href="02-folder-as-crate-root.html">Turning a folder into an RO-Crate</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/02-folder-as-crate-root.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -613,7 +634,7 @@ favourite editor, then add the following JSON:</p>
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1/context"</span><span class="fu">,</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="fu">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="dt">"@graph"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="ot">]</span></span>
@@ -629,7 +650,7 @@ folder of the crate for the <strong>RO-Crate Root</strong> and can now
 refer to its content with relative file paths.</p>
 <p>We also need to make some declaration within the JSON file to turn it
 into a valid <em>RO-Crate Metadata Document</em>, explained in the next
-session.</p>
+section.</p>
 </section><section><h2 class="section-heading" id="json-ld-preamble">JSON-LD preamble<a class="anchor" aria-label="anchor" href="#json-ld-preamble"></a>
 </h2>
 <hr class="half-width">
@@ -640,7 +661,7 @@ map to definitions in the <a href="http://schema.org/" class="external-link">sch
 vocabulary, which can be used by RO-Crate extensions to provide
 additional metadata beyond the RO-Crate specifications. It is this
 feature of JSON-LD that helps make RO-Crate extensible for many
-different purposes – this is explored further in the specification’s <a href="https://www.researchobject.org/ro-crate/1.1/appendix/jsonld.html" class="external-link">appendix
+different purposes – this is explored further in the specification’s <a href="https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html" class="external-link">appendix
 on JSON-LD</a>. In short, only JSON keys (<em>properties</em>) and types
 defined this way can be used within the RO-Crate Metadata Document.</p>
 <p>However, in the general case it should be sufficient to follow the
@@ -653,7 +674,7 @@ have experienced before. The <code>@type</code> keyword associates an
 object with a predefined type from the JSON-LD context. Almost any
 property can alternatively be used with an <code>[]</code> array to
 provide multiple values.</p>
-<p>The rest of this tutorial, and indeed most of the <a href="https://www.researchobject.org/ro-crate/1.1/" class="external-link">RO-Crate
+<p>The rest of this tutorial, and indeed most of the <a href="https://www.researchobject.org/ro-crate/specification/1.2/" class="external-link">RO-Crate
 specification</a>, specify which entities can be added to the
 <code>@graph</code> array.</p>
 <div id="keypoints1" class="callout keypoints">
@@ -674,106 +695,9 @@ RO-Crate</li>
 </div>
 </div>
 </div>
-</section></section><section id="aio-03-metadata-descriptor"><p>Content from <a href="03-metadata-descriptor.html">Making a metadata descriptor</a></p>
-<hr>
-<p>Last updated on 2025-04-17 |
-
-        <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/03-metadata-descriptor.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>Which RO-Crate version is used?</li>
-<li>How can the crate self-identify as an RO-Crate?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Add the first entity to the JSON-LD <span class="citation">@graph</span>
-</li>
-<li>Indicate the version of RO-Crate</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="ro-crate-metadata-descriptor">RO-Crate Metadata descriptor<a class="anchor" aria-label="anchor" href="#ro-crate-metadata-descriptor"></a>
-</h2>
-<hr class="half-width">
-<p>The first JSON-LD <em>entity</em> to add in the <code>@graph</code>
-array has the <code>@id</code> value of
-<code>ro-crate-metadata.json</code> to describe the JSON file
-itself:</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"ro-crate-metadata.json"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="dt">"conformsTo"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1"</span><span class="fu">},</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">"about"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">}</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
-</div>
-<p>This required entity, known as the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor" class="external-link">RO-Crate
-Metadata Descriptor</a>, helps this file self-identify as an RO-Crate
-Metadata Document, which is conforming to (<code>conformsTo</code>) the
-RO-Crate specification version 1.1. Notice that the
-<code>conformsTo</code> URL corresponds to the <code>@context</code> URL
-version-wise, but they have two different functions. The context brings
-the defined terms into the metadata document, while the conformance
-declares which RO-Crate conventions of using those terms are being
-followed.</p>
-<div id="ro-crate-versions" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="ro-crate-versions" class="callout-inner">
-<h3 class="callout-title">RO-Crate versions</h3>
-<div class="callout-content">
-<p>This tutorial is written for RO-Crate 1.1, the RO-Crate website will
-list the <a href="https://www.researchobject.org/ro-crate/specification.html" class="external-link">current
-specification version</a> – RO-Crates can generally be upgraded to newer
-versions following <a href="https://semver.org/" class="external-link">semantic versioning</a>
-conventions, but check the <a href="https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html" class="external-link">change
-log</a> for any important changes. The next development version of the
-specification, indicated with a <code>-DRAFT</code> status, may still be
-subject to changes and should only be used with caution.</p>
-</div>
-</div>
-</div>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>The RO-Crate Metadata Descriptor describes the JSON-LD file
-itself</li>
-<li>RO-Crate specifications are versioned</li>
-<li>The version of RO-Crate is indicated using the conformsTo
-property</li>
-</ul>
-</div>
-</div>
-</div>
 </section></section><section id="aio-04-root"><p>Content from <a href="04-root.html">Declaring the root folder</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/04-root.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -807,8 +731,8 @@ property</li>
 <section><h2 class="section-heading" id="ro-crate-root">RO-Crate Root<a class="anchor" aria-label="anchor" href="#ro-crate-root"></a>
 </h2>
 <hr class="half-width">
-<p>Next we’ll add another entity to the <code>@graph</code> array, to
-describe the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">RO-Crate
+<p>First we’ll add an entity to the <code>@graph</code> array, to
+describe the <a href="https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">RO-Crate
 Root</a>:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -821,33 +745,12 @@ Root</a>:</p>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="ot">]</span></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
 </div>
-<div id="adding-entities-to-the-json-array" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="adding-entities-to-the-json-array" class="callout-inner">
-<h3 class="callout-title">Adding entities to the JSON array</h3>
-<div class="callout-content">
-<p>Because we’re adding incrementally to the <code>@graph</code> array.
-It is important to remember the comma <code>,</code> between each
-entity, <strong>except</strong> for the final entity in the JSON array;
-and likewise for the properties within the JSON object for each entity.
-This is an artefact of the strict <a href="https://www.json.org/" class="external-link">JSON</a> file format rules to simplify
-parsing. The order of the entities within the <code>@graph</code>
-JSON-LD array and the order of the keys within a JSON object is <em>not
-significant</em>. The <em>graph</em> content is given by the
-<code>@id</code> cross-references.</p>
-<p>You will add a comma here between the
-<code>ro-crate-metadata.json</code> entity, and the root data
-entity.</p>
-</div>
-</div>
-</div>
 <p>By convention, in RO-Crate the <code>@id</code> value of
 <code>./</code> means that this entity describes the folder in which the
-RO-Crate metadata file is located. This reference from
-<code>ro-crate-metadata.json</code> is therefore semantically marking
-the <code>crate1</code> folder as being the RO-Crate Root.</p>
+RO-Crate metadata file is located. The root data entity always has the
+<code>@type</code> value of <code>Dataset</code>, which is a <a href="https://schema.org/Dataset" class="external-link">schema.org</a> type. This will be
+referenced from <code>ro-crate-metadata.json</code>, semantically
+marking the <code>crate1</code> folder as being the RO-Crate Root.</p>
 <div id="ro-crates-can-be-published-on-the-web" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -862,11 +765,54 @@ archived as a ZIP file.</p>
 repository or database where files are not organized in folders, then
 the <code>@id</code> might be an absolute URI instead of <code>./</code>
 – this is one reason why we point to the root entity from the metadata
-descriptor, see section <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html" class="external-link">Root
-Data Entity</a> for details.</p>
+descriptor, as you will see in the next section.</p>
 </div>
 </div>
 </div>
+<div id="add-an-additional-type" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="add-an-additional-type" class="callout-inner">
+<h3 class="callout-title">Add an additional type</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>Navigate the schema.org type list to find a subtype of
+<code>CreativeWork</code> that is suitable for a learning resource.</li>
+<li>Modify the root entity’s <code>@type</code> to be an array.</li>
+<li>Add the type name for learning resource at the end of the
+array.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>   <span class="dt">"@type"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Dataset"</span><span class="ot">,</span> <span class="st">"LearningResource"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> </span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>     <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">}</span> </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The root has several metadata properties that describe the RO-Crate
+as a whole, considering it as a Research Object of collected resources.
+In the next section we will cover the required and recommended
+properties of the root <code>./</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -876,15 +822,17 @@ Data Entity</a> for details.</p>
 <div class="callout-content">
 <ul>
 <li>The RO-Crate Root is the top-level object of the RO-Crate</li>
-<li>The root identifier may be a URL, but commonly just ./ for the
-current folder</li>
+<li>The root identifier is commonly just ./ for the current folder, but
+can be a URL</li>
+<li>The root is always typed as a Dataset, but can have additional
+types</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-05-root-metadata"><p>Content from <a href="05-root-metadata.html">Describing the root entity</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/05-root-metadata.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -920,7 +868,7 @@ current folder</li>
 <section><h2 class="section-heading" id="describing-the-root-entity">Describing the root entity<a class="anchor" aria-label="anchor" href="#describing-the-root-entity"></a>
 </h2>
 <hr class="half-width">
-<p>When describing the <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">root
+<p>When describing the <a href="https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity" class="external-link">root
 entity</a>, the properties generally apply to the whole of the crate.
 For instance it is a good idea to give a description of why these
 resources are gathered in a crate, as well as giving the crate a name
@@ -956,7 +904,7 @@ license of your choice:</p>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Example crate"</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"I created this example by following the tutorial"</span><span class="fu">,</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2023-05-22T12:03:00+0100"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2023-05-22"</span><span class="fu">,</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>  <span class="dt">"license"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://spdx.org/licenses/CC0-1.0"</span><span class="fu">}</span>  </span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
 </div>
@@ -1009,15 +957,134 @@ Root.</p>
 <div class="callout-content">
 <ul>
 <li>Name, description, date published and license are required for the
-RO-Crate Root”</li>
+RO-Crate Root</li>
 <li>RO-Crate allows multiple licenses for different parts</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section><section id="aio-03-metadata-descriptor"><p>Content from <a href="03-metadata-descriptor.html">Making a metadata descriptor</a></p>
+<hr>
+<p>Last updated on 2025-07-25 |
+
+        <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/03-metadata-descriptor.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>Which RO-Crate version is used?</li>
+<li>How can the crate self-identify as an RO-Crate?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Add the first entity to the JSON-LD <span class="citation">@graph</span>
+</li>
+<li>Indicate the version of RO-Crate</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="ro-crate-metadata-descriptor">RO-Crate Metadata descriptor<a class="anchor" aria-label="anchor" href="#ro-crate-metadata-descriptor"></a>
+</h2>
+<hr class="half-width">
+<p>Next, we’ll add another <em>entity</em> to the <code>@graph</code>
+array has the <code>@id</code> value of
+<code>ro-crate-metadata.json</code> to describe the JSON file
+itself:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"ro-crate-metadata.json"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="dt">"conformsTo"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2"</span><span class="fu">},</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">"about"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">}</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+<p>This required entity, known as the <a href="https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#ro-crate-metadata-file-descriptor" class="external-link">RO-Crate
+Metadata Descriptor</a>, helps this file self-identify as an RO-Crate
+Metadata Document, which is conforming to (<code>conformsTo</code>) the
+RO-Crate specification version 1.2. Notice that the
+<code>conformsTo</code> URL corresponds to the <code>@context</code> URL
+version-wise, but they have two different functions. The context brings
+the defined terms into the metadata document, while the conformance
+declares which RO-Crate conventions of using those terms are being
+followed.</p>
+<div id="adding-entities-to-the-json-array" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="adding-entities-to-the-json-array" class="callout-inner">
+<h3 class="callout-title">Adding entities to the JSON array</h3>
+<div class="callout-content">
+<p>Because we’re adding incrementally to the <code>@graph</code> array.
+It is important to remember the comma <code>,</code> between each
+entity, <strong>except</strong> for the final entity in the JSON array;
+and likewise for the properties within the JSON object for each entity.
+This is an artefact of the strict <a href="https://www.json.org/" class="external-link">JSON</a> file format rules to simplify
+parsing. The order of the entities within the <code>@graph</code>
+JSON-LD array and the order of the keys within a JSON object is <em>not
+significant</em>. The <em>graph</em> content is given by the
+<code>@id</code> cross-references.</p>
+<p>You will add a comma here between the
+<code>ro-crate-metadata.json</code> entity, and the root data
+entity.</p>
+</div>
+</div>
+</div>
+<div id="ro-crate-versions" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="ro-crate-versions" class="callout-inner">
+<h3 class="callout-title">RO-Crate versions</h3>
+<div class="callout-content">
+<p>This tutorial is written for RO-Crate 1.2, the RO-Crate website will
+list the <a href="https://www.researchobject.org/ro-crate/specification.html" class="external-link">current
+specification version</a> – RO-Crates can generally be upgraded to newer
+versions following <a href="https://semver.org/" class="external-link">semantic versioning</a>
+conventions, but check the <a href="https://www.researchobject.org/ro-crate/specification/1.2/appendix/changelog.html" class="external-link">change
+log</a> for any important changes. The next development version of the
+specification, indicated with a <code>-DRAFT</code> status, may still be
+subject to changes and should only be used with caution.</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>The RO-Crate Metadata Descriptor describes the JSON-LD file
+itself</li>
+<li>RO-Crate specifications are versioned</li>
+<li>The version of RO-Crate is indicated using the conformsTo
+property</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-06-cross-references"><p>Content from <a href="06-cross-references.html">Adding cross-references</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/06-cross-references.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1042,9 +1109,8 @@ RO-Crate Root”</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Understand cross-references in flattened JSON-LD</li>
+<li>Understand cross-references in RO-Crate</li>
 <li>Add a data entity reference from the root entity</li>
-<li>Add another type to the root entity</li>
 </ul>
 </div>
 </div>
@@ -1054,12 +1120,52 @@ RO-Crate Root”</li>
 <section><h2 class="section-heading" id="about-cross-references">About cross-references<a class="anchor" aria-label="anchor" href="#about-cross-references"></a>
 </h2>
 <hr class="half-width">
+<p>In many JSON documents, related information is nested inside parent
+objects. For example:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"My Dataset"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="dt">"author"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Person"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Josiah Carberry"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="st">"Brown University"</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+<p>While this is readable, it can become hard to manage when entities
+are reused or grow in complexity.</p>
+<p>In contrast, RO-Crate uses a flattened structure, where each entity
+is described just once, and connected using <span class="citation">@id</span> cross-references:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"My Dataset"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="dt">"author"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://orcid.org/0000-0002-1825-0097"</span> <span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://orcid.org/0000-0002-1825-0097"</span><span class="fu">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Person"</span><span class="fu">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Josiah Carberry"</span><span class="fu">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="st">"Brown University"</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="ot">]</span></span></code></pre>
+</div>
 <p>In a RO-Crate Metadata Document, entities are cross-referenced using
 <code>@id</code> reference objects, rather than using deeply nested JSON
-objects. In short, this <em>flattened JSON-LD</em> style (shown below)
-allows any entity to reference any other entity, and RO-Crate consumers
-can directly find all the descriptions of a given entity as a single
-JSON object.</p>
+objects. In short, this <em>flattened JSON-LD</em> style allows any
+entity to reference any other entity, and RO-Crate consumers can
+directly find all the descriptions of a given entity as a single JSON
+object.</p>
+<p>Think of <span class="citation">@id</span> as the entity’s “name
+tag”, you describe it once and refer to it anywhere in the graph.</p>
 <figure><img src="fig/introduction-figure-1.svg" alt="showing RO-Crate Metadata descriptor's `about` property pointing at the RO-Crate Root entity with matching `@id`" class="figure mx-auto d-block"><div class="figcaption">JSON block with id
 <code>ro-crate-metadata.json</code> has some attributes,
 <code>conformsTo</code> RO-Crate 1.2, and <code>about</code> referencing
@@ -1083,73 +1189,24 @@ cross-reference to the file <code>data.csv</code> using the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb1">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>   <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>   <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> </span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>       <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">}</span> </span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>   <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>   <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>   <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>   <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>       <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">}</span> </span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>   <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>The RO-Crate root is always typed <code>Dataset</code>, though
-<code>@type</code> may in some cases have additional types by using a
-JSON array instead of a single value. Most entities can have such more
-specific types, e.g. chosen from <a href="https://schema.org/docs/full.html" class="external-link">schema.org type list</a>.</p>
-<div id="add-an-additional-type" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="add-an-additional-type" class="callout-inner">
-<h3 class="callout-title">Add an additional type</h3>
-<div class="callout-content">
-<ol style="list-style-type: decimal">
-<li>Navigate the schema.org type list to find a subtype of
-<code>CreativeWork</code> that is suitable for a learning resource.</li>
-<li>Modify the root entity’s <code>@type</code> to be an array.</li>
-<li>Add the type name for learning resource at the end of the
-array.</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>   <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>   <span class="dt">"@type"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Dataset"</span><span class="ot">,</span> <span class="st">"LearningResource"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>   <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="ot">[</span> </span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>     <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">}</span> </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>   <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>   <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>The root has several metadata properties that describe the RO-Crate
-as a whole, considering it as a Research Object of collected resources.
-The section on <a href="https://www.researchobject.org/ro-crate/1.1/root-data-entity.html" class="external-link">root
-data entity</a> details further the required and recommended properties
-of the root <code>./</code>.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1160,16 +1217,16 @@ of the root <code>./</code>.</p>
 <ul>
 <li>The <span class="citation">@id</span> uniquely identifies the entity
 within the RO-Crate</li>
-<li>The <span class="citation">@id</span> key is used for
-cross-referencing</li>
-<li>Multiple types can be listed by using an array</li>
+<li>Flattened JSON-LD helps keep each entity self-contained</li>
+<li>Reuse of <span class="citation">@id</span> avoids duplication and
+enables linking</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-07-data-entities"><p>Content from <a href="07-data-entities.html">Data entities</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/07-data-entities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1183,7 +1240,7 @@ cross-referencing</li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I describe the files in my RO-Crate?</li>
+<li>How do I describe the data files in my RO-Crate?</li>
 </ul>
 </div>
 </div>
@@ -1219,7 +1276,7 @@ file <code>data.csv</code>.</p>
 <div class="callout-content">
 <p>RO-Crates can also contain data entities that are folders and Web
 resources, as well as non-File data like online databases – see section
-on <a href="https://www.researchobject.org/ro-crate/1.1/data-entities.html" class="external-link">data
+on <a href="https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html" class="external-link">data
 entities</a>.</p>
 </div>
 </div>
@@ -1279,7 +1336,7 @@ the media file type so that consumers of the crate can open
 important for less common file extensions frequently encountered in
 outputs from research software and instruments.</p>
 <p>For more information on describing files and folders, including their
-recommended and required attributes, see section on <a href="https://www.researchobject.org/ro-crate/1.1/data-entitites.html" class="external-link">data
+recommended and required attributes, see section on <a href="https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html" class="external-link">data
 entities</a>.</p>
 <div id="override-the-licence" class="callout challenge">
 <div class="callout-square">
@@ -1332,14 +1389,13 @@ this particular data entity</li>
 <li>Data entities are files &amp; folders within the root, as well as
 external Web references</li>
 <li>Required properties for files are name and encodingFormat</li>
-<li>License can be overridden for particular data entities</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-08-contextual-entities"><p>Content from <a href="08-contextual-entities.html">Contextual entities</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/08-contextual-entities.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1353,8 +1409,9 @@ external Web references</li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How can I describe things in the world?</li>
-<li>How can I give details about licenses?</li>
+<li>How can I describe contextual information about how data was
+created?</li>
+<li>How can I represent an instrument used to generate a data file?</li>
 </ul>
 </div>
 </div>
@@ -1377,13 +1434,17 @@ external Web references</li>
 <hr class="half-width">
 <p>Entities that we have added under <code>hasPart</code> are considered
 <em>data entities</em>, while entities only referenced from those are
-considered <em>contextual entities</em> – they help explain the crate
-and its content.</p>
+considered <em>contextual entities</em></p>
+<p>A contextual entity might describe: - The software that processed the
+data - The instrument that captured it - The project that funded it -
+The people that contributed to creating it</p>
+<p>These entities don’t contain data themselves but give semantic
+context to the data you’re describing.</p>
 <p>You may notice the subtle difference between a <em>data entity</em>
 that is conceptually part of the RO-Crate and is file-like (containing
 bytes), while a <em>contextual entity</em> is a representation of a
 real-life organization that can’t be downloaded: following the URL, we
-would only get its <em>description</em>. The section <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html" class="external-link">contextual
+would only get its <em>description</em>. The section <a href="https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html" class="external-link">contextual
 entities</a> explores several of the entities that can be added to the
 RO-Crate to provide it with a <strong>context</strong>, for instance how
 to link to authors and their affiliations. Simplifying slightly, a data
@@ -1446,6 +1507,55 @@ both use spdx identifiers, remembering to update the corresponding
 <code>license</code> cross-references when changing the
 <code>@id</code>. However, not all licenses have a direct SPDX
 identifier.</p>
+</section><section><h2 class="section-heading" id="instrument-details">Instrument details<a class="anchor" aria-label="anchor" href="#instrument-details"></a>
+</h2>
+<hr class="half-width">
+<p>For example, the instrument used to capture weather data is not
+itself part of the dataset, but knowing what device created the
+measurements helps the data consumer interpret and validate the
+data.</p>
+<div id="add-an-instrument-as-a-contextual-entity" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="add-an-instrument-as-a-contextual-entity" class="callout-inner">
+<h3 class="callout-title">Add an instrument as a contextual entity</h3>
+<div class="callout-content">
+<p>In your data.csv entity, use instrument to reference the equipment
+used. Then define the instrument entity in the <span class="citation">@graph</span>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"File"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Rainfall Katoomba 2022-02"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Rainfall data for Katoomba, NSW Australia February 2022"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="dt">"encodingFormat"</span><span class="fu">:</span> <span class="st">"text/csv"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="dt">"instrument"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span> <span class="fu">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span>    </span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span><span class="fu">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"IndividualProduct"</span><span class="fu">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"WS-2000 Weather Station"</span><span class="fu">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Automated weather station used to record temperature and rainfall data."</span><span class="fu">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1454,16 +1564,19 @@ identifier.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Contextual entities are not considered part of the crate</li>
-<li>Cross-references should be expanded as contextual entities</li>
-<li>It is recommended to provide a human-readable name for licenses</li>
+<li>Contextual entities are not considered part of the crate’s file
+structure</li>
+<li>Instruments, software, and projects can be described as contextual
+entities</li>
+<li>Contextual entities can provide provenance about data capture and
+processing</li>
 </ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-09-authorship"><p>Content from <a href="09-authorship.html">Authorship in crates</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/09-authorship.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1511,7 +1624,7 @@ are the authors of the crate.</p>
 <h3 class="callout-title">Add an author and affiliation</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
-<li>Add yourself as an <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people" class="external-link"><code>author</code></a>
+<li>Add yourself as an <a href="https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#people" class="external-link"><code>author</code></a>
 of the crate using the type <code>Person</code>
 </li>
 <li>Include your preferred name.</li>
@@ -1528,7 +1641,7 @@ crate-local identifier like <code>#alice</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1558,7 +1671,7 @@ crate-local identifier like <code>#alice</code>.</li>
 <h3 class="callout-title">Who can be authors of an RO-Crate?</h3>
 <div class="callout-content">
 <p>When we say someone is an author of a crate, it means they have
-contributed something substansively to its content (typically the data).
+contributed something substantively to its content (typically the data).
 Agreement on what is considered authorship on a dataset can be tricky;
 you may decide some people would be better represented as
 <code>contributor</code>. One advantage of RO-Crate is that authorship
@@ -1593,7 +1706,7 @@ page of your organization as its <code>@id</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1641,7 +1754,7 @@ institution’s web pages.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1676,7 +1789,7 @@ same affiliation</li>
 </div>
 </section></section><section id="aio-10-validating"><p>Content from <a href="10-validating.html">Validating JSON-LD</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/10-validating.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1743,7 +1856,7 @@ should see output under <em>Expanded</em> looking something like:</p>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="dt">"http://purl.org/dc/terms/conformsTo"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1"</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2"</span></span>
 <span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>      <span class="fu">}</span></span>
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="ot">]</span></span>
 <span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
@@ -1777,7 +1890,7 @@ different nodes.</p>
 possible to process it using Linked Data technologies such as triple
 stores and SPARQL queries. It is beyond the scope of this tutorial to
 explain this aspect fully, but interested readers should consider how to
-<a href="https://www.researchobject.org/ro-crate/1.1/appendix/relative-uris.html" class="external-link">handle
+<a href="https://www.researchobject.org/ro-crate/specification/1.2/appendix/relative-uris.html" class="external-link">handle
 relative URI references</a>. As an example, try the <em>Table</em>
 button and notice that the entities with relative identifiers are not
 included. This is because when converting to RDF you need absolute URIs
@@ -1802,7 +1915,7 @@ handling of relative URI references</li>
 </div>
 </section></section><section id="aio-11-triples"><p>Content from <a href="11-triples.html">Converting JSON-LD to triples</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/11-triples.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1842,7 +1955,7 @@ RO-Crate</li>
 it might be described at a web resource, a ‘base’ URI is needed that
 will point to that resource, i.e. resolve as a page or file on the
 web.</p>
-<p>Try to specify a hypothetical base URI by modifing the graph’s
+<p>Try to specify a hypothetical base URI by modifying the graph’s
 <code>@context</code> within the <a href="https://json-ld.org/playground/" class="external-link">JSON-LD Playground</a> (do not
 modify the <code>ro-crate-metadata.json</code> on disk), and revisit the
 <em>Table</em> rendering.</p>
@@ -1851,7 +1964,7 @@ modify the <code>ro-crate-metadata.json</code> on disk), and revisit the
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="st">"https://w3id.org/ro/crate/1.1/context"</span><span class="ot">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="ot">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="fu">{</span> <span class="dt">"@base"</span><span class="fu">:</span> <span class="st">"arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/"</span> <span class="fu">}</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="dt">"…"</span><span class="fu">:</span> <span class="st">"…"</span></span>
@@ -1886,7 +1999,7 @@ Web</li>
 </div>
 </section></section><section id="aio-12-html-preview"><p>Content from <a href="12-html-preview.html">Visualizing a crate as HTML preview</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/12-html-preview.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1912,7 +2025,6 @@ Web</li>
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>Explore a HTML preview of an RO-Crate</li>
-<li>(Advanced) Try the ro-crate-html tool</li>
 </ul>
 </div>
 </div>
@@ -1955,9 +2067,8 @@ example</a> and find:</p>
 <ol style="list-style-type: decimal">
 <li>CC BY-NC-SA 4.0 International</li>
 <li>Brown University</li>
-<li>The context, and for root dataset: existance, valid identifier,
-name, description, license and date published.<br>
-</li>
+<li>The context, and for root dataset: existence, valid identifier,
+name, description, license and date published.</li>
 <li>The other entities were not checked, e.g. the
 <code>affiliation</code> of the author.</li>
 </ol>
@@ -1968,28 +2079,24 @@ name, description, license and date published.<br>
 </section><section><h2 class="section-heading" id="advanced-generating-html-preview">Advanced: Generating HTML preview<a class="anchor" aria-label="anchor" href="#advanced-generating-html-preview"></a>
 </h2>
 <hr class="half-width">
-<p>If you have <a href="https://nodejs.org/" class="external-link">Node JS</a> installed, you
-can install and try the <a href="https://www.npmjs.com/package/ro-crate-html" class="external-link">ro-crate-html</a>
-tool on your <code>crate1</code> folder:</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">npm</span> i <span class="at">-g</span> ro-crate-html</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">rochtml</span> crate1/ro-crate-metadata.json</span></code></pre>
-</div>
-<p>Or if you have <a href="https://www.docker.com/" class="external-link">Docker</a>,
-something like:</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> pull simleo/rochtml</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/crate <span class="at">-it</span> simleo/rochtml <span class="at">-c</span> ro-crate-preview_files /crate/ro-crate-metadata.json</span></code></pre>
-</div>
-<p>The above will generate a <code>ro-crate-preview.html</code> file
-within your RO-Crate Root. Experiment with modifying the Metadata file
-and re-generating the HTML preview to see how your rendering differs
-from the <a href="files/rainfall-1.2.1/ro-crate-preview.html">running
-example</a>.</p>
+<p>The <a href="https://ro-crate.ldaca.edu.au/" class="external-link">LDACA RO-Crate
+Playground</a> is a web-based tool that lets you upload an RO-Crate and
+view a structured HTML summary of its metadata.</p>
+<p>Navigate to the <a href="https://ro-crate.ldaca.edu.au/" class="external-link">LDACA
+RO-Crate Playground</a> Click “Start Packaging”, then click “Examples.”
+From the examples list, click “Try it” for “sample-crate.” You will see
+a tab called “HTML Preview” that contains a preview of the RO-Crate
+metadata.</p>
+<p>If you want to generate a preview of your own RO-Crate, you can click
+“Create New” to create a new RO-Crate, where you can upload your data
+files and add metadata. Once you have added your data files and
+metadata, click the “HTML Preview” button at the top of the page.</p>
+<p>The tool will generate a preview of your RO-Crate, which you can then
+download as an HTML file. This preview will show the entities in your
+RO-Crate, including the root dataset, data files, licenses, authors, and
+any other contextual entities you have added. You can save the resulting
+HTML page using your browser’s “Save As” feature, or extract the
+generated preview for distribution.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2007,7 +2114,7 @@ example</a>.</p>
 </div>
 </section></section><section id="aio-13-complete"><p>Content from <a href="13-complete.html">Completed RO-Crate</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/13-complete.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2067,12 +2174,12 @@ should look something like:</p>
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a> <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1/context"</span><span class="fu">,</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a> <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="fu">,</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a> <span class="dt">"@graph"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>   <span class="fu">{</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"ro-crate-metadata.json"</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>     <span class="dt">"conformsTo"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.1"</span><span class="fu">},</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>     <span class="dt">"conformsTo"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2"</span><span class="fu">},</span></span>
 <span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>     <span class="dt">"about"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">}</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>   <span class="fu">{</span></span>
@@ -2083,7 +2190,7 @@ should look something like:</p>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>     <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Example dataset for RO-Crate specification"</span><span class="fu">,</span></span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Official rainfall readings for Katoomba, NSW 2022, Australia"</span><span class="fu">,</span></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>     <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2023-05-22T12:03:00+0100"</span><span class="fu">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>     <span class="dt">"datePublished"</span><span class="fu">:</span> <span class="st">"2023-05-22"</span><span class="fu">,</span></span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>     <span class="dt">"license"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://spdx.org/licenses/CC0-1.0"</span><span class="fu">},</span></span>
 <span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>     <span class="dt">"author"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://orcid.org/0000-0002-1825-0097"</span> <span class="fu">},</span></span>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>     <span class="dt">"publisher"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://ror.org/05gq02987"</span><span class="fu">}</span></span>
@@ -2094,37 +2201,43 @@ should look something like:</p>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Rainfall Katoomba 2022-02"</span><span class="fu">,</span></span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Rainfall data for Katoomba, NSW Australia February 2022"</span><span class="fu">,</span></span>
 <span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>     <span class="dt">"encodingFormat"</span><span class="fu">:</span> <span class="st">"text/csv"</span><span class="fu">,</span></span>
-<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>     <span class="dt">"license"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/licenses/by-nc-sa/4.0/"</span><span class="fu">}</span></span>
-<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>   <span class="fu">{</span></span>
-<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/licenses/by-nc-sa/4.0/"</span><span class="fu">,</span></span>
-<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
-<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"CC BY-NC-SA 4.0 International"</span><span class="fu">,</span></span>
-<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"</span></span>
-<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span>    </span>
-<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>   <span class="fu">{</span></span>
-<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://spdx.org/licenses/CC0-1.0"</span><span class="fu">,</span></span>
-<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
-<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"CC0-1.0"</span><span class="fu">,</span></span>
-<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Creative Commons Zero v1.0 Universal"</span><span class="fu">,</span></span>
-<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>     <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/publicdomain/zero/1.0/"</span></span>
-<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span>    </span>
-<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a>   <span class="fu">{</span></span>
-<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://orcid.org/0000-0002-1825-0097"</span><span class="fu">,</span></span>
-<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Person"</span><span class="fu">,</span> </span>
-<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Josiah Carberry"</span><span class="fu">,</span></span>
-<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a>     <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>       <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://ror.org/05gq02987"</span></span>
-<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a>     <span class="fu">}</span></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>     <span class="dt">"license"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/licenses/by-nc-sa/4.0/"</span><span class="fu">},</span></span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>     <span class="dt">"instrument"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span> <span class="fu">}</span></span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>   <span class="fu">{</span></span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span><span class="fu">,</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Individual Product"</span><span class="fu">,</span></span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"WS-2000 Weather Station"</span><span class="fu">,</span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Automated weather station used to record temperature and rainfall data."</span><span class="fu">,</span></span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>     <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://example.org/instrument/ws-2000"</span></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>   <span class="fu">{</span></span>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/licenses/by-nc-sa/4.0/"</span><span class="fu">,</span></span>
+<span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
+<span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"CC BY-NC-SA 4.0 International"</span><span class="fu">,</span></span>
+<span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"</span></span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a>   <span class="fu">{</span></span>
+<span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://spdx.org/licenses/CC0-1.0"</span><span class="fu">,</span></span>
+<span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"CreativeWork"</span><span class="fu">,</span></span>
+<span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"CC0-1.0"</span><span class="fu">,</span></span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a>     <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"Creative Commons Zero v1.0 Universal"</span><span class="fu">,</span></span>
+<span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a>     <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://creativecommons.org/publicdomain/zero/1.0/"</span></span>
 <span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a>   <span class="fu">{</span></span>
-<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://ror.org/05gq02987"</span><span class="fu">,</span></span>
-<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Organization"</span><span class="fu">,</span></span>
-<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Brown University"</span><span class="fu">,</span></span>
-<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>     <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://www.brown.edu/"</span></span>
-<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>   <span class="fu">}</span></span>
-<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a> <span class="ot">]</span></span>
-<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+<span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://orcid.org/0000-0002-1825-0097"</span><span class="fu">,</span></span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Person"</span><span class="fu">,</span> </span>
+<span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Josiah Carberry"</span><span class="fu">,</span></span>
+<span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a>     <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://ror.org/05gq02987"</span> <span class="fu">}</span></span>
+<span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a>   <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a>   <span class="fu">{</span></span>
+<span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a>     <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"https://ror.org/05gq02987"</span><span class="fu">,</span></span>
+<span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a>     <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Organization"</span><span class="fu">,</span></span>
+<span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a>     <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Brown University"</span><span class="fu">,</span></span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a>     <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"http://www.brown.edu/"</span></span>
+<span id="cb1-63"><a href="#cb1-63" tabindex="-1"></a>   <span class="fu">}</span></span>
+<span id="cb1-64"><a href="#cb1-64" tabindex="-1"></a> <span class="ot">]</span></span>
+<span id="cb1-65"><a href="#cb1-65" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -2145,9 +2258,255 @@ array is not important</li>
 </div>
 </div>
 </div>
+</section></section><section id="aio-15-common-pitfalls"><p>Content from <a href="15-common-pitfalls.html">Avoiding Common pitfalls</a></p>
+<hr>
+<p>Last updated on 2025-07-25 |
+
+        <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/15-common-pitfalls.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What are common mistakes to avoid when authoring RO-Crate
+packages?</li>
+<li>How can I troubleshoot errors in the metadata file?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Recognize common errors in RO-Crate metadata</li>
+<li>Review a checklist of requirements for RO-Crate structure and
+format</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Creating RO-Crate packages by hand is a great way to understand their
+structure, but it’s easy to run into small issues that can break the
+crate or make it difficult to interpret. This section outlines the most
+frequent problems and how to avoid them.</p>
+<hr></section><section><h2 class="section-heading" id="common-mistakes">Common Mistakes<a class="anchor" aria-label="anchor" href="#common-mistakes"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="invalid-or-malformed-json">1. Invalid or malformed JSON<a class="anchor" aria-label="anchor" href="#invalid-or-malformed-json"></a>
+</h3>
+<ul>
+<li>
+<strong>Problem</strong>: Forgetting commas, quotes, or
+brackets.</li>
+<li>
+<strong>Fix</strong>: Use an editor with JSON syntax highlighting
+(e.g., VS Code) and test your crate in the <a href="https://json-ld.org/playground/" class="external-link">JSON-LD Playground</a>.</li>
+</ul>
+<blockquote>
+<p>Tip: Run your <code>ro-crate-metadata.json</code> through a JSON
+validator before uploading it anywhere.</p>
+</blockquote>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="missing-context-or-graph">2. Missing <code>@context</code> or <code>@graph</code>
+<a class="anchor" aria-label="anchor" href="#missing-context-or-graph"></a>
+</h3>
+<ul>
+<li>
+<strong>Problem</strong>: Forgetting to include the required
+top-level keys in the RO-Crate metadata file.</li>
+<li>
+<strong>Fix</strong>: Make sure every
+<code>ro-crate-metadata.json</code> starts like this:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="dt">"@graph"</span><span class="fu">:</span> <span class="ot">[</span> <span class="er">/*</span> <span class="er">your</span> <span class="er">entities</span> <span class="er">here</span> <span class="er">*/</span> <span class="ot">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="using-nested-json-instead-of-flat-structure">3. Using nested JSON instead of flat structure<a class="anchor" aria-label="anchor" href="#using-nested-json-instead-of-flat-structure"></a>
+</h3>
+<ul>
+<li>
+<strong>Problem</strong>: Embedding full descriptions of related
+entities instead of referencing them with <code>@id</code>.</li>
+<li>
+<strong>Fix</strong>: Use cross-referencing. Define each entity once
+in the <code>@graph</code> array and refer to it using its
+<code>@id</code>.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="repeating-or-mismatched-id-values">4. Repeating or mismatched <span class="citation">@id</span>
+values<a class="anchor" aria-label="anchor" href="#repeating-or-mismatched-id-values"></a>
+</h3>
+<ul>
+<li>
+<strong>Problem</strong>: Accidentally defining two entities with
+the same <span class="citation">@id</span>, or referencing an entity
+with an <span class="citation">@id</span> that doesn’t exist in the
+<code>@graph</code>.</li>
+<li>
+<strong>Fix</strong>: Ensure every <span class="citation">@id</span>
+is unique and cross-references point to an entity defined in the
+metadata.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="forgetting-required-metadata-on-key-entities">5. Forgetting required metadata on key entities<a class="anchor" aria-label="anchor" href="#forgetting-required-metadata-on-key-entities"></a>
+</h3>
+<ul>
+<li>
+<strong>Problem</strong>: The root dataset doesn’t have
+<code>name</code> or <code>license</code>, or files are missing
+<code>@type</code>.</li>
+<li>
+<strong>Fix</strong>: Always include the required fields for the
+root (./) and for files:</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Dataset"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"My Crate"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="st">"An example research dataset."</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="dt">"license"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"http://spdx.org/licenses/CC0-1.0"</span> <span class="fu">}</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+<div id="spot-the-errors" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="spot-the-errors" class="callout-inner">
+<h3 class="callout-title">Spot the errors</h3>
+<div class="callout-content">
+<p>Here’s an incorrect metadata example. Identify and fix the
+issues.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="dt">"@context"</span><span class="fu">:</span> <span class="st">"https://w3id.org/ro/crate/1.2/context"</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="dt">"@graph"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>      <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"./"</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>      <span class="dt">"@type"</span><span class="fu">:</span> <span class="st">"Folder"</span><span class="fu">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Rainfall data"</span><span class="fu">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>      <span class="dt">"hasPart"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>        <span class="dt">"@id"</span><span class="fu">:</span> <span class="st">"data.csv"</span><span class="fu">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Rainfall Katoomba"</span><span class="fu">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>        <span class="dt">"encodingFormat"</span><span class="fu">:</span> <span class="st">"comma separated values"</span><span class="fu">,</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>The <code>@type</code> for the root should be “Dataset”, not
+“Folder”.</li>
+<li>The hasPart value should reference an <span class="citation">@id</span>, not contain the full entity.</li>
+<li>The data.csv entity should be defined separately in the <span class="citation">@graph</span>.</li>
+<li>The encodingFormat should be a valid IANA media type (e.g.,
+“text/csv”).</li>
+<li>Missing required properties (description, datePublished, license) on
+the root dataset.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="ro-crate-validation-tools">RO-Crate validation tools<a class="anchor" aria-label="anchor" href="#ro-crate-validation-tools"></a>
+</h2>
+<hr class="half-width">
+<p>The <a href="https://ro-crate.ldaca.edu.au" class="external-link">RO-Crate Playground</a>
+and the <a href="https://rocrate-validator.readthedocs.io/en/latest/" class="external-link">rocrate-validator</a>
+Python package can both be used to check for errors in your RO-Crate
+metadata. Each of them performs a different set of checks.</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Copy and paste your completed JSON-LD into the <a href="https://ro-crate.ldaca.edu.au" class="external-link">RO-Crate Playground</a>, then click
+“Validate”. Are there any issues?</p>
+</div>
+</div>
+</div>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge</h3>
+<div class="callout-content">
+<p>Install the <a href="https://rocrate-validator.readthedocs.io/en/latest/" class="external-link">rocrate-validator</a>
+and run it on the command line against your completed RO-Crate:</p>
+<pre><code>rocrate-validator validate &lt;path_to_rocrate&gt;</code></pre>
+<p>Are there any issues? Are the results different to the RO-Crate
+Playground?</p>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>Include a metadata descriptor with <span class="citation">@id</span>: “ro-crate-metadata.json” and <span class="citation">@type</span>: “CreativeWork”</li>
+<li>Ensure each referenced <span class="citation">@id</span> is also
+defined as an entity in <span class="citation">@graph</span>
+</li>
+<li>Use unique identifiers for each entity</li>
+<li>Ensure every entity has an <span class="citation">@id</span> and a
+meaningful <span class="citation">@type</span>
+</li>
+<li>Use tools like JSON validators and JSON-LD playgrounds to check your
+metadata</li>
+</ul>
+</div>
+</div>
+</div>
 </section></section><section id="aio-14-next-steps"><p>Content from <a href="14-next-steps.html">Next steps</a></p>
 <hr>
-<p>Last updated on 2025-04-17 |
+<p>Last updated on 2025-07-25 |
 
         <a href="https://github.com/ResearchObject/packaging_data_with_ro-crate/edit/main/episodes/14-next-steps.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2184,31 +2543,38 @@ array is not important</li>
 <p>You have completed making a basic RO-Crate. You may try any of the
 following:</p>
 <ul>
-<li>Add and describe additional data entities, adding additional
-properties for <a href="https://www.researchobject.org/ro-crate/1.1/data-entities.html" class="external-link">data
-entities</a>
-</li>
-<li>Follow the RO-Crate specification for additional <a href="https://www.researchobject.org/ro-crate/1.1/contextual-entities.html" class="external-link">contextual
-entities</a> you can add to the crate</li>
-<li>Try briefly describing <a href="https://www.researchobject.org/ro-crate/1.1/provenance.html" class="external-link">provenance</a>
-or <a href="https://www.researchobject.org/ro-crate/1.1/workflows.html" class="external-link">software</a>
-for any additional data entities you have added.</li>
-</ul>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>RO-Crate specification has further details, e.g. additional
-contextual entities</li>
-</ul>
-</div>
-</div>
-</div>
-</section></section>
+<li><p><strong>Add Additional Properties</strong>: Explore the RO-Crate
+specification for a wide range of properties to describe <a href="https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html" class="external-link">data
+entities</a> more comprehensively.</p></li>
+<li><p><strong>More Contextual Entities</strong>: Discover additional <a href="https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html" class="external-link">contextual
+entities</a> you can add to your crate, such as projects, grants, or
+related publications, to enrich the crate’s context.</p></li>
+<li><p><strong>Provenance and Software</strong>: Learn how to describe
+the <a href="https://www.researchobject.org/ro-crate/specification/1.2/provenance.html" class="external-link">provenance</a>
+(origin and history) of your data and include information about the <a href="https://www.researchobject.org/ro-crate/specification/1.2/workflows.html" class="external-link">software</a>
+and workflows used in your research.</p></li>
+<li><p><strong>RO-Crate Profiles</strong>: Delve into <a href="https://www.researchobject.org/ro-crate/profiles.html" class="external-link">RO-Crate
+Profiles</a>, which are community-defined content checklists that extend
+the base specification to meet the specific needs of a domain or data
+type. Profiles impose conventions and may add domain specific
+terms/vocabularies, effectively making RO-Crates typed and
+machine-actionable for specific use cases. Examples include the <a href="https://about.workflowhub.eu/Workflow-RO-Crate/" class="external-link">Workflow RO-Crate
+profile</a> used by WorkflowHub and the <a href="https://trefx.uk/5s-crate/" class="external-link">Five Safes RO-Crate profile</a> for
+trusted workflow execution in Trusted Research Environments
+(TREs).</p></li>
+<li><p><strong>FAIR Signposting</strong>: Understand how <a href="https://catalogue.fair-impact.eu/resources/fair-signposting" class="external-link">FAIR
+Signposting</a> can be used in combination with RO-Crate to guide
+machine agents through metadata space.</p></li>
+<li><p><strong>Bioschemas</strong>: Explore <a href="https://bioschemas.org/" class="external-link">Bioschemas</a>, a life sciences community
+initiative built on schema.org that defines domain-specific profiles
+(e.g., Dataset, ComputationalWorkflow, ChemicalSubstance).</p></li>
+<li><p><strong>Community and Tools</strong>: Join the open <a href="https://www.researchobject.org/ro-crate/community" class="external-link">RO-Crate
+community</a> on GitHub, participate in drop-in sessions, and explore
+the tools and libraries for various programming languages.</p></li>
+<li><p><strong>Real-world Use Cases</strong>: Explore how RO-Crates are
+being <a href="https://www.researchobject.org/ro-crate/use_cases" class="external-link">used
+in practice</a> across various domains.</p></li>
+</ul></section></section>
 </div>
     </main>
 </div>
@@ -2255,9 +2621,9 @@ contextual entities</li>
   "creativeWorkStatus": "active",
   "url": "https://www.researchobject.org/packaging_data_with_ro-crate/aio.html",
   "identifier": "https://www.researchobject.org/packaging_data_with_ro-crate/aio.html",
-  "dateCreated": "2025-07-22",
-  "dateModified": "2025-07-22",
-  "datePublished": "2025-07-22"
+  "dateCreated": "2025-07-25",
+  "dateModified": "2025-07-25",
+  "datePublished": "2025-07-25"
 }
 
   </script><script>
