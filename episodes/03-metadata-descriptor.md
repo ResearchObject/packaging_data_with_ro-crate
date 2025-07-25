@@ -1,77 +1,56 @@
 ---
-title: Declaring the root folder
+title: Making a metadata descriptor
 teaching: 2
-exercises: 1
+exercises: 2
+
 ---
 
-:::::::::::::::::::::::::::::::::::::::: questions
-- What is the root folder?
+::::::::::::::::::::::::::::::::::::::: questions
+- Which RO-Crate version is used?
+- How can the crate self-identify as an RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: objectives
-- Create a top-level entity that can list the parts of the crate
+::::::::::::::::::::::::::::::::::::::: objectives
+- Add the first entity to the JSON-LD @graph
+- Indicate the version of RO-Crate
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## RO-Crate Root
+## RO-Crate Metadata descriptor 
 
-First we'll add an entity to the `@graph` array,
-to describe the [RO-Crate Root](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity):
+Next, we'll add another _entity_ to the `@graph` array has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
+
 
 ```json
 {
-    "@id": "./",
-    "@type": "Dataset",
-    "hasPart": [ 
-
-    ]
+    "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
+    "about": {"@id": "./"}
 }
 ```
 
-By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located. The root data entity always has the `@type` value of `Dataset`, which is a [schema.org](https://schema.org/Dataset) type.
-This will be referenced from `ro-crate-metadata.json`, semantically marking the `crate1` folder as being the RO-Crate Root.
+This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#ro-crate-metadata-file-descriptor),
+helps this file self-identify as an RO-Crate Metadata Document,
+which is conforming to (`conformsTo`) the RO-Crate specification version 1.2.
+Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise,
+but they have two different functions.
+The context brings the defined terms into the metadata document,
+while the conformance declares which RO-Crate conventions of using those terms are being followed.
 
-
-:::::::::::::::::::::::::::::::::::::::: discussion
-## RO-Crates can be published on the Web
- 
-This example is a folder-based RO-Crate stored on disk,
-and therefore absolute paths are avoided,
-e.g. in case the root folder is moved or archived as a ZIP file. 
- 
-If the crate is being served from a Web service,
-such as a data repository or database where files are not organized in folders,
-then the `@id` might be an absolute URI instead of `./`
--- this is one reason why we point to the root entity from the metadata descriptor,
-as you will see in the next section.
+::::::::::::::::::::::::::::::::::::::: callout
+## RO-Crate versions
+This tutorial is written for RO-Crate 1.2,
+the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html)
+-- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions,
+but check the [change log](https://www.researchobject.org/ro-crate/specification/1.2/appendix/changelog.html) for any important changes.
+The next development version of the specification, indicated with a `-DRAFT` status,
+may still be subject to changes and should only be used with caution.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::: challenge
-## Add an additional type
-
-1. Navigate the schema.org type list to find a subtype of `CreativeWork` that is suitable for a learning resource.
-2. Modify the root entity's `@type` to be an array.
-3. Add the type name for learning resource at the end of the array.
-
-:::::::::::::::  solution
-```json
-{
-   "@id": "./",
-   "@type": ["Dataset", "LearningResource"],
-   "hasPart": [ 
-     {"@id": "data.csv"} 
-   ],
-   "…": "…"
-}
-```
-:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::: keypoints
+- The RO-Crate Metadata Descriptor describes the JSON-LD file itself
+- RO-Crate specifications are versioned
+- The version of RO-Crate is indicated using the conformsTo property
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The root has several metadata properties that describe the RO-Crate as a whole,
-considering it as a Research Object of collected resources.
-In the next section we will cover the required and recommended properties of the root `./`.
 
-:::::::::::::::::::::::::::::::::::::::: keypoints
-- The RO-Crate Root is the top-level object of the RO-Crate
-- The root identifier is commonly just ./ for the current folder, but can be a URL
-- The root is always typed as a Dataset, but can have additional types
-::::::::::::::::::::::::::::::::::::::::::::::::::

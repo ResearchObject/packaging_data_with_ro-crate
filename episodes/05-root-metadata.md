@@ -1,56 +1,73 @@
 ---
-title: Making a metadata descriptor
-teaching: 2
-exercises: 2
-
+title: Describing the root entity
+teaching: 4
+exercises: 4
 ---
-
-::::::::::::::::::::::::::::::::::::::: questions
-- Which RO-Crate version is used?
-- How can the crate self-identify as an RO-Crate?
+:::::::::::::::::::::::::::::::::::::::: questions
+- How can I describe the crate?
+- How do I specify the license of the RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::: objectives
-- Add the first entity to the JSON-LD @graph
-- Indicate the version of RO-Crate
+:::::::::::::::::::::::::::::::::::::::: objectives
+- Learn about required metadata for the RO-Crate Root
+- Understand license identifiers using SPDX
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## RO-Crate Metadata descriptor 
+## Describing the root entity
 
-Next, we'll add another _entity_ to the `@graph` array has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
+When describing the [root entity](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity),
+the properties generally apply to the whole of the crate.
+For instance it is a good idea to give a description of why these resources are gathered in a crate,
+as well as giving the crate a name and license for FAIR reuse and citation.
 
+:::::::::::::::::::::::::::::::::::::::: challenge
+## Add metadata to root entity
 
+Try to add the `name`, `description` and `datePublished` properties,
+and for `license` as a cross-reference,
+use [SPDX](https://spdx.org/licenses/) license list to find the identifier for Creative Commons Zero
+or another license of your choice:
+
+:::::::::::::::  solution
 ```json
 {
-    "@id": "ro-crate-metadata.json",
-    "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
-    "about": {"@id": "./"}
+  "@id": "./",
+  "@type": "Dataset",
+  "hasPart": [ ],
+  "name": "Example crate",
+  "description": "I created this example by following the tutorial",
+  "datePublished": "2023-05-22",
+  "license": { "@id": "http://spdx.org/licenses/CC0-1.0"}  
 }
 ```
+:::::::::::::::::::::::::
 
-This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#ro-crate-metadata-file-descriptor),
-helps this file self-identify as an RO-Crate Metadata Document,
-which is conforming to (`conformsTo`) the RO-Crate specification version 1.2.
-Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise,
-but they have two different functions.
-The context brings the defined terms into the metadata document,
-while the conformance declares which RO-Crate conventions of using those terms are being followed.
-
-::::::::::::::::::::::::::::::::::::::: callout
-## RO-Crate versions
-This tutorial is written for RO-Crate 1.2,
-the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html)
--- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions,
-but check the [change log](https://www.researchobject.org/ro-crate/specification/1.2/appendix/changelog.html) for any important changes.
-The next development version of the specification, indicated with a `-DRAFT` status,
-may still be subject to changes and should only be used with caution.
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::: keypoints
-- The RO-Crate Metadata Descriptor describes the JSON-LD file itself
-- RO-Crate specifications are versioned
-- The version of RO-Crate is indicated using the conformsTo property
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+:::::::::::::::::::::::::::::::::::::::: callout
+## License identifiers
+
+In the above solution,
+the identifier for CC0-1.0 <http://spdx.org/licenses/CC0-1.0> is slightly
+different from their listed web page URI <https://spdx.org/licenses/CC0-1.0.html>
+-- the former is chosen to align with [SPDX JSON-LD identifiers](https://github.com/spdx/license-list-data/tree/main/jsonld),
+which unfortunately are not shown directly on their website as _permalinks_. 
+It is not a requirement in RO-Crate to use permalinks for `@id` of entities like licenses, 
+it is nevertheless best practice to propagate permalinks where known.
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: discussion
+## Choosing a license
+
+Choosing a license appropriate for your dataset can be non-trivial,
+particularly if third-party data/software and multiple organizations are involved.
+See [FAIR Cookbook on licensing](https://faircookbook.elixir-europe.org/content/recipes/reusability/ATI-licensing.html).
+It is worth noting that an RO-Crate permits data entities to have a `license` different from the overall Crate license.
+It is still recommended to choose an overall Crate license that can legally apply across all the content in the RO-Crate Root.
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+- Name, description, date published and license are required for the RO-Crate Root
+- RO-Crate allows multiple licenses for different parts
+::::::::::::::::::::::::::::::::::::::::::::::::::
