@@ -9,7 +9,7 @@ packaging research data.
 
 :::::::::::::::::::::::::::::::::::::::::: prereq
 ## Prerequisites
-- Files and folder organization and using an editor/IDE
+- Files and folder organization and using a text editor or IDE such as [Visual Studio Code](https://code.visualstudio.com/)
 - Familiarity with [JSON](https://www.json.org/) file format
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

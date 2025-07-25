@@ -68,9 +68,9 @@ contact: "ro-crate@researchobject.org"
 episodes:
   - 01-introduction.md
   - 02-folder-as-crate-root.md
-  - 03-metadata-descriptor.md
   - 04-root.md
   - 05-root-metadata.md
+  - 03-metadata-descriptor.md
   - 06-cross-references.md
   - 07-data-entities.md
   - 08-contextual-entities.md
@@ -79,6 +79,7 @@ episodes:
   - 11-triples.md
   - 12-html-preview.md
   - 13-complete.md
+  - 15-common-pitfalls.md
   - 14-next-steps.md
 
 # Information for Learners

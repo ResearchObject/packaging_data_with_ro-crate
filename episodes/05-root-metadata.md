@@ -15,7 +15,7 @@ exercises: 4
 
 ## Describing the root entity
 
-When describing the [root entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity),
+When describing the [root entity](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity),
 the properties generally apply to the whole of the crate.
 For instance it is a good idea to give a description of why these resources are gathered in a crate,
 as well as giving the crate a name and license for FAIR reuse and citation.
@@ -36,7 +36,7 @@ or another license of your choice:
   "hasPart": [ ],
   "name": "Example crate",
   "description": "I created this example by following the tutorial",
-  "datePublished": "2023-05-22T12:03:00+0100",
+  "datePublished": "2023-05-22",
   "license": { "@id": "http://spdx.org/licenses/CC0-1.0"}  
 }
 ```
@@ -68,9 +68,6 @@ It is still recommended to choose an overall Crate license that can legally appl
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
-- Name, description, date published and license are required for the RO-Crate Root"
+- Name, description, date published and license are required for the RO-Crate Root
 - RO-Crate allows multiple licenses for different parts
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
