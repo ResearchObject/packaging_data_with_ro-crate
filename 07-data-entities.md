@@ -5,7 +5,7 @@ exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::::: questions
-- How do I describe the files in my RO-Crate?
+- How do I describe the data files in my RO-Crate?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: objectives
@@ -26,7 +26,7 @@ a reference to the entity describing the file `data.csv`.
 
 RO-Crates can also contain data entities that are folders and Web resources,
 as well as non-File data like online databases
--- see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entities.html).
+-- see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html).
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 We should now be able to follow the `@id` reference for the corresponding _data entity_ JSON block for our CSV file,
@@ -61,7 +61,7 @@ and can be particularly important for less common file extensions frequently enc
 
 For more information on describing files and folders,
 including their recommended and required attributes,
-see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-entitites.html).
+see section on [data entities](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html).
 
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Override the licence
@@ -85,10 +85,8 @@ see section on [data entities](https://www.researchobject.org/ro-crate/1.1/data-
 :::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - Data entities are files & folders within the root, as well as external Web references
 - Required properties for files are name and encodingFormat
-- License can be overridden for particular data entities
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

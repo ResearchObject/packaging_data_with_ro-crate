@@ -25,12 +25,12 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
 
 ```json
 {
- "@context": "https://w3id.org/ro/crate/1.1/context",
+ "@context": "https://w3id.org/ro/crate/1.2/context",
  "@graph": [
    {
      "@id": "ro-crate-metadata.json",
      "@type": "CreativeWork",
-     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
      "about": {"@id": "./"}
    },
    {
@@ -41,7 +41,7 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
      ],
      "name": "Example dataset for RO-Crate specification",
      "description": "Official rainfall readings for Katoomba, NSW 2022, Australia",
-     "datePublished": "2023-05-22T12:03:00+0100",
+     "datePublished": "2023-05-22",
      "license": {"@id": "http://spdx.org/licenses/CC0-1.0"},
      "author": { "@id": "https://orcid.org/0000-0002-1825-0097" },
      "publisher": {"@id": "https://ror.org/05gq02987"}
@@ -52,28 +52,34 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
      "name": "Rainfall Katoomba 2022-02",
      "description": "Rainfall data for Katoomba, NSW Australia February 2022",
      "encodingFormat": "text/csv",
-     "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/"}
+     "license": {"@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/"},
+     "instrument": { "@id": "https://example.org/instrument/ws-2000" }
+   },
+   {
+     "@id": "https://example.org/instrument/ws-2000",
+     "@type": "Individual Product",
+     "name": "WS-2000 Weather Station",
+     "description": "Automated weather station used to record temperature and rainfall data.",
+     "url": "https://example.org/instrument/ws-2000"
    },
    {
      "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
      "@type": "CreativeWork",
      "name": "CC BY-NC-SA 4.0 International",
      "description": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
-   },    
+   },
    {
      "@id": "http://spdx.org/licenses/CC0-1.0",
      "@type": "CreativeWork",
      "name": "CC0-1.0",
      "description": "Creative Commons Zero v1.0 Universal",
      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
-   },    
+   },
    {
      "@id": "https://orcid.org/0000-0002-1825-0097",
      "@type": "Person", 
      "name": "Josiah Carberry",
-     "affiliation": {
-       "@id": "https://ror.org/05gq02987"
-     }
+     "affiliation": { "@id": "https://ror.org/05gq02987" }
    },
    {
      "@id": "https://ror.org/05gq02987",
@@ -91,4 +97,3 @@ The final RO-Crate Metadata Document constructed in this tutorial should look so
 - A single RO-Crate lists all the entities
 - The order of entities in the @graph array is not important
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-

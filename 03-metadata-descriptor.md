@@ -17,32 +17,48 @@ exercises: 2
 
 ## RO-Crate Metadata descriptor 
 
-The first JSON-LD _entity_ to add in the `@graph` array has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
+Next, we'll add another _entity_ to the `@graph` array has the `@id` value of `ro-crate-metadata.json` to describe the JSON file itself:
 
 
 ```json
 {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "./"}
 }
 ```
 
-This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#ro-crate-metadata-file-descriptor),
+This required entity, known as the [RO-Crate Metadata Descriptor](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#ro-crate-metadata-file-descriptor),
 helps this file self-identify as an RO-Crate Metadata Document,
-which is conforming to (`conformsTo`) the RO-Crate specification version 1.1.
+which is conforming to (`conformsTo`) the RO-Crate specification version 1.2.
 Notice that the `conformsTo` URL corresponds to the `@context` URL version-wise,
 but they have two different functions.
 The context brings the defined terms into the metadata document,
 while the conformance declares which RO-Crate conventions of using those terms are being followed.
 
+:::::::::::::::::::::::::::::::::::::::: callout
+
+## Adding entities to the JSON array
+
+Because we're adding incrementally to the `@graph` array.	
+It is important to remember the comma `,` between each entity,	
+**except** for the final entity in the JSON array;	
+and likewise for the properties within the JSON object for each entity.	
+This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing.	
+The order of the entities within the `@graph` JSON-LD array	
+and the order of the keys within a JSON object is _not significant_.	
+The _graph_ content is given by the `@id` cross-references.	
+
+You will add a comma here between the `ro-crate-metadata.json` entity, and the root data entity.	
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::: callout
 ## RO-Crate versions
-This tutorial is written for RO-Crate 1.1,
+This tutorial is written for RO-Crate 1.2,
 the RO-Crate website will list the [current specification version](https://www.researchobject.org/ro-crate/specification.html)
 -- RO-Crates can generally be upgraded to newer versions following [semantic versioning](https://semver.org/) conventions,
-but check the [change log](https://www.researchobject.org/ro-crate/1.1/appendix/changelog.html) for any important changes.
+but check the [change log](https://www.researchobject.org/ro-crate/specification/1.2/appendix/changelog.html) for any important changes.
 The next development version of the specification, indicated with a `-DRAFT` status,
 may still be subject to changes and should only be used with caution.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -52,5 +68,3 @@ may still be subject to changes and should only be used with caution.
 - RO-Crate specifications are versioned
 - The version of RO-Crate is indicated using the conformsTo property
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

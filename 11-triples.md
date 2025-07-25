@@ -19,13 +19,13 @@ e.g. to demonstrate how it might be described at a web resource,
 a 'base' URI is needed that will point to that resource,
 i.e. resolve as a page or file on the web.
 
-Try to specify a hypothetical base URI by modifing the graph's `@context` within the [JSON-LD Playground](https://json-ld.org/playground/)
+Try to specify a hypothetical base URI by modifying the graph's `@context` within the [JSON-LD Playground](https://json-ld.org/playground/)
 (do not modify the `ro-crate-metadata.json` on disk), and revisit the _Table_ rendering.
 
 ```json
 {
   "@context": [
-    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/crate/1.2/context",
     { "@base": "arcp://uuid,deffa754-c764-4e04-aabf-e600c6200553/" }
   ],
   "…": "…"

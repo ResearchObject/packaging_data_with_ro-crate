@@ -14,8 +14,8 @@ exercises: 1
 
 ## RO-Crate Root
 
-Next we'll add another entity to the `@graph` array,
-to describe the [RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html#direct-properties-of-the-root-data-entity):
+First we'll add an entity to the `@graph` array,
+to describe the [RO-Crate Root](https://www.researchobject.org/ro-crate/specification/1.2/root-data-entity.html#direct-properties-of-the-root-data-entity):
 
 ```json
 {
@@ -27,23 +27,8 @@ to describe the [RO-Crate Root](https://www.researchobject.org/ro-crate/1.1/root
 }
 ```
 
-:::::::::::::::::::::::::::::::::::::::: callout
-## Adding entities to the JSON array
-
-Because we're adding incrementally to the `@graph` array.
-It is important to remember the comma `,` between each entity,
-**except** for the final entity in the JSON array;
-and likewise for the properties within the JSON object for each entity.
-This is an artefact of the strict [JSON](https://www.json.org/) file format rules to simplify parsing.
-The order of the entities within the `@graph` JSON-LD array
-and the order of the keys within a JSON object is _not significant_.
-The _graph_ content is given by the `@id` cross-references.
-
-You will add a comma here between the `ro-crate-metadata.json` entity, and the root data entity.
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located.
-This reference from `ro-crate-metadata.json` is therefore semantically marking the `crate1` folder as being the RO-Crate Root.
+By convention, in RO-Crate the `@id` value of  `./` means that this entity describes the folder in which the RO-Crate metadata file is located. The root data entity always has the `@type` value of `Dataset`, which is a [schema.org](https://schema.org/Dataset) type.
+This will be referenced from `ro-crate-metadata.json`, semantically marking the `crate1` folder as being the RO-Crate Root.
 
 
 :::::::::::::::::::::::::::::::::::::::: discussion
@@ -57,11 +42,36 @@ If the crate is being served from a Web service,
 such as a data repository or database where files are not organized in folders,
 then the `@id` might be an absolute URI instead of `./`
 -- this is one reason why we point to the root entity from the metadata descriptor,
-see section [Root Data Entity](https://www.researchobject.org/ro-crate/1.1/root-data-entity.html) for details.
+as you will see in the next section.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: challenge
+## Add an additional type
+
+1. Navigate the schema.org type list to find a subtype of `CreativeWork` that is suitable for a learning resource.
+2. Modify the root entity's `@type` to be an array.
+3. Add the type name for learning resource at the end of the array.
+
+:::::::::::::::  solution
+```json
+{
+   "@id": "./",
+   "@type": ["Dataset", "LearningResource"],
+   "hasPart": [ 
+     {"@id": "data.csv"} 
+   ],
+   "…": "…"
+}
+```
+:::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+The root has several metadata properties that describe the RO-Crate as a whole,
+considering it as a Research Object of collected resources.
+In the next section we will cover the required and recommended properties of the root `./`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 - The RO-Crate Root is the top-level object of the RO-Crate
-- The root identifier may be a URL, but commonly just ./ for the current folder
+- The root identifier is commonly just ./ for the current folder, but can be a URL
+- The root is always typed as a Dataset, but can have additional types
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-

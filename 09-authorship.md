@@ -25,7 +25,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 :::::::::::::::::::::::::::::::::::::::: challenge
 ## Add an author and affiliation
 
-1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/1.1/contextual-entities.html#people)
+1. Add yourself as an [`author`](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#people)
    of the crate using the type `Person`
 2. Include your preferred name. 
 3. If you don't have an [ORCID](https://orcid.org/), you may use either the URL of your main home page at your institution,
@@ -54,7 +54,7 @@ Moving back to the RO-Crate root `./`, let's specify who are the authors of the 
 ## Who can be authors of an RO-Crate?
 
 When we say someone is an author of a crate,
-it means they have contributed something substansively to its content (typically the data).
+it means they have contributed something substantively to its content (typically the data).
 Agreement on what is considered authorship on a dataset can be tricky;
 you may decide some people would be better represented as `contributor`.
 One advantage of RO-Crate is that authorship can be declared explicitly also on each data entity,
