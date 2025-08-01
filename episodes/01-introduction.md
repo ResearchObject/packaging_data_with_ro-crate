@@ -52,7 +52,7 @@ _Video: An overview of the RO-Crate concept and its implementations_ (see also [
 
 ## Tutorial walk-through
 
-In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/1.2/),
+In this tutorial, meant to be read along with the [RO-Crate specification](https://www.researchobject.org/ro-crate/specification/1.2/),
 we'll walk through the initial steps for creating a basic RO-Crate.
 You are invited to replicate the below steps on your local computer.
 
