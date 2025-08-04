@@ -67,7 +67,7 @@ used in the rest of the RO-Crate document.
 These will largely map to definitions in the [schema.org](http://schema.org/) vocabulary,
 which can be used by RO-Crate extensions to provide additional metadata beyond the RO-Crate specifications.
 It is this feature of JSON-LD that helps make RO-Crate extensible for many different purposes
--- this is explored further in the specification's [appendix on JSON-LD](https://www.researchobject.org/ro-crate/1.2/appendix/jsonld.html).
+-- this is explored further in the specification's [appendix on JSON-LD](https://www.researchobject.org/ro-crate/specification/1.2/appendix/jsonld.html).
 In short, only JSON keys (_properties_) and types defined this way can be used within the RO-Crate Metadata Document.
 
 However, in the general case it should be sufficient to follow the RO-Crate JSON examples directly without deeper JSON-LD understanding.
